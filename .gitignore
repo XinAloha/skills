@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node / Bun（导入的 skill 中带 scripts/ 时使用）
+node_modules/
+.pnp/
+.pnp.*
+
+# 编辑器与系统
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+*.swo
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# 本地环境与密钥
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+secrets/
+config.local.*
+
+# 构建产物 / 临时
+dist/
+build/
+out/
+*.log
+tmp/
+temp/
+
+# skill 导入流程的临时目录（详见 _meta/import_skills.py）
+_external_skills/
+
+# Claude Code / Codex 本地状态（不进版本库）
+.claude/local/
+.codex/local/
