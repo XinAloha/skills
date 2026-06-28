@@ -10,7 +10,7 @@ Legend for **Kind**:
 - `cluster: <name>` (in Cluster column) — multiple skills designed to be chained. See `_meta/clusters.md`.
 - `native` — authored in this repo, not imported.
 
-**Totals:** 54 imported · 52 native · 106 skills across 14 categories.
+**Totals:** 54 imported · 53 native · 107 skills across 14 categories.
 
 ## `engineering/`
 
@@ -91,11 +91,12 @@ Method-style skills: diagnose, decision systems, learning, deconstruction, resea
 
 ## `workmode/`
 
-Work modes: caveman, grill-me, handoff, slow-is-fast, goal clarification.
+Work modes: caveman, grill-me, handoff, slow-is-fast, goal clarification, manage-upward.
 
 | Slug | Kind | Cluster | Source | Summary |
 |---|---|---|---|---|
 | [`README.md`](workmode/README.md) | native | — | this repo | — |
+| [`manage-upward.md`](workmode/manage-upward.md) | native | — | this repo | 向上管理双向督促：三件事汇报法、2 小时风险上报、带方案沟通、摆脱学生思维。 |
 | [`caveman.md`](workmode/caveman.md) | native | — | this repo | — |
 | [`grill-me.md`](workmode/grill-me.md) | native | — | this repo | — |
 | [`handoff.md`](workmode/handoff.md) | native | — | this repo | — |
