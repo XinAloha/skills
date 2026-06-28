@@ -4,7 +4,6 @@ type: misc
 parent: dev-guidelines.md
 auto_execution_mode: 2
 source: Matt Pocock skills - misc/setup-pre-commit（已改写：从 Husky+lint-staged+Prettier → pre-commit + ruff/black/pytest）
-adapted-for: A 股量化数据采集系统 (Python / pytest / PostgreSQL)
 ---
 
 # Setup Pre-Commit - 配置 pre-commit 钩子（Python 版）

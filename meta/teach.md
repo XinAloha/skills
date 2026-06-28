@@ -4,7 +4,6 @@ type: meta
 parent: dev-guidelines.md
 auto_execution_mode: 2
 source: Matt Pocock skills - productivity/teach
-adapted-for: A 股量化数据采集系统 (Python / pytest / PostgreSQL)
 disable-model-invocation: true
 argument-hint: 「你想学什么？」
 ---

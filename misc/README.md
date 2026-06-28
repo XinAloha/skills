@@ -4,7 +4,6 @@ type: misc
 parent: dev-guidelines.md
 auto_execution_mode: 2
 source: Matt Pocock skills (misc 部分，部分针对 TS/JS 的已改写为 Python 工具链)
-adapted-for: A 股量化数据采集系统 (Python / pytest / PostgreSQL)
 ---
 
 # 杂项参考分组

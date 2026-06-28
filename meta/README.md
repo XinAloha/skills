@@ -4,7 +4,6 @@ type: meta
 parent: dev-guidelines.md
 auto_execution_mode: 2
 source: Matt Pocock skills (productivity 部分)
-adapted-for: A 股量化数据采集系统 (Python / pytest / PostgreSQL)
 ---
 
 # 元能力分组

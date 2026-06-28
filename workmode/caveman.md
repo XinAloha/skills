@@ -4,7 +4,6 @@ type: workmode
 parent: dev-guidelines.md
 auto_execution_mode: 2
 source: Matt Pocock skills - productivity/caveman
-adapted-for: A 股量化数据采集系统 (Python / pytest / PostgreSQL)
 ---
 
 # Caveman - 穴居人模式

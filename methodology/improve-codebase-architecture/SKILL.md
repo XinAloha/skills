@@ -4,7 +4,6 @@ type: methodology
 parent: dev-guidelines.md
 auto_execution_mode: 2
 source: Matt Pocock skills - engineering/improve-codebase-architecture
-adapted-for: A 股量化数据采集系统 (Python / pytest / PostgreSQL)
 ---
 
 # Improve Codebase Architecture - 改进代码库架构

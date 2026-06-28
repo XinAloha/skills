@@ -4,7 +4,6 @@ type: workmode
 parent: dev-guidelines.md
 auto_execution_mode: 2
 source: Matt Pocock skills - productivity/handoff
-adapted-for: A 股量化数据采集系统 (Python / pytest / PostgreSQL)
 argument-hint: 「下个会话用来做什么？」
 ---
 

@@ -4,7 +4,6 @@ type: meta
 parent: dev-guidelines.md
 auto_execution_mode: 2
 source: Matt Pocock skills - productivity/write-a-skill
-adapted-for: A 股量化数据采集系统 (Python / pytest / PostgreSQL)
 ---
 
 # Write a Skill - 写新 skill
@@ -135,9 +134,10 @@ parent: dev-guidelines.md     # Devin / Codex
                               # 或 claude-guidelines.md（Claude 专属时）
 auto_execution_mode: 2
 source: <如改编自外部，写来源 URL>          # 可选
-adapted-for: A 股量化数据采集系统 ...        # 可选
 ---
 ```
+
+> **关于已废弃的 `adapted-for` 字段**：早期导入脚本会在每个 skill 上自动加 `adapted-for: A 股量化数据采集系统 (Python / pytest / PostgreSQL)`，但 skill 本身大多是通用的，这个字段反而妨碍跨项目软链接复用（让别的项目用户以为是项目专属）。2026-06-28 起，**默认模板不再带这个字段**；本仓库已统一清掉。仅当 skill 的指令本身确实做了"为本项目定向改造"（例如把通用方法论里的术语全部替换成本项目的具体表名/函数名）时，才可以再单独加回来，否则保持空着。要展示本项目示例的，放在正文末尾的"## 本项目示例"段即可，正文里的示例不影响 skill 的可移植性。
 
 **新增 skill 的位置规则**（2026-06-27 重构后）：
 - **共享工程规则** → 按功能写入 `skills/engineering/`、`skills/testing/`、`skills/git/`、`skills/governance/` 等分类目录，三方 Agent 自动可用。

@@ -4,7 +4,6 @@ type: methodology
 parent: dev-guidelines.md
 auto_execution_mode: 2
 source: Matt Pocock skills (https://github.com/aihero-dev/skills)
-adapted-for: A 股量化数据采集系统 (Python / pytest / PostgreSQL)
 ---
 
 # 工程方法论分组

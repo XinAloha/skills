@@ -4,7 +4,6 @@ type: misc
 parent: dev-guidelines.md
 auto_execution_mode: 2
 source: Matt Pocock skills - misc/scaffold-exercises（已改写：从 TS 课程脚手架 → Python / 量化项目"参考分析练习"）
-adapted-for: A 股量化数据采集系统 (Python / pytest / PostgreSQL)
 ---
 
 # Scaffold Exercises - 练习目录脚手架

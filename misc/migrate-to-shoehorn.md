@@ -4,7 +4,6 @@ type: misc
 parent: dev-guidelines.md
 auto_execution_mode: 2
 source: Matt Pocock skills - misc/migrate-to-shoehorn（TS 专属，已改写为 Python 类比参考）
-adapted-for: A 股量化数据采集系统 (Python / pytest / PostgreSQL)
 ---
 
 # Migrate to Shoehorn —— Python 类比参考

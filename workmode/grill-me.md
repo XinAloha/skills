@@ -4,7 +4,6 @@ type: workmode
 parent: dev-guidelines.md
 auto_execution_mode: 2
 source: Matt Pocock skills - productivity/grill-me
-adapted-for: A 股量化数据采集系统 (Python / pytest / PostgreSQL)
 ---
 
 # Grill Me - 质询我

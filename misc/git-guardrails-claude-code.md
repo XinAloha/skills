@@ -4,7 +4,6 @@ type: misc
 parent: dev-guidelines.md
 auto_execution_mode: 2
 source: Matt Pocock skills - misc/git-guardrails-claude-code
-adapted-for: A 股量化数据采集系统 (Python / pytest / PostgreSQL)
 ---
 
 # Git Guardrails for Claude Code - Git 守卫
