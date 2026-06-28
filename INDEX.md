@@ -10,7 +10,7 @@ Legend for **Kind**:
 - `cluster: <name>` (in Cluster column) — multiple skills designed to be chained. See `_meta/clusters.md`.
 - `native` — authored in this repo, not imported.
 
-**Totals:** 54 imported · 53 native · 107 skills across 14 categories.
+**Totals:** 54 imported · 54 native · 108 skills across 14 categories.
 
 ## `engineering/`
 
@@ -91,12 +91,13 @@ Method-style skills: diagnose, decision systems, learning, deconstruction, resea
 
 ## `workmode/`
 
-Work modes: caveman, grill-me, handoff, slow-is-fast, goal clarification, manage-upward.
+Work modes: caveman, grill-me, handoff, slow-is-fast, goal clarification, manage-upward, tame-vibe-coding.
 
 | Slug | Kind | Cluster | Source | Summary |
 |---|---|---|---|---|
 | [`README.md`](workmode/README.md) | native | — | this repo | — |
 | [`manage-upward.md`](workmode/manage-upward.md) | native | — | this repo | 向上管理双向督促：三件事汇报法、2 小时风险上报、带方案沟通、摆脱学生思维。 |
+| [`tame-vibe-coding.md`](workmode/tame-vibe-coding.md) | native | — | this repo | Vibe Coding 债务控制：化解认知债务（你不懂自己项目）和技术债务（代码烂账），AI 当实习生你当 mentor。 |
 | [`caveman.md`](workmode/caveman.md) | native | — | this repo | — |
 | [`grill-me.md`](workmode/grill-me.md) | native | — | this repo | — |
 | [`handoff.md`](workmode/handoff.md) | native | — | this repo | — |
