@@ -42,6 +42,13 @@ temp/
 # skill 导入流程的临时目录（详见 _meta/import_skills.py）
 _external_skills/
 
-# Claude Code / Codex 本地状态（不进版本库）
+# Claude Code / Codex / Devin 本地状态（不进版本库）
 .claude/local/
 .codex/local/
+.devin/local/
+
+# 平台入口的 skill/ Junction 是机器本地链接，不进版本库
+# 真实内容在 skills/ 根目录；克隆后用 _meta/symlink-mount.md 的脚本重建
+.claude/workflows/skill/
+.codex/workflows/skill/
+.devin/workflows/skill/

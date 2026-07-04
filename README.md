@@ -1,112 +1,31 @@
-# Skills — 多源 Skill 集合大全
+# Skills — 给 AI 加上专业能力的 Skill 大全
 
-`skills/` 既是本仓库（Quantitative_Trading 项目）所有 Agent skill 的事实源，也作为一个 **可单独维护、可被多个项目软链接复用** 的 skill 大全 —— 它把社区里若干优秀开源 skill 项目按功能归并到统一目录树，每个 skill 都保留对其上游的指针，便于持续追踪。
+你的 AI 助手能写代码，但不懂 Git 分支规范；能写文章，但写出来一股 AI 味；能搜资料，但不会发到微信公众号。本仓库就是补这些能力缺口的——一套开箱即用的 Agent skill 集合，让 AI 按专业流程干活，而不是即兴发挥。
 
-> 后续这里会继续接入社区其它 skill 项目；完整清单与实时计数见 [`INDEX.md`](INDEX.md)。
+每个 skill 是一份结构化指令（有的带脚本），放进 AI 的 skill 目录就能用。你可以只挑需要的一个挂上去，也可以整组装。
 
-## ⭐ 置顶推荐 — 打工人协作双子 skill
+## 能干什么
 
-本仓库目前最优先推荐两个 **协作类 skill**，覆盖打工人的双线沟通——**一个对人，一个对 AI**。建议常驻开启。
-
-### 1️⃣ [workmode/tame-vibe-coding.md](workmode/tame-vibe-coding.md) — Vibe Coding 债务控制（人 ↔ AI）
-
-让你从"AI 代码生成器的下游工人"扳回"AI 代码的审查员和架构师"。
-
-- **认知债务 vs 技术债务**：技术债务是代码烂账，认知债务是**你自己不懂自己的项目**了——AI 时代的新风险，比技术债务更隐蔽。
-- **AI 审查员工作流**：AI 当实习生，你是 mentor。**生成速度必须慢于理解速度**。
-- **强制"复述验收"**：合并 AI 代码前用三句话讲清意图/逻辑/边界，说不出来就不许合。
-- **TDD 优先**：先让 AI 写测试用例，**我审测试**，再让 AI 写实现；测试是技术债务的安全网。
-- **知识沉淀**：维护 `Rules.md` 项目规则文件 + 关键功能的"生成轨迹/决策日志"，对抗 AI 上下文遗忘。
-- **自动化护栏**：`ruff` / `mypy` / `pytest` / CI / SonarQube 兜底，护栏不到位时不大量生成代码。
-- **思维转变**：从"生成"到"理解"，从"能用"到"可维护"，你是架构师、AI 是工程师。
-
-启用：说 *"vibe coding / 认知债务 / 提醒我别让 AI 跑偏 / 我有点看不懂这段代码了"* 或调用 `/tame-vibe-coding`。
-
-### 2️⃣ [workmode/manage-upward.md](workmode/manage-upward.md) — 向上管理模式（人 ↔ 人）
-
-让"执行者 ↔ 合作者"互相督促，把 AI 和用户都拉到合格打工人状态。
-
-- **核心理念**：向上管理 ≠ 拍马屁，本质是**用你的可控性，去覆盖对方的不确定感和焦虑感**。
-- **三件事汇报法**：每次同步只讲清 *进度 / 风险 / 需要的支持* 这三件事。
-- **2 小时风险上报原则**：硬扛不超 2h，超时立刻带"已尝试 + 临时结论"上报，杜绝闷头干。
-- **汇报问题必带方案**：哪怕方案不成熟，也比当传声筒强。
-- **摆脱学生思维**：少看多干、工作留痕、及时沟通，多用"我们"代替"我"和"你"。
-- **双向**：AI 主动按这些原则提醒用户，用户也用同样原则要求 AI。
-
-启用：说 *"向上管理 / 打工人模式 / 督促我"* 或调用 `/manage-upward`。
-
-> **为什么并列**：两个 skill 是同一套打工人哲学的两条战线——`tame-vibe-coding` 守住你**对代码的掌控**（别被 AI 推着走），`manage-upward` 守住你**对项目和上级的掌控**（别被进度推着走）。两个都失守，认知 + 项目双线崩盘。
-
----
-
-## skill 形态分类
-
-每个 skill 有一个 **kind**（`atomic` / `composite` / `composite-danger`，描述单个 skill 长什么样）和可选的 **cluster**（设计上互相串联的 skill 组）。两者正交。完整定义、举例、升级/拆分准则见 [`_meta/atomic-vs-composite.md`](_meta/atomic-vs-composite.md)，集群目录见 [`_meta/clusters.md`](_meta/clusters.md)。
-
-## 目录结构
-
-| 目录 | 定位 |
+| 你想让 AI 帮你做的事 | 对应 skill |
 |---|---|
-| `engineering/` | 工程规则：代码风格、接口、文档、外部集成、安全、新功能流程，以及导入的 `diagram` / `electron-extract` |
-| `testing/` | 测试与质量规则 |
-| `git/` | Git 工作流，含导入的 `release-workflow` |
-| `governance/` | 项目治理 |
-| `methodology/` | 方法论 skill（含导入的 `hv-analysis`、`good-question`、`decision-system`、`deconstruct`、`learning-plan`、`chatroom`、`chatroom-austrian` 等） |
-| `workmode/` | 工作模式（含导入的 `goal-clarify`、`slowisfast`、`ponytail` 全家桶 6 件） |
-| `meta/` | 元能力（含导入的 `neat-freak`） |
-| `misc/` | 低频辅助 skill |
-| `domain/` | 领域 skill（A 股数据等） |
-| `agent-adapters/` | 平台适配层：同一职责在 Claude Code / Codex 下的不同工具栈写在**同一个跨平台 md** 里（frontmatter `applies-to: [claude-code, codex]`），具体工具调用按平台内联给出；含导入的 `agent-migration/` |
-| `content/` | **新增** — 写作、排版、翻译、配图、PPT、社交卡片、发布相关 skill |
-| `productivity/` | **新增** — URL/视频抽取、存储清理、NotebookLM、新闻摘要、微信群摘要 |
-| `business/` | **新增** — dontbesilent 商业诊断套件 |
-| `ai-backends/` | **新增** — AI 提供商适配（image-gen, gemini-web） |
-| `_meta/` | **新增** — 仓库自身的架构说明、import manifest、构建脚本 |
+| 写代码时不跑偏——先审再合、TDD 优先、认知债务控制 | `workmode/tame-vibe-coding` |
+| 汇报工作讲清进度/风险/需求，不闷头干 | `workmode/manage-upward` |
+| 把 AI 味浓重的中文改回人话 | `content/humanizer-zh` |
+| 文章一键排版成可读的 Markdown | `content/format-markdown` |
+| 生成单 HTML 横滑 PPT | `content/guizang-ppt` |
+| 生成小红书/社交平台风格卡片图 | `content/guizang-social-card` |
+| 把文章发到微信/微博/X/小红书 | `content/post-to-wechat` 等 |
+| 多渠道 AI 绘图（Codex / DashScope / Replicate 聚合） | `ai-backends/image-gen` |
+| 把网页/YouTube/推文转成 Markdown | `productivity/url-to-markdown` 等 |
+| 诊断商业问题、做基准对标 | `business/diagnosis` |
+| A 股数据采集（K线/板块/复权因子） | `domain/a-stock-data` |
+| Git 分支/code review/commit 规范 | `git/git-branch-workflow` 等 |
+| 分层测试策略（单元/集成/数据质量） | `testing/test-strategy` |
+| 好问题框架、决策系统、解构分析等方法论 | `methodology/good-question` 等 |
 
-## 平台入口
+## 怎么用
 
-平台自身工作目录只保留软链接入口，真实内容仍在 `skills/`：
-
-| Agent | 入口说明 | skill 作用路径 |
-|---|---|---|
-| Codex | `.codex/workflows/codex-guidelines.md` | `.codex/workflows/skill/` |
-| Devin | `.devin/workflows/dev-guidelines.md` | `.devin/workflows/skill/` |
-| Claude Code | `.claude/workflows/claude-guidelines.md` | `.claude/workflows/skill/` |
-
-示例（Windows 用 Junction）：
-
-```text
-.codex/workflows/skill/engineering -> skills/engineering
-.codex/workflows/skill/content     -> skills/content
-.claude/workflows/skill/business   -> skills/business
-```
-
-跨项目挂载用法见 [`_meta/symlink-mount.md`](_meta/symlink-mount.md)。
-
-## 外部来源仓库
-
-已接入的 8 个上游项目（首批 2026-06-27 共 7 个，2026-07-04 增补 ponytail 6 件）：
-
-| 上游仓库 | 提供 skill 数 | 类型概览 |
-|---|---|---|
-| [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh) | 1 | 中文文本去 AI 痕迹 |
-| [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills) | 22 | 内容创作 / 发布 / 图像 / 抓取一整套 |
-| [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill) | 23 | 商业诊断 / 思维方法 / 内容引擎一整套 |
-| [op7418/guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill) | 1 | 单 HTML 横滑 web PPT |
-| [op7418/guizang-social-card-skill](https://github.com/op7418/guizang-social-card-skill) | 1 | Guizang 风格社交卡片 |
-| [KKKKhazix/khazix-skills](https://github.com/KKKKhazix/khazix-skills) | 5 | AI 新闻、研究方法、文风、知识库清理、存储分析 |
-| [PleasePrompto/notebooklm-skill](https://github.com/PleasePrompto/notebooklm-skill) | 1 | NotebookLM 浏览器自动化 |
-| [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | 6 | 懒人高级开发模式：YAGNI/stdlib/native/one-line 最小代码阶梯 + 过度工程审查/审计/技术债台账 |
-
-每个导入的 skill 在自己的目录下都有一个 [`SOURCE.md`](business/diagnosis/SOURCE.md)（任一示例），写明上游链接、原始路径、kind、cluster、导入日期、软链接挂载片段、更新流程。后期更新只需跟着 SOURCE.md 的 `Updating from upstream` 走。
-
-## 如何使用
-
-### 在本仓库
-
-平台说明文件里写平台本地路径，例如 `skill/content/humanizer-zh/SKILL.md`。
-
-### 在其他项目挂载
+每个 skill 自包含，挑你需要的挂到项目的 skill 目录即可：
 
 ```bash
 # Linux/macOS
@@ -118,34 +37,34 @@ New-Item -ItemType Junction `
   -Target E:\Project\Quantitative_Trading\skills\content\humanizer-zh
 ```
 
-整组挂载见 [`_meta/symlink-mount.md`](_meta/symlink-mount.md)。
+整组挂载（按 category 批量）见 [`_meta/symlink-mount.md`](_meta/symlink-mount.md)。
 
-## 维护规则
+## ⭐ 推荐入门
 
-1. **新增 skill** 时先判断它属于哪个 category；属于 atomic 就是单文件，属于 composite 就建子目录。命名用 kebab-case。
-2. **从外部导入新的 skill** 走 `_meta/import-manifest.tsv` + `_meta/import_skills.py`：在 manifest 加一行 → 跑 import 脚本 → 跑 `_meta/build_index.py` 重生 `INDEX.md`。
-3. **同源/同任务多份 skill** 的并轨原则见 [`_meta/merge-policy.md`](_meta/merge-policy.md)：短期 siblings，长期把同粒度指令逐渐合并到一份，*指令越具体越好*。
-4. **修改本地 skill** 时如果改的是导入而来的，必须在该 skill 目录的 `SOURCE.md` 的 `Local modifications` 段记录；这样上游更新时知道哪里有冲突。
-5. **平台 `workflows/skill/`** 下只放目录链接，不放手工复制文件。Windows 用 Junction。
-6. **移动 / 改名 skill** 时同步检查相对链接、SOURCE.md 里的 sibling 引用、`INDEX.md`、`_meta/clusters.md`。
+刚接触本仓库的话，推荐从 `workmode/` 下这两个开始，覆盖打工人的双线沟通：
 
-## 自动化脚本
+| skill | 守住的战线 | 一句话 |
+|---|---|---|
+| [tame-vibe-coding](workmode/tame-vibe-coding.md) | 对代码的掌控 | AI 当实习生、你当 mentor；生成慢于理解，合并前先复述验收 |
+| [manage-upward](workmode/manage-upward.md) | 对项目和上级的掌控 | 三件事汇报法 + 2 小时风险上报原则 |
 
-| 脚本 | 作用 |
+## 目录结构
+
+| 目录 | 能做什么 |
 |---|---|
-| `_meta/import_skills.py` | 按 manifest 把 `_external_skills/` 内容复制到目标目录，并生成每个 skill 的 `SOURCE.md` |
-| `_meta/build_index.py` | 扫描所有 category 和 manifest，重生 `INDEX.md` |
-| `_meta/import-manifest.tsv` | 导入清单：`source_subpath / target_subpath / kind / repo / repo_path / cluster / notes` |
+| `workmode/` | 工作模式：AI 编程债务控制、向上管理、目标澄清、慢即快、最小代码阶梯（ponytail 6 件） |
+| `content/` | 写作与发布：排版、翻译、去 AI 痕迹、PPT、社交卡片、配图、多平台发布（微信/微博/X/小红书）、漫画、传播策略 |
+| `productivity/` | 效率工具：网页/YouTube/推文转 Markdown、微信群摘要、AI 热点新闻、图片压缩、存储分析、NotebookLM |
+| `business/` | 商业诊断套件：商业诊断、行动诊断、基准对标、路由分发、状态管理集群 |
+| `engineering/` | 工程规则：代码风格、接口设计、文档规范、外部集成、安全、Mermaid 图表、Electron 逆向 |
+| `testing/` | 测试策略：分层测试（单元/集成/数据质量）、数据库测试、故障恢复、管线测试 |
+| `git/` | Git 工作流：分支策略、code review、commit 规范、回滚恢复、版本发布 |
+| `governance/` | 项目治理：自动清理、避坑清单、项目管理员、重构检查、参考分析 |
+| `methodology/` | 方法论：好问题、决策系统、解构分析、学习计划、HV 分析、聊天室研讨、TDD、原型法 |
+| `domain/` | 领域 skill：A 股数据采集（股票列表、日K线、板块、复权因子、降级策略） |
+| `ai-backends/` | AI 提供商适配：多渠道绘图聚合、Gemini Web API |
+| `agent-adapters/` | 平台适配层：跨平台工作流（Claude Code / Codex 工具对照）、Agent 工作台迁移 |
+| `meta/` | 元能力：多会话教学、创建新 skill 模板、代码整洁 |
+| `misc/` | 低频辅助：Git 安全护栏、迁移工具、脚手架练习、pre-commit |
 
-两个脚本都用本机 `python` 跑（开发机上是 Anaconda 的 Python 3.11）。
-
-## 迁移背景
-
-2026-06-27 之前 skill 按平台和历史来源分散。当前迁移目标：
-
-- **单一事实源 + 平台软链接** —— 已完成。
-- **吸纳社区优秀 skill** —— 当前共导入 60 个（首批 2026-06-27 共 54 个，2026-07-04 增补 ponytail 6 个）；后续可加更多来源（在 manifest 添行即可）。
-- **可被其他项目软链接挂载** —— 每个 skill 自包含，相对路径全在自己目录里解析。
-- **同任务多源的合并策略** —— 见 `_meta/merge-policy.md`。短期 siblings 并存，长期把同粒度指令逐步合并、做到指令越详细越好。
-
-后续如果要让本目录独立成仓库上 GitHub 动态维护，结构已经具备条件。
+> 完整 skill 清单见 [`INDEX.md`](INDEX.md)，维护者指南见 [`_meta/`](_meta/)。
