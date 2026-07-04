@@ -75,6 +75,17 @@
 
 **取舍：** 想自选嘉宾 → `chatroom`；要 Austrian 经济学视角 → `chatroom-austrian`。
 
+## `ponytail` — 懒人最小代码工具箱
+
+- [`workmode/ponytail`](../workmode/ponytail/) — 主模式：写码前先爬「YAGNI → stdlib → native → 依赖 → one line → 最小可用」阶梯，懒于方案、不懒于读码
+- [`workmode/ponytail-review`](../workmode/ponytail-review/) — diff 级过度工程审查，一行一条（delete/stdlib/native/yagni/shrink）
+- [`workmode/ponytail-audit`](../workmode/ponytail-audit/) — 整库过度工程审计，按可删减量排序，只出报告不改码
+- [`workmode/ponytail-debt`](../workmode/ponytail-debt/) — 收集代码里所有 `ponytail:` 注释成「技术债台账」，避免「以后做」烂成「永远不做」
+- [`workmode/ponytail-gain`](../workmode/ponytail-gain/) — 展示 ponytail 的基准测试成绩板（代码/成本/速度）
+- [`workmode/ponytail-help`](../workmode/ponytail-help/) — 全部 ponytail 模式/技能/命令速查卡
+
+**典型流程：** 写码时开 `ponytail` 模式（lite/full/ultra）→ 写完跑 `ponytail-review` 审 diff / `ponytail-audit` 审整库 → 用 `ponytail-debt` 把刻意留下的捷径登记成债 → `ponytail-help` 速查、`ponytail-gain` 看收益。与 `workmode/caveman`（极简行文）、`workmode/tame-vibe-coding`（认知/技术债控制）同属工作模式，可叠加。
+
 ---
 
 ## 还没成簇的「孤狼」也能强强联合

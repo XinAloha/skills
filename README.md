@@ -2,7 +2,7 @@
 
 `skills/` 既是本仓库（Quantitative_Trading 项目）所有 Agent skill 的事实源，也作为一个 **可单独维护、可被多个项目软链接复用** 的 skill 大全 —— 它把社区里若干优秀开源 skill 项目按功能归并到统一目录树，每个 skill 都保留对其上游的指针，便于持续追踪。
 
-> 后续这里会继续接入社区其它 skill 项目；当前已包含 **108 个 skill**：54 个从外部仓库导入 + 54 个本仓库原生。完整清单见 [`INDEX.md`](INDEX.md)。
+> 后续这里会继续接入社区其它 skill 项目；完整清单与实时计数见 [`INDEX.md`](INDEX.md)。
 
 ## ⭐ 置顶推荐 — 打工人协作双子 skill
 
@@ -41,23 +41,7 @@
 
 ## skill 形态分类
 
-每个 skill 有一个 **kind**（描述它本身长什么样）。多个 skill 之间还可以有 **cluster**（描述它们怎么搭配）。这两个维度正交。
-
-### 三种 kind（描述单个 skill）
-
-| kind | 含义 | 举例 |
-|---|---|---|
-| `atomic` | 单文件 `SKILL.md`，一招一动作。**普攻**。 | `workmode/caveman.md`、`business/diagnosis/`、`methodology/good-question/` |
-| `composite` | `SKILL.md` + 内置 `scripts/` / `references/` / `assets/`，单次调用自带一套流水线。**一招一整套**。 | `content/guizang-ppt/`、`productivity/notebooklm/`、`engineering/diagram/` |
-| `composite-danger` | composite，但依赖逆向 / 非官方 API，**上游随时可能失效**。 | `ai-backends/gemini-web/`、`productivity/x-to-markdown/` |
-
-### 一种组合机制（描述多个 skill 怎么串）
-
-| 机制 | 含义 | 举例 |
-|---|---|---|
-| `pipeline-cluster` | 多个独立 skill 设计上互相串联使用。集群名见 [`_meta/clusters.md`](_meta/clusters.md)。 | `dbs-state` (state-save → state-restore → state-report)、`humanizer`、`slide`、`card`、`extract`、`publish`、`visual`、`chatroom` |
-
-每个 skill 既有 kind（atomic / composite / composite-danger 三选一），又**可能**属于某个 cluster（也可能不属于）。详见 [`_meta/atomic-vs-composite.md`](_meta/atomic-vs-composite.md)。
+每个 skill 有一个 **kind**（`atomic` / `composite` / `composite-danger`，描述单个 skill 长什么样）和可选的 **cluster**（设计上互相串联的 skill 组）。两者正交。完整定义、举例、升级/拆分准则见 [`_meta/atomic-vs-composite.md`](_meta/atomic-vs-composite.md)，集群目录见 [`_meta/clusters.md`](_meta/clusters.md)。
 
 ## 目录结构
 
@@ -68,7 +52,7 @@
 | `git/` | Git 工作流，含导入的 `release-workflow` |
 | `governance/` | 项目治理 |
 | `methodology/` | 方法论 skill（含导入的 `hv-analysis`、`good-question`、`decision-system`、`deconstruct`、`learning-plan`、`chatroom`、`chatroom-austrian` 等） |
-| `workmode/` | 工作模式（含导入的 `goal-clarify`、`slowisfast`） |
+| `workmode/` | 工作模式（含导入的 `goal-clarify`、`slowisfast`、`ponytail` 全家桶 6 件） |
 | `meta/` | 元能力（含导入的 `neat-freak`） |
 | `misc/` | 低频辅助 skill |
 | `domain/` | 领域 skill（A 股数据等） |
@@ -101,7 +85,7 @@
 
 ## 外部来源仓库
 
-本次（2026-06-27）导入的 7 个上游项目：
+已接入的 8 个上游项目（首批 2026-06-27 共 7 个，2026-07-04 增补 ponytail 6 件）：
 
 | 上游仓库 | 提供 skill 数 | 类型概览 |
 |---|---|---|
@@ -112,6 +96,7 @@
 | [op7418/guizang-social-card-skill](https://github.com/op7418/guizang-social-card-skill) | 1 | Guizang 风格社交卡片 |
 | [KKKKhazix/khazix-skills](https://github.com/KKKKhazix/khazix-skills) | 5 | AI 新闻、研究方法、文风、知识库清理、存储分析 |
 | [PleasePrompto/notebooklm-skill](https://github.com/PleasePrompto/notebooklm-skill) | 1 | NotebookLM 浏览器自动化 |
+| [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | 6 | 懒人高级开发模式：YAGNI/stdlib/native/one-line 最小代码阶梯 + 过度工程审查/审计/技术债台账 |
 
 每个导入的 skill 在自己的目录下都有一个 [`SOURCE.md`](business/diagnosis/SOURCE.md)（任一示例），写明上游链接、原始路径、kind、cluster、导入日期、软链接挂载片段、更新流程。后期更新只需跟着 SOURCE.md 的 `Updating from upstream` 走。
 
@@ -159,7 +144,7 @@ New-Item -ItemType Junction `
 2026-06-27 之前 skill 按平台和历史来源分散。当前迁移目标：
 
 - **单一事实源 + 平台软链接** —— 已完成。
-- **吸纳社区优秀 skill** —— 当前共导入 54 个；后续可加更多来源（在 manifest 添行即可）。
+- **吸纳社区优秀 skill** —— 当前共导入 60 个（首批 2026-06-27 共 54 个，2026-07-04 增补 ponytail 6 个）；后续可加更多来源（在 manifest 添行即可）。
 - **可被其他项目软链接挂载** —— 每个 skill 自包含，相对路径全在自己目录里解析。
 - **同任务多源的合并策略** —— 见 `_meta/merge-policy.md`。短期 siblings 并存，长期把同粒度指令逐步合并、做到指令越详细越好。
 

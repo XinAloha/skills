@@ -27,7 +27,7 @@ CATEGORY_BLURB = {
     "git": "Git workflow + release engineering.",
     "governance": "Project governance: cleanup, anti-patterns, requirement abstraction, refactor checks.",
     "methodology": "Method-style skills: diagnose, decision systems, learning, deconstruction, research frameworks.",
-    "workmode": "Work modes: caveman, grill-me, handoff, slow-is-fast, goal clarification.",
+    "workmode": "Work modes: caveman, ponytail (lazy minimal coding), grill-me, handoff, slow-is-fast, goal clarification.",
     "meta": "Meta capabilities: skill authoring, knowledge-base hygiene.",
     "misc": "Low-frequency helpers and tool references.",
     "domain": "Domain skills (e.g. A-share data tools).",
@@ -56,6 +56,9 @@ def list_native_skills(imported_targets: set[str]) -> list[tuple[str, str]]:
         for entry in sorted(cat_dir.iterdir()):
             rel = f"{cat}/{entry.name}"
             if rel in imported_targets:
+                continue
+            # Category README.md is documentation, not a skill — skip it
+            if entry.name == "README.md":
                 continue
             # Skip auxiliary files; both dirs and standalone .md files count
             if entry.is_dir():

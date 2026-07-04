@@ -10,7 +10,7 @@ Legend for **Kind**:
 - `cluster: <name>` (in Cluster column) — multiple skills designed to be chained. See `_meta/clusters.md`.
 - `native` — authored in this repo, not imported.
 
-**Totals:** 54 imported · 54 native · 108 skills across 14 categories.
+**Totals:** 60 imported · 50 native · 110 skills across 14 categories.
 
 ## `engineering/`
 
@@ -73,7 +73,6 @@ Method-style skills: diagnose, decision systems, learning, deconstruction, resea
 
 | Slug | Kind | Cluster | Source | Summary |
 |---|---|---|---|---|
-| [`README.md`](methodology/README.md) | native | — | this repo | — |
 | [`diagnose.md`](methodology/diagnose.md) | native | — | this repo | — |
 | [`grill-with-docs`](methodology/grill-with-docs/) | native | — | this repo | — |
 | [`improve-codebase-architecture`](methodology/improve-codebase-architecture/) | native | — | this repo | — |
@@ -91,17 +90,22 @@ Method-style skills: diagnose, decision systems, learning, deconstruction, resea
 
 ## `workmode/`
 
-Work modes: caveman, grill-me, handoff, slow-is-fast, goal clarification, manage-upward, tame-vibe-coding.
+Work modes: caveman, ponytail (lazy minimal coding), grill-me, handoff, slow-is-fast, goal clarification.
 
 | Slug | Kind | Cluster | Source | Summary |
 |---|---|---|---|---|
-| [`README.md`](workmode/README.md) | native | — | this repo | — |
-| [`manage-upward.md`](workmode/manage-upward.md) | native | — | this repo | 向上管理双向督促：三件事汇报法、2 小时风险上报、带方案沟通、摆脱学生思维。 |
-| [`tame-vibe-coding.md`](workmode/tame-vibe-coding.md) | native | — | this repo | Vibe Coding 债务控制：化解认知债务（你不懂自己项目）和技术债务（代码烂账），AI 当实习生你当 mentor。 |
 | [`caveman.md`](workmode/caveman.md) | native | — | this repo | — |
 | [`grill-me.md`](workmode/grill-me.md) | native | — | this repo | — |
 | [`handoff.md`](workmode/handoff.md) | native | — | this repo | — |
+| [`manage-upward.md`](workmode/manage-upward.md) | native | — | this repo | — |
+| [`tame-vibe-coding.md`](workmode/tame-vibe-coding.md) | native | — | this repo | — |
 | [`goal-clarify`](workmode/goal-clarify/) | `atomic` | `—` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-goal) | Goal clarification via Wittgenstein-style language auditing. |
+| [`ponytail`](workmode/ponytail/) | `atomic` | `ponytail` | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail/tree/main/skills/ponytail) | Lazy senior-dev coding mode: force the minimal solution that works (YAGNI -> stdlib -> native -> one line -> minimum). Levels lite/full/ultra. Sibling: workmode/caveman. |
+| [`ponytail-audit`](workmode/ponytail-audit/) | `atomic` | `ponytail` | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail/tree/main/skills/ponytail-audit) | Whole-repo audit for over-engineering: ranked list of what to delete/simplify/replace with stdlib/native. One-shot report, no fixes. |
+| [`ponytail-debt`](workmode/ponytail-debt/) | `atomic` | `ponytail` | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail/tree/main/skills/ponytail-debt) | Harvest every ponytail: comment into a debt ledger so deliberate shortcuts get tracked. One-shot report, changes nothing. |
+| [`ponytail-gain`](workmode/ponytail-gain/) | `atomic` | `ponytail` | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail/tree/main/skills/ponytail-gain) | Display ponytail's measured benchmark scoreboard (less code/cost, more speed). One-shot display, not a persistent mode. |
+| [`ponytail-help`](workmode/ponytail-help/) | `atomic` | `ponytail` | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail/tree/main/skills/ponytail-help) | Quick-reference card for all ponytail modes/skills/commands. One-shot display. |
+| [`ponytail-review`](workmode/ponytail-review/) | `atomic` | `ponytail` | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail/tree/main/skills/ponytail-review) | Code review hunting only over-engineering: one line per finding (delete/stdlib/native/yagni/shrink). Complements correctness-focused review. |
 | [`slowisfast`](workmode/slowisfast/) | `atomic` | `—` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-slowisfast) | Slow is fast diagnostic: distinguish compounding friction from harmful shortcuts. |
 
 ## `meta/`
@@ -110,7 +114,6 @@ Meta capabilities: skill authoring, knowledge-base hygiene.
 
 | Slug | Kind | Cluster | Source | Summary |
 |---|---|---|---|---|
-| [`README.md`](meta/README.md) | native | — | this repo | — |
 | [`teach.md`](meta/teach.md) | native | — | this repo | — |
 | [`write-a-skill.md`](meta/write-a-skill.md) | native | — | this repo | — |
 | [`neat-freak`](meta/neat-freak/) | `composite` | `—` | [KKKKhazix/khazix-skills](https://github.com/KKKKhazix/khazix-skills/tree/main/neat-freak) | Knowledge Base Neat-Freak: cross-platform agent memory/docs hygiene. |
@@ -121,7 +124,6 @@ Low-frequency helpers and tool references.
 
 | Slug | Kind | Cluster | Source | Summary |
 |---|---|---|---|---|
-| [`README.md`](misc/README.md) | native | — | this repo | — |
 | [`git-guardrails-claude-code.md`](misc/git-guardrails-claude-code.md) | native | — | this repo | — |
 | [`migrate-to-shoehorn.md`](misc/migrate-to-shoehorn.md) | native | — | this repo | — |
 | [`scaffold-exercises.md`](misc/scaffold-exercises.md) | native | — | this repo | — |
@@ -255,6 +257,15 @@ Skills sharing a `cluster:` tag are intended to compose. See `_meta/clusters.md`
 - [`ai-check`](content/ai-check/) — Detect AI-writing traces in Chinese text. Sibling: content/humanizer-zh (rewrites), content/format-markdown.
 - [`format-markdown`](content/format-markdown/) — Format MD with frontmatter/titles/summaries/headings. Sibling: content/humanizer-zh, content/ai-check.
 - [`humanizer-zh`](content/humanizer-zh/) — Chinese text de-AI-ification; rewrite to natural prose. Sibling: content/ai-check (detects), content/format-markdown (formats).
+
+### `ponytail`
+
+- [`ponytail`](workmode/ponytail/) — Lazy senior-dev coding mode: force the minimal solution that works (YAGNI -> stdlib -> native -> one line -> minimum). Levels lite/full/ultra. Sibling: workmode/caveman.
+- [`ponytail-audit`](workmode/ponytail-audit/) — Whole-repo audit for over-engineering: ranked list of what to delete/simplify/replace with stdlib/native. One-shot report, no fixes.
+- [`ponytail-debt`](workmode/ponytail-debt/) — Harvest every ponytail: comment into a debt ledger so deliberate shortcuts get tracked. One-shot report, changes nothing.
+- [`ponytail-gain`](workmode/ponytail-gain/) — Display ponytail's measured benchmark scoreboard (less code/cost, more speed). One-shot display, not a persistent mode.
+- [`ponytail-help`](workmode/ponytail-help/) — Quick-reference card for all ponytail modes/skills/commands. One-shot display.
+- [`ponytail-review`](workmode/ponytail-review/) — Code review hunting only over-engineering: one line per finding (delete/stdlib/native/yagni/shrink). Complements correctness-focused review.
 
 ### `publish`
 
