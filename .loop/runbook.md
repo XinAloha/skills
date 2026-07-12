@@ -23,6 +23,8 @@ This Loop reads repository files and writes only `.loop/` evidence, state, triag
 
 The scheduler is intentionally not configured by this project artifact. First complete and approve a manual dry run. Then configure a local or CI scheduler to invoke exactly the command in the contract once per UTC day, with concurrency one and no source-write credentials.
 
+Before treating the scheduler as stable, collect evidence from three completed scheduled runs. If a run is missed, duplicated, or cannot write a report, mark it blocked and use the manual command; do not silently increase retries or frequency.
+
 ## Recovery
 
 If interrupted, rerun the read-only command. It is idempotent except for replacing `.loop/reports/latest.json`. If report writing fails, do not retry source changes; preserve the error and escalate.

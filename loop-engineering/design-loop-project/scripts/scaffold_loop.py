@@ -12,6 +12,7 @@ CONTRACT = {
     "trigger": {"kind": "manual", "dedupe_key": "TODO", "concurrency": 1},
     "goal": {"statement": "TODO", "evidence": [], "verifier": "deterministic"},
     "allowed_actions": {"read": ["TODO"], "write": [], "external": []},
+    "delivery": {"mode": "draft-pr-only", "branch": "agent/<task-id>", "pr": "draft-required"},
     "budgets": {"max_iterations": 5, "max_minutes": 30, "max_cost": "TODO", "max_tool_retries": 2},
     "stop_rules": {"success": "all evidence passes", "no_progress": 2, "hard_stops": [], "escalate_to": "TODO"},
     "approval_gates": ["merge", "deploy", "production-write", "external-notification"],

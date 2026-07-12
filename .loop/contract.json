@@ -24,6 +24,11 @@
     "write": [".loop/reports/**", ".loop/state.json", ".loop/journal.md", ".loop/evidence.md", ".loop/triage.md"],
     "external": []
   },
+  "delivery": {
+    "mode": "no-source-delivery",
+    "branch": null,
+    "pr": "not-applicable"
+  },
   "budgets": {
     "max_iterations": 1,
     "max_minutes": 10,
