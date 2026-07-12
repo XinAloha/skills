@@ -13,12 +13,13 @@
 | [`build-loop-harness`](build-loop-harness/) | 构建指南与反馈控制 | 检查、观测、权限和修正顺序 |
 | [`audit-loop-project`](audit-loop-project/) | 上线前审计 | 阻断项、演练证据与试运行结论 |
 | [`operate-loop-run`](operate-loop-run/) | 运行与恢复 | 分流、隔离、验证、交接与恢复记录 |
+| [`verify-loop-delivery`](verify-loop-delivery/) | 独立代码审核 | 只读验证实施代理产物并输出可追溯裁决 |
 | [`improve-loop-system`](improve-loop-system/) | 持续改良 | 规则、传感器、文档、记忆和指标的演化 |
 
 ## 推荐流程
 
 新项目直接调用 `$design-loop-project`。专项任务可分别调用对应 Skill，标准顺序为：
 
-`qualify-loop-task → specify-loop-contract → design-loop-state → build-loop-harness → operate-loop-run → audit-loop-project → improve-loop-system`
+`qualify-loop-task → specify-loop-contract → design-loop-state → build-loop-harness → operate-loop-run → verify-loop-delivery → audit-loop-project → improve-loop-system`
 
 只有任务适合循环化、阻断项清零且人工闸门明确时，才进入受控试运行。参考资料放在各 Skill 的 `references/` 中按需加载；确定性动作放在 `scripts/` 中执行。循环结束不等于系统完成：将已验证的失败教训沉淀为项目控制，才形成长期闭环。

@@ -7,7 +7,7 @@
 | 发现、研判、交接、验证、持久化、调度 | kaize 43, 67-70 | `operate-loop-run`、状态和运行手册 |
 | 红线：不删、不直推 main、不自动合并 | kaize 117-129 | 契约 `delivery`、运行协议、审计演练 |
 | 每事项独立工作树、分支、并发上限 | kaize 149-204；LoopEngineering 51-54 | 工作树与交付参考、审计清单 |
-| 制造者/验证者分离，验证行为而非意图 | kaize 212-286；LoopEngineering 69-73 | reviewer/goal 参考与审计 |
+| 制造者/验证者分离，验证行为而非意图 | kaize 212-286；LoopEngineering 69-73 | `$verify-loop-delivery`、reviewer/goal 参考与审计 |
 | 磁盘状态、任务字段、跨日恢复 | kaize 288-360；记忆优先设计 | 状态/记忆设计 |
 | 触发器、上限、人工入口、无发现归档 | kaize 365+；循环详解 50-90 | 契约、运行手册、审计 |
 | 前馈/反馈、快速/昂贵/漂移传感器 | 工具集工程 15-65 | harness 生命周期 |
@@ -16,4 +16,3 @@
 | 循环类型与成本控制 | 循环详解 118-305 | 架构选择、契约预算 |
 
 平台功能（Automations、`/goal`、MCP、CI、PR API）只能在本项目做过能力探测后标记为 `implemented`。没有探测结果时，使用手工入口或列为 `blocked`。
-

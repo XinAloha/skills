@@ -1,0 +1,4 @@
+interface:
+  display_name: "独立验证 Loop 交付"
+  short_description: "独立审核实施代理代码并输出有证据的通过、拒绝或升级裁决"
+  default_prompt: "Use $verify-loop-delivery to independently review this loop task without modifying code."

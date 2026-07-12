@@ -20,6 +20,14 @@ def main():
     if not data.get("goal", {}).get("evidence"): warnings.append("goal has no automatic evidence; require an approval gate")
     if data.get("trigger", {}).get("dedupe_key") == "TODO": warnings.append("dedupe key is not configured")
     if data.get("delivery", {}).get("mode") == "direct-main": errors.append("direct-main delivery is forbidden; use a task branch and PR")
+    if data.get("delivery", {}).get("mode") != "no-source-delivery":
+        review = data.get("review")
+        if not isinstance(review, dict): errors.append("source delivery requires a review object")
+        else:
+            for key in ("implementer_identity", "verifier_identity", "checklist_path", "verdict_path"):
+                if not review.get(key): errors.append(f"source delivery review missing {key}")
+            if review.get("implementer_identity") == review.get("verifier_identity"):
+                errors.append("implementer_identity and verifier_identity must differ")
     print(json.dumps({"ok": not errors, "errors": errors, "warnings": warnings}, ensure_ascii=False, indent=2))
     raise SystemExit(1 if errors else 0)
 if __name__ == "__main__": main()
