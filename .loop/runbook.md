@@ -21,7 +21,9 @@ This Loop reads repository files and writes only `.loop/` evidence, state, triag
 
 ## Scheduling
 
-The scheduler is intentionally not configured by this project artifact. First complete and approve a manual dry run. Then configure a local or CI scheduler to invoke exactly the command in the contract once per UTC day, with concurrency one and no source-write credentials.
+GitHub Actions is configured in `.github/workflows/skills-health.yml` to invoke the contract command once per UTC day at 02:17, with repository-wide concurrency one, a 10-minute timeout and read-only `contents` permission. It uploads the JSON report as a 30-day workflow artifact and publishes only the scanner's counts and suggestions in the run summary.
+
+The workflow does not receive source-write permission and must not edit Skills, regenerate `INDEX.md`, commit, open or update a pull request, or merge. It becomes scheduled only after the draft pull request containing it is human-approved and merged into the default branch.
 
 Before treating the scheduler as stable, collect evidence from three completed scheduled runs. If a run is missed, duplicated, or cannot write a report, mark it blocked and use the manual command; do not silently increase retries or frequency.
 
