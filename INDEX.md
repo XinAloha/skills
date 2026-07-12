@@ -10,7 +10,7 @@ Legend for **Kind**:
 - `cluster: <name>` (in Cluster column) — multiple skills designed to be chained. See `_meta/clusters.md`.
 - `native` — authored in this repo, not imported.
 
-**Totals:** 60 imported · 58 native · 118 skills across 15 categories.
+**Totals:** 60 imported · 59 native · 119 skills across 15 categories.
 
 ## `engineering/`
 
@@ -234,6 +234,7 @@ Project-level agent loop qualification, contracts, state, harnesses, scaffolding
 | [`operate-loop-run`](loop-engineering/operate-loop-run/) | native | — | this repo | — |
 | [`qualify-loop-task`](loop-engineering/qualify-loop-task/) | native | — | this repo | — |
 | [`specify-loop-contract`](loop-engineering/specify-loop-contract/) | native | — | this repo | — |
+| [`verify-loop-delivery`](loop-engineering/verify-loop-delivery/) | native | — | this repo | — |
 
 ---
 
@@ -250,6 +251,7 @@ Skills sharing a `cluster:` tag are intended to compose. See `_meta/clusters.md`
 - [`build-loop-harness`](loop-engineering/build-loop-harness/) — Builds guidance, feedback sensors, observability, and permission boundaries.
 - [`audit-loop-project`](loop-engineering/audit-loop-project/) — Audits safety, recoverability, and readiness before unattended execution.
 - [`operate-loop-run`](loop-engineering/operate-loop-run/) — Runs triage, isolated execution, independent verification, and safe handoff.
+- [`verify-loop-delivery`](loop-engineering/verify-loop-delivery/) — Independently reviews implementer output and returns an evidence-backed verdict.
 - [`improve-loop-system`](loop-engineering/improve-loop-system/) — Evolves controls from evidence, review feedback, and drift.
 
 ### `card`

@@ -1,0 +1,76 @@
+name: Skills health
+
+on:
+  schedule:
+    # Daily at 02:17 UTC. The scheduler runs only after this workflow reaches main.
+    - cron: "17 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: skills-health-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    name: Read-only skills health scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run health scan
+        run: |
+          mkdir -p .loop/reports
+          python .loop/scripts/skills_health_check.py \
+            --root . \
+            --report .loop/reports/latest.json
+
+      - name: Publish findings summary
+        if: always()
+        env:
+          REPORT: .loop/reports/latest.json
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          report = Path(os.environ["REPORT"])
+          summary = Path(os.environ["GITHUB_STEP_SUMMARY"])
+          if not report.is_file():
+              summary.write_text("## Skills health\n\nThe scanner did not produce a report. See step logs.\n", encoding="utf-8")
+              raise SystemExit(0)
+
+          data = json.loads(report.read_text(encoding="utf-8"))
+          counts = data["summary"]
+          lines = [
+              "## Skills health",
+              "",
+              f"- Scan: `{data['scan_id']}`",
+              f"- Errors: **{counts['error']}**",
+              f"- Warnings: **{counts['warning']}**",
+              f"- Reviews: **{counts['review']}**",
+              "",
+              "Findings contain suggestions only; this workflow does not edit source files, commit, open a PR, or merge.",
+          ]
+          summary.write_text("\n".join(lines) + "\n", encoding="utf-8")
+          PY
+
+      - name: Upload health report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: skills-health-${{ github.run_id }}
+          path: .loop/reports/latest.json
+          if-no-files-found: warn
+          retention-days: 30

@@ -15,9 +15,10 @@
 - [`loop-engineering/build-loop-harness`](../loop-engineering/build-loop-harness/) — 配置指南、反馈传感器、观测与权限边界
 - [`loop-engineering/audit-loop-project`](../loop-engineering/audit-loop-project/) — 用正反例验证安全性和运行就绪度
 - [`loop-engineering/operate-loop-run`](../loop-engineering/operate-loop-run/) — 分流、隔离执行、独立验证、交接与恢复
+- [`loop-engineering/verify-loop-delivery`](../loop-engineering/verify-loop-delivery/) — 独立审核实施代理代码，输出 pass/reject/escalate 裁决
 - [`loop-engineering/improve-loop-system`](../loop-engineering/improve-loop-system/) — 将失败、审查与漂移转化为受验证的系统改良
 
-**典型流程：** `qualify-loop-task` → `specify-loop-contract` → `design-loop-state` → `build-loop-harness` → `operate-loop-run` → `audit-loop-project` → `improve-loop-system`；新建完整工程时由 `design-loop-project` 统一编排。
+**典型流程：** `qualify-loop-task` → `specify-loop-contract` → `design-loop-state` → `build-loop-harness` → `operate-loop-run` → `verify-loop-delivery` → `audit-loop-project` → `improve-loop-system`；新建完整工程时由 `design-loop-project` 统一编排。
 
 ## `dbs-state` — dbskill 诊断状态快照
 

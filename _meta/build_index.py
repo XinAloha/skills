@@ -147,6 +147,7 @@ def build_md(imports: list[dict], native: list[tuple[str, str]]) -> str:
     out.append("- [`build-loop-harness`](loop-engineering/build-loop-harness/) — Builds guidance, feedback sensors, observability, and permission boundaries.")
     out.append("- [`audit-loop-project`](loop-engineering/audit-loop-project/) — Audits safety, recoverability, and readiness before unattended execution.")
     out.append("- [`operate-loop-run`](loop-engineering/operate-loop-run/) — Runs triage, isolated execution, independent verification, and safe handoff.")
+    out.append("- [`verify-loop-delivery`](loop-engineering/verify-loop-delivery/) — Independently reviews implementer output and returns an evidence-backed verdict.")
     out.append("- [`improve-loop-system`](loop-engineering/improve-loop-system/) — Evolves controls from evidence, review feedback, and drift.")
     out.append("")
 
