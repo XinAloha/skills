@@ -1,0 +1,4 @@
+interface:
+  display_name: "设计 Loop 状态"
+  short_description: "设计跨轮次状态、检索式记忆、恢复、过期和并发控制机制"
+  default_prompt: "Use $design-loop-state to design safe persistent state and memory for this loop."

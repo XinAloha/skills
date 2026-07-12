@@ -1,0 +1,4 @@
+interface:
+  display_name: "设计 Loop 工程"
+  short_description: "设计完整可验证、可恢复、可持续改良的项目级智能体循环工程"
+  default_prompt: "Use $design-loop-project to design a verifiable project-level loop engineering system."

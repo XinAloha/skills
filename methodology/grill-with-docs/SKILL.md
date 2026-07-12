@@ -1,4 +1,5 @@
 ﻿---
+name: grill-with-docs
 description: 计划质询 + CONTEXT.md / ADR 内联更新 - 在领域模型上压力测试方案
 type: methodology
 parent: dev-guidelines.md

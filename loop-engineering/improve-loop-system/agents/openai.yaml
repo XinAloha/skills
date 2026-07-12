@@ -1,0 +1,4 @@
+interface:
+  display_name: "改良 Loop 系统"
+  short_description: "将失败、审查、成本和漂移转化为可验证的工程系统改良"
+  default_prompt: "Use $improve-loop-system to improve this loop from evidence and recurring failures."

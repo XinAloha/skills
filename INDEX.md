@@ -10,7 +10,7 @@ Legend for **Kind**:
 - `cluster: <name>` (in Cluster column) — multiple skills designed to be chained. See `_meta/clusters.md`.
 - `native` — authored in this repo, not imported.
 
-**Totals:** 60 imported · 50 native · 110 skills across 14 categories.
+**Totals:** 60 imported · 58 native · 118 skills across 15 categories.
 
 ## `engineering/`
 
@@ -220,11 +220,37 @@ AI provider adapters (image gen, gemini-web, etc.).
 | [`gemini-web`](ai-backends/gemini-web/) | `composite-danger` | `—` | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-danger-gemini-web) | DANGER: reverse-engineered Gemini Web API; needs browser session. |
 | [`image-gen`](ai-backends/image-gen/) | `composite` | `—` | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-image-gen) | Multi-provider image generation API (OpenAI/Azure/Google/OpenRouter/DashScope/Z.AI/MiniMax/Jimeng/Seedream/Replicate/Agnes). |
 
+## `loop-engineering/`
+
+Project-level agent loop qualification, contracts, state, harnesses, scaffolding, and audits.
+
+| Slug | Kind | Cluster | Source | Summary |
+|---|---|---|---|---|
+| [`audit-loop-project`](loop-engineering/audit-loop-project/) | native | — | this repo | — |
+| [`build-loop-harness`](loop-engineering/build-loop-harness/) | native | — | this repo | — |
+| [`design-loop-project`](loop-engineering/design-loop-project/) | native | — | this repo | — |
+| [`design-loop-state`](loop-engineering/design-loop-state/) | native | — | this repo | — |
+| [`improve-loop-system`](loop-engineering/improve-loop-system/) | native | — | this repo | — |
+| [`operate-loop-run`](loop-engineering/operate-loop-run/) | native | — | this repo | — |
+| [`qualify-loop-task`](loop-engineering/qualify-loop-task/) | native | — | this repo | — |
+| [`specify-loop-contract`](loop-engineering/specify-loop-contract/) | native | — | this repo | — |
+
 ---
 
 ## Clusters
 
 Skills sharing a `cluster:` tag are intended to compose. See `_meta/clusters.md` for recommended pipelines.
+
+### `loop-engineering`
+
+- [`design-loop-project`](loop-engineering/design-loop-project/) — Orchestrates the complete loop-engineering workflow.
+- [`qualify-loop-task`](loop-engineering/qualify-loop-task/) — Determines whether a task should be a loop, automation, or human-led process.
+- [`specify-loop-contract`](loop-engineering/specify-loop-contract/) — Defines evidence, budgets, stop conditions, and escalation.
+- [`design-loop-state`](loop-engineering/design-loop-state/) — Designs persistent state, attempt history, checkpoints, and recovery.
+- [`build-loop-harness`](loop-engineering/build-loop-harness/) — Builds guidance, feedback sensors, observability, and permission boundaries.
+- [`audit-loop-project`](loop-engineering/audit-loop-project/) — Audits safety, recoverability, and readiness before unattended execution.
+- [`operate-loop-run`](loop-engineering/operate-loop-run/) — Runs triage, isolated execution, independent verification, and safe handoff.
+- [`improve-loop-system`](loop-engineering/improve-loop-system/) — Evolves controls from evidence, review feedback, and drift.
 
 ### `card`
 

@@ -1,4 +1,5 @@
 ﻿---
+name: improve-codebase-architecture
 description: 找代码库的深度化机会 - 深模块、locality、leverage，受 CONTEXT.md 与 ADR 影响
 type: methodology
 parent: dev-guidelines.md

@@ -1,4 +1,5 @@
 ﻿---
+name: prototype
 description: 一次性原型答疑 - 逻辑分支（终端交互）/ UI 分支（多变体路由）
 type: methodology
 parent: dev-guidelines.md

@@ -4,7 +4,20 @@
 
 每个集群成员的 `SOURCE.md` 都有 `Cluster: <name>` 字段。导入 manifest 在 `_meta/import-manifest.tsv` 的 `cluster` 列定义。
 
-下面列出从外部仓库引入的所有集群。同一集群里有多份来源的，互为 sibling，可任选其一或组合使用。
+下面列出仓库内维护的流水线集群。同一集群中的 Skill 仍可独立调用，也可以按推荐顺序组合使用。
+
+## `loop-engineering` — 项目级智能体循环工程
+
+- [`loop-engineering/design-loop-project`](../loop-engineering/design-loop-project/) — 总入口，协调评估、契约、状态、工具集和审计
+- [`loop-engineering/qualify-loop-task`](../loop-engineering/qualify-loop-task/) — 判断任务适合循环、确定性自动化还是人工主导
+- [`loop-engineering/specify-loop-contract`](../loop-engineering/specify-loop-contract/) — 定义目标证据、预算、停止和升级条件
+- [`loop-engineering/design-loop-state`](../loop-engineering/design-loop-state/) — 设计持久状态、尝试日志、检查点和恢复
+- [`loop-engineering/build-loop-harness`](../loop-engineering/build-loop-harness/) — 配置指南、反馈传感器、观测与权限边界
+- [`loop-engineering/audit-loop-project`](../loop-engineering/audit-loop-project/) — 用正反例验证安全性和运行就绪度
+- [`loop-engineering/operate-loop-run`](../loop-engineering/operate-loop-run/) — 分流、隔离执行、独立验证、交接与恢复
+- [`loop-engineering/improve-loop-system`](../loop-engineering/improve-loop-system/) — 将失败、审查与漂移转化为受验证的系统改良
+
+**典型流程：** `qualify-loop-task` → `specify-loop-contract` → `design-loop-state` → `build-loop-harness` → `operate-loop-run` → `audit-loop-project` → `improve-loop-system`；新建完整工程时由 `design-loop-project` 统一编排。
 
 ## `dbs-state` — dbskill 诊断状态快照
 

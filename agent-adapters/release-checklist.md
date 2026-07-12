@@ -13,7 +13,7 @@ auto_execution_mode: 2
 
 ## Agent 平台适配提醒
 
-1. **不主动执行** `git commit / git push / git tag` —— 参照 [CLAUDE.md](../../CLAUDE.md) §3 全局硬性约束（同样适用于 Codex），最后三条 git 操作必须用户**明确指令**才能执行；本清单 §"发布执行" 中的命令应**逐条征求用户确认**后再跑
+1. **不主动执行** `git commit / git push / git tag` —— 遵守项目全局硬性约束（同样适用于 Codex），最后三条 git 操作必须用户**明确指令**才能执行；本清单 §"发布执行" 中的命令应**逐条征求用户确认**后再跑
 2. **Python 解释器固定走** `/d/Developer_Tools/Anaconda/python.exe`（默认 `python` 是失效 Store 桩，exit 49 静默——见对应记忆条目），所有 `python` 命令在调用时都要替换。Claude Code 用 `Bash`、Codex 用 `run_terminal_cmd`，都要替换
 3. **改文件前先确认当前内容**：
    - Claude Code：先 `Read` 再 `Edit`/`Write`；改 `VERSION` / `__init__.__version__` / `CHANGELOG.md` 都遵守

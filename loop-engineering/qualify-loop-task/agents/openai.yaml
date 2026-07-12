@@ -1,0 +1,4 @@
+interface:
+  display_name: "评估 Loop 任务"
+  short_description: "评估任务是否具备可验证、可控、可恢复的循环运行条件"
+  default_prompt: "Use $qualify-loop-task to determine the safest workflow for this task."

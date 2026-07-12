@@ -1,4 +1,5 @@
 ﻿---
+name: triage
 description: issue 分诊状态机 - 类别 + 状态双轴，配合 agent brief 与 .out-of-scope/ 知识库
 type: methodology
 parent: dev-guidelines.md

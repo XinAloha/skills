@@ -1,0 +1,4 @@
+interface:
+  display_name: "审计 Loop 工程"
+  short_description: "审计契约、状态、护栏、隔离、恢复和独立验证运行就绪度"
+  default_prompt: "Use $audit-loop-project to audit this loop project before controlled operation."

@@ -7,6 +7,8 @@ top-level category dirs but skipping any path that matches an imported target.
 """
 from __future__ import annotations
 import csv
+import argparse
+import difflib
 from pathlib import Path
 from collections import defaultdict
 
@@ -18,7 +20,7 @@ OUT = SKILLS / "INDEX.md"
 CATEGORY_ORDER = [
     "engineering", "testing", "git", "governance", "methodology", "workmode",
     "meta", "misc", "domain", "agent-adapters",
-    "content", "productivity", "business", "ai-backends",
+    "content", "productivity", "business", "ai-backends", "loop-engineering",
 ]
 
 CATEGORY_BLURB = {
@@ -36,6 +38,7 @@ CATEGORY_BLURB = {
     "productivity": "URL/video extraction, storage hygiene, notebook querying, news, summarization.",
     "business": "Business / product / personal diagnostic frameworks (dontbesilent toolkit).",
     "ai-backends": "AI provider adapters (image gen, gemini-web, etc.).",
+    "loop-engineering": "Project-level agent loop qualification, contracts, state, harnesses, scaffolding, and audits.",
 }
 
 
@@ -59,6 +62,8 @@ def list_native_skills(imported_targets: set[str]) -> list[tuple[str, str]]:
                 continue
             # Category README.md is documentation, not a skill — skip it
             if entry.name == "README.md":
+                continue
+            if cat == "misc" and entry.name == "scripts":
                 continue
             # Skip auxiliary files; both dirs and standalone .md files count
             if entry.is_dir():
@@ -133,6 +138,18 @@ def build_md(imports: list[dict], native: list[tuple[str, str]]) -> str:
     out.append("Skills sharing a `cluster:` tag are intended to compose. See `_meta/clusters.md` for recommended pipelines.")
     out.append("")
 
+    out.append("### `loop-engineering`")
+    out.append("")
+    out.append("- [`design-loop-project`](loop-engineering/design-loop-project/) — Orchestrates the complete loop-engineering workflow.")
+    out.append("- [`qualify-loop-task`](loop-engineering/qualify-loop-task/) — Determines whether a task should be a loop, automation, or human-led process.")
+    out.append("- [`specify-loop-contract`](loop-engineering/specify-loop-contract/) — Defines evidence, budgets, stop conditions, and escalation.")
+    out.append("- [`design-loop-state`](loop-engineering/design-loop-state/) — Designs persistent state, attempt history, checkpoints, and recovery.")
+    out.append("- [`build-loop-harness`](loop-engineering/build-loop-harness/) — Builds guidance, feedback sensors, observability, and permission boundaries.")
+    out.append("- [`audit-loop-project`](loop-engineering/audit-loop-project/) — Audits safety, recoverability, and readiness before unattended execution.")
+    out.append("- [`operate-loop-run`](loop-engineering/operate-loop-run/) — Runs triage, isolated execution, independent verification, and safe handoff.")
+    out.append("- [`improve-loop-system`](loop-engineering/improve-loop-system/) — Evolves controls from evidence, review feedback, and drift.")
+    out.append("")
+
     clusters: dict[str, list[dict]] = defaultdict(list)
     for r in imports:
         c = r["cluster"].strip()
@@ -151,9 +168,22 @@ def build_md(imports: list[dict], native: list[tuple[str, str]]) -> str:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Build or verify the skills index.")
+    parser.add_argument("--check", action="store_true", help="Exit non-zero when INDEX.md is stale without writing it.")
+    args = parser.parse_args()
     imports, imported_targets = load_imports()
     native = list_native_skills(imported_targets)
-    OUT.write_text(build_md(imports, native), encoding="utf-8")
+    generated = build_md(imports, native)
+    if args.check:
+        current = OUT.read_text(encoding="utf-8") if OUT.exists() else ""
+        if current != generated:
+            print("INDEX.md is stale. Run: python _meta/build_index.py")
+            for line in difflib.unified_diff(current.splitlines(), generated.splitlines(), fromfile="INDEX.md", tofile="generated/INDEX.md", lineterm=""):
+                print(line)
+            raise SystemExit(1)
+        print("INDEX.md is current")
+        return
+    OUT.write_text(generated, encoding="utf-8")
     print(f"Wrote {OUT}")
     print(f"  imports: {len(imports)}")
     print(f"  native : {len(native)}")

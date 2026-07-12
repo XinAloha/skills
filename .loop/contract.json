@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "id": "daily-skills-health",
+  "mode": "closed",
+  "architecture": "react",
+  "trigger": {
+    "kind": "scheduled-daily",
+    "dedupe_key": "skills-health:{utc-date}",
+    "concurrency": 1
+  },
+  "goal": {
+    "statement": "For each scheduled run, produce a fresh, evidence-backed skills health report without changing repository source files or external systems.",
+    "evidence": [
+      {
+        "command": "python .loop/scripts/skills_health_check.py --root . --report .loop/reports/latest.json",
+        "expected": "exit code 0 and a parseable report containing skills, index, python, and links checks",
+        "output": ".loop/reports/latest.json"
+      }
+    ],
+    "verifier": "deterministic"
+  },
+  "allowed_actions": {
+    "read": ["SKILL.md", "*.md", "*.py", "INDEX.md", "README.md", "_meta/build_index.py"],
+    "write": [".loop/reports/**", ".loop/state.json", ".loop/journal.md", ".loop/evidence.md", ".loop/triage.md"],
+    "external": []
+  },
+  "budgets": {
+    "max_iterations": 1,
+    "max_minutes": 10,
+    "max_cost": "0-model-calls",
+    "max_tool_retries": 0
+  },
+  "stop_rules": {
+    "success": "The deterministic scan exits 0 and writes a fresh parseable report.",
+    "no_progress": 1,
+    "hard_stops": ["repository root is inaccessible", "health checker cannot complete", "report path is not writable"],
+    "escalate_to": "repository-maintainer"
+  },
+  "approval_gates": ["source-file-write", "commit", "merge", "external-notification"]
+}

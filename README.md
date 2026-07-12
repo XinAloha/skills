@@ -22,6 +22,7 @@
 | Git 分支/code review/commit 规范 | `git/git-branch-workflow` 等 |
 | 分层测试策略（单元/集成/数据质量） | `testing/test-strategy` |
 | 好问题框架、决策系统、解构分析等方法论 | `methodology/good-question` 等 |
+| 为项目建立可验证、可恢复的智能体循环工程 | `loop-engineering/design-loop-project` |
 
 ## 怎么用
 

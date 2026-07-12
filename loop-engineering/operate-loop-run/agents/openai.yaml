@@ -1,0 +1,4 @@
+interface:
+  display_name: "运行 Loop 工程"
+  short_description: "编排分流、隔离执行、独立验证、交接与安全恢复完整流程"
+  default_prompt: "Use $operate-loop-run to run this loop project safely and resumably."

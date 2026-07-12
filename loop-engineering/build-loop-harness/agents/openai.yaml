@@ -1,0 +1,4 @@
+interface:
+  display_name: "构建 Loop 工具集"
+  short_description: "构建分层反馈、传感器、运行观测和最小权限控制完整系统"
+  default_prompt: "Use $build-loop-harness to build executable controls for this loop."

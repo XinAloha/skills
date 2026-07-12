@@ -1,0 +1,4 @@
+interface:
+  display_name: "定义 Loop 契约"
+  short_description: "定义可机器校验的目标证据、权限、预算、停止和升级条件"
+  default_prompt: "Use $specify-loop-contract to create a machine-checkable loop contract."

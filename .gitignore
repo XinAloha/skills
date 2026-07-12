@@ -6,6 +6,9 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+.coverage
+coverage/
+htmlcov/
 
 # Node / Bun（导入的 skill 中带 scripts/ 时使用）
 node_modules/
@@ -18,6 +21,8 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+.history/
+.fleet/
 .vscode/*
 !.vscode/settings.json
 !.vscode/extensions.json
@@ -30,6 +35,8 @@ Thumbs.db
 *.pem
 secrets/
 config.local.*
+.claude/settings.local.json
+.codex/config.local.toml
 
 # 构建产物 / 临时
 dist/
@@ -38,6 +45,10 @@ out/
 *.log
 tmp/
 temp/
+.cache/
+*.tmp
+*.bak
+*.orig
 
 # skill 导入流程的临时目录（详见 _meta/import_skills.py）
 _external_skills/
@@ -52,3 +63,13 @@ _external_skills/
 .claude/workflows/skill/
 .codex/workflows/skill/
 .devin/workflows/skill/
+.claude/skills/
+.codex/skills/
+
+# Loop 运行时产物；保留契约、运行手册和脚本等工程源文件
+.loop/reports/
+.loop/state.json
+.loop/journal.md
+.loop/evidence.md
+.loop/triage.md
+.loop/*.lock
