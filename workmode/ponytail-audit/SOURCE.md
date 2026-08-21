@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/DietrichGebert/ponytail/tree/main/skills/ponytail-audit](https://github.com/DietrichGebert/ponytail/tree/main/skills/ponytail-audit) |
 | Kind | `atomic` |
 | Cluster | `ponytail` |
-| Imported on | 2026-07-04 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Whole-repo audit for over-engineering: ranked list of what to delete/simplify/replace with stdlib/native. One-shot report, no fixes.

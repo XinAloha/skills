@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-ai-check](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-ai-check) |
 | Kind | `atomic` |
 | Cluster | `humanizer` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Detect AI-writing traces in Chinese text. Sibling: content/humanizer-zh (rewrites), content/format-markdown.

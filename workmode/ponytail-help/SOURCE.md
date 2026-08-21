@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/DietrichGebert/ponytail/tree/main/skills/ponytail-help](https://github.com/DietrichGebert/ponytail/tree/main/skills/ponytail-help) |
 | Kind | `atomic` |
 | Cluster | `ponytail` |
-| Imported on | 2026-07-04 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Quick-reference card for all ponytail modes/skills/commands. One-shot display.

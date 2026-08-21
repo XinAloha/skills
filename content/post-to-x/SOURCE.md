@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-x](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-x) |
 | Kind | `composite` |
 | Cluster | `publish` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Post to X/Twitter via Chrome extension, Computer Use, or CDP.

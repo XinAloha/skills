@@ -28,6 +28,23 @@ Run this before final delivery.
 - Images and screenshots align to the grid.
 - Screenshot pages give the screenshot enough area.
 - 1:1 WeChat cover uses a simplified short title and is composed separately, not blindly cropped.
+- If a page overflows, measure the overflow before editing. Do not remove content until the measured overflow requires it.
+- Titles need visible breathing room before the next content block. Main display titles should usually keep at least 28px below; local headings should keep at least 16px.
+
+### Overflow Correction Ladder
+
+Use validator output before changing the layout:
+
+- `1-40px` over: nudge the content group up or tighten one gap/padding by 20-40px. Do not delete content.
+- `40-90px` over: compact local gaps/padding and reduce one block height. Avoid cutting copy.
+- `90-160px` over: reduce a display title slightly or compress one paragraph before deleting content.
+- `160px+` over: switch to a higher-capacity recipe, merge modules, or remove content intentionally.
+
+After fixing overflow, check for over-correction:
+
+- If `R8` reports large bottom whitespace, restore some spacing, move the content down slightly, or expand the final block.
+- Do not accept a fix that turns a small overflow into a large empty lower band.
+- Prefer one measured adjustment per render pass, then re-run validation.
 
 ### 4-band Density Check (3:4 only — run after render)
 
@@ -44,6 +61,16 @@ A poster passes when:
 3. No two adjacent bands are both "justified empty" — that creates a >25% void mid-poster.
 
 If failing: don't shrink the canvas, don't add decorative blobs. Either expand copy (more ledger items, longer paragraphs, supporting evidence row, marginalia column) or switch recipe (M07 → M04 for genuinely-short content; M03 → M11 to add a marginal column; thin ledger → M08 Tall Ledger with bigger rows).
+
+### Programmatic Layout Checks
+
+`validate-social-deck.mjs` reports:
+
+- `R1` / `R8`: DOM overflow and visual overflow, including measured pixel amount and the lowest overflowing element.
+- `R8`: bottom whitespace and active content height, which catches "fixed too much" layouts.
+- `R9`: title-to-content gap, which catches titles visually touching the next block.
+
+Use these numbers as the first diagnosis. Multimodal inspection is still useful for taste, but overflow, empty lower bands, and title gaps should be handled from measured output first.
 
 ## Style
 

@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-url-to-markdown](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-url-to-markdown) |
 | Kind | `composite` |
 | Cluster | `extract` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Any-URL to Markdown via baoyu-fetch CLI; site adapters (X, YouTube, HN). Sibling: productivity/x-to-markdown, productivity/youtube-transcript.

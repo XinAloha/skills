@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-comic](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-comic) |
 | Kind | `composite` |
 | Cluster | `visual` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Knowledge comic creator (multi art-style, tones, panel layouts, batch image gen).

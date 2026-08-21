@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/PleasePrompto/notebooklm-skill](https://github.com/PleasePrompto/notebooklm-skill) |
 | Kind | `composite` |
 | Cluster | `-` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Query Google NotebookLM from agent for citation-backed answers; browser automation.

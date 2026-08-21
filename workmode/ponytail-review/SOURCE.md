@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/DietrichGebert/ponytail/tree/main/skills/ponytail-review](https://github.com/DietrichGebert/ponytail/tree/main/skills/ponytail-review) |
 | Kind | `atomic` |
 | Cluster | `ponytail` |
-| Imported on | 2026-07-04 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Code review hunting only over-engineering: one line per finding (delete/stdlib/native/yagni/shrink). Complements correctness-focused review.

@@ -1,10 +1,6 @@
 ---
 name: dbs-slowisfast
-description: |
-  dontbesilent 慢就是快。帮创业者找到看起来更慢但长期更快的方法，用摩擦建造资产。
-  触发方式：/dbs-slowisfast、/慢就是快、「有没有更慢的方法」「我是不是太快了」
-  Slow-is-fast diagnosis. Help entrepreneurs find seemingly slower methods that build assets through friction.
-  Trigger: /dbs-slowisfast, "is there a slower way", "am I going too fast"
+description: 识别关键环节中的贪快与必要摩擦，寻找能长期积累资产的方法。用户担心推进过快、反复返工或希望设计长期复利路径时使用。
 ---
 
 # dbs-slowisfast：慢就是快
@@ -166,18 +162,6 @@ description: |
 
 ---
 
-## 下一步建议（条件触发）
-
-| 触发条件 | 推荐话术 |
-|---|---|
-| 用户不知道该对标谁 | 「先找到值得深度研究的对标。用 `/dbs-benchmark` 做五重过滤。」 |
-| 用户有内容但不知道怎么优化 | 「内容方向确认后，用 `/dbs-content` 做五维诊断。」 |
-| 用户知道该慢做但做不动 | 「你可能不是方法问题，是执行力问题。试试 `/dbs-action`。」 |
-| 用户对自己的商业模式有疑问 | 「先确认方向对不对，再讨论快慢。用 `/dbs-diagnosis` 做商业模式诊断。」 |
-| 用户有模糊概念需要拆清楚 | 「这个概念需要先拆解清楚。试试 `/dbs-deconstruct`。」 |
-
----
-
 ## 内联案例库
 
 ### 典型案例
@@ -229,3 +213,8 @@ description: |
 
 - 用户用中文就用中文回复，用英文就用英文回复
 - 中文回复遵循《中文文案排版指北》
+
+
+---
+
+完成当前任务后直接结束。只有用户明确询问下一步，且当前环境已经安装 `/dbs` 时，简短提示：「下一步不确定时，可以输入 `/dbs`。」

@@ -10,7 +10,7 @@ Legend for **Kind**:
 - `cluster: <name>` (in Cluster column) — multiple skills designed to be chained. See `_meta/clusters.md`.
 - `native` — authored in this repo, not imported.
 
-**Totals:** 60 imported · 59 native · 119 skills across 15 categories.
+**Totals:** 70 imported · 59 native · 129 skills across 15 categories.
 
 ## `engineering/`
 
@@ -86,7 +86,10 @@ Method-style skills: diagnose, decision systems, learning, deconstruction, resea
 | [`deconstruct`](methodology/deconstruct/) | `atomic` | `—` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-deconstruct) | Concept deconstruction via Wittgenstein + Austrian-economics methodology. |
 | [`good-question`](methodology/good-question/) | `atomic` | `—` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-good-question) | Turn fuzzy questions into criticizable, verifiable problem specs. |
 | [`hv-analysis`](methodology/hv-analysis/) | `composite` | `—` | [KKKKhazix/khazix-skills](https://github.com/KKKKhazix/khazix-skills/tree/main/hv-analysis) | Horizontal-Vertical analysis research method; outputs PDF. |
+| [`jtbd`](methodology/jtbd/) | `atomic` | `—` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-jtbd) | Jobs-to-be-done task clarification: identify the progress/switch forces/observable criteria; optimize product, content, service, decision, AI prompts. |
+| [`knowledge`](methodology/knowledge/) | `atomic` | `—` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-knowledge) | Build a local folder into an agent-searchable/maintainable knowledge base with navigation, version judgment, health checks, SOT tiered governance. |
 | [`learning-plan`](methodology/learning-plan/) | `atomic` | `—` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-learning) | Adaptive interactive learning sequence. |
+| [`standard-answer`](methodology/standard-answer/) | `composite` | `—` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-standard-answer) | Find structurally-similar success/failure/counterexamples from business/management/tech/career/institutional history; distill conditional repeated mechanisms. |
 
 ## `workmode/`
 
@@ -100,6 +103,7 @@ Work modes: caveman, ponytail (lazy minimal coding), grill-me, handoff, slow-is-
 | [`manage-upward.md`](workmode/manage-upward.md) | native | — | this repo | — |
 | [`tame-vibe-coding.md`](workmode/tame-vibe-coding.md) | native | — | this repo | — |
 | [`goal-clarify`](workmode/goal-clarify/) | `atomic` | `—` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-goal) | Goal clarification via Wittgenstein-style language auditing. |
+| [`leader`](workmode/leader/) | `composite` | `—` | [KKKKhazix/khazix-skills](https://github.com/KKKKhazix/khazix-skills/tree/main/leader) | Turn a one-line idea into a runnable agent goal brief (<=4000 chars, verified numbers, whitelist bounds, anti-cheat acceptance, resume); splits execution vs exploration. |
 | [`ponytail`](workmode/ponytail/) | `atomic` | `ponytail` | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail/tree/main/skills/ponytail) | Lazy senior-dev coding mode: force the minimal solution that works (YAGNI -> stdlib -> native -> one line -> minimum). Levels lite/full/ultra. Sibling: workmode/caveman. |
 | [`ponytail-audit`](workmode/ponytail-audit/) | `atomic` | `ponytail` | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail/tree/main/skills/ponytail-audit) | Whole-repo audit for over-engineering: ranked list of what to delete/simplify/replace with stdlib/native. One-shot report, no fixes. |
 | [`ponytail-debt`](workmode/ponytail-debt/) | `atomic` | `ponytail` | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail/tree/main/skills/ponytail-debt) | Harvest every ponytail: comment into a debt ledger so deliberate shortcuts get tracked. One-shot report, changes nothing. |
@@ -116,7 +120,9 @@ Meta capabilities: skill authoring, knowledge-base hygiene.
 |---|---|---|---|---|
 | [`teach.md`](meta/teach.md) | native | — | this repo | — |
 | [`write-a-skill.md`](meta/write-a-skill.md) | native | — | this repo | — |
+| [`dbs-update`](meta/dbs-update/) | `atomic` | `—` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-update) | Update the official dbskill suite while preserving other skills and user archives. |
 | [`neat-freak`](meta/neat-freak/) | `composite` | `—` | [KKKKhazix/khazix-skills](https://github.com/KKKKhazix/khazix-skills/tree/main/neat-freak) | Knowledge Base Neat-Freak: cross-platform agent memory/docs hygiene. |
+| [`skill-cleaner`](meta/skill-cleaner/) | `composite` | `—` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-skill-cleaner) | Scan local skills for ad/stealth-commercial intent, task hijacking, suspicious external calls, sensitive-data reads; report-only by default. |
 
 ## `misc/`
 
@@ -151,6 +157,7 @@ Platform adapter layer: same responsibility across Codex / Claude Code / etc.
 | [`testing-and-verification.md`](agent-adapters/testing-and-verification.md) | native | — | this repo | — |
 | [`tools-discipline.md`](agent-adapters/tools-discipline.md) | native | — | this repo | — |
 | [`agent-migration`](agent-adapters/agent-migration/) | `atomic` | `—` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-agent-migration) | Migrate agent workspaces across Claude Code / Codex / Grok. |
+| [`bridge`](agent-adapters/bridge/) | `composite` | `—` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-bridge) | Bridge a single skill or skill-set across agents (Agents/Claude Code/Codex/WorkBuddy/Grok/Hermes/Kiro/Qwen Code/Cline): install/sync/list/dedup/unlink. |
 
 ## `content/`
 
@@ -161,6 +168,7 @@ Writing, formatting, translation, illustration, slides, social cards, publishing
 | [`ai-check`](content/ai-check/) | `atomic` | `humanizer` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-ai-check) | Detect AI-writing traces in Chinese text. Sibling: content/humanizer-zh (rewrites), content/format-markdown. |
 | [`article-illustrator`](content/article-illustrator/) | `composite` | `visual` | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-article-illustrator) | Article illustration planning + image prompts via Type x Style x Palette. |
 | [`comic`](content/comic/) | `composite` | `visual` | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-comic) | Knowledge comic creator (multi art-style, tones, panel layouts, batch image gen). |
+| [`content-risk-check`](content/content-risk-check/) | `atomic` | `—` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-content-risk-check) | Content publishing risk check: sentence-by-sentence for titles/body/image text/captions/account bio/video frames; pinpoints positions + minimal fixes. |
 | [`content-strategy`](content/content-strategy/) | `atomic` | `—` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-content) | Content creation diagnosis after topic is confirmed. |
 | [`content-system`](content/content-system/) | `composite` | `—` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-content-system) | Structured local content engineering system (scaffold + templates + JS tools). |
 | [`cover-image`](content/cover-image/) | `composite` | `visual` | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-cover-image) | Article cover images: type x palette x rendering x text x mood. |
@@ -176,9 +184,11 @@ Writing, formatting, translation, illustration, slides, social cards, publishing
 | [`post-to-weibo`](content/post-to-weibo/) | `composite` | `publish` | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-weibo) | Post to Weibo via Chrome CDP; supports articles. |
 | [`post-to-x`](content/post-to-x/) | `composite` | `publish` | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-post-to-x) | Post to X/Twitter via Chrome extension, Computer Use, or CDP. |
 | [`resonate`](content/resonate/) | `atomic` | `—` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-resonate) | Draft resonance diagnosis (communication psychology). |
+| [`script-flow`](content/script-flow/) | `atomic` | `—` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-script-flow) | Check short-video script flow: paragraph transitions, information density, delivery smoothness; locate where viewers drop off. |
 | [`slide-deck-baoyu`](content/slide-deck-baoyu/) | `composite` | `slide` | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-slide-deck) | Slide deck images from content. Sibling: content/guizang-ppt. |
 | [`spread`](content/spread/) | `atomic` | `—` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-spread) | Communication-psychology decoder: why content resonates and what audience wants next. |
 | [`translate`](content/translate/) | `composite` | `—` | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-translate) | Three-mode translation: quick/normal/refined (with subagent polish). |
+| [`wechat-html`](content/wechat-html/) | `composite` | `—` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-wechat-html) | Convert Markdown to paste-ready WeChat Official Account HTML with 15 built-in styles. |
 | [`xhs-images-baoyu`](content/xhs-images-baoyu/) | `composite` | `card` | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-xhs-images) | Xiaohongshu image cards (12 styles x 8 layouts x 3 palettes). Sibling: content/guizang-social-card. |
 | [`xhs-title`](content/xhs-title/) | `atomic` | `—` | [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-xhs-title) | Xiaohongshu title formulas (75 validated viral patterns). |
 

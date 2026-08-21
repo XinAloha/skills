@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-agent-migration](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-agent-migration) |
 | Kind | `atomic` |
 | Cluster | `-` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Migrate agent workspaces across Claude Code / Codex / Grok.

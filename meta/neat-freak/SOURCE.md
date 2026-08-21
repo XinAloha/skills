@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/KKKKhazix/khazix-skills/tree/main/neat-freak](https://github.com/KKKKhazix/khazix-skills/tree/main/neat-freak) |
 | Kind | `composite` |
 | Cluster | `-` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Knowledge Base Neat-Freak: cross-platform agent memory/docs hygiene.

@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-slowisfast](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-slowisfast) |
 | Kind | `atomic` |
 | Cluster | `-` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Slow is fast diagnostic: distinguish compounding friction from harmful shortcuts.

@@ -1,10 +1,6 @@
 ---
 name: dbs-spread
-description: |
-  传播心理解码。给定一段内容，用 5 个经典传播学理论解码它为什么能引起受众共鸣，分析受众情绪底层和有效立场，输出聊天室的讨论方向。
-  触发方式：/dbs-spread、「传播心理解码」、「为什么这个能火」、「受众想听什么」、「这个内容打中了什么情绪」
-  Transmission psychology decoder. Given a piece of content, analyze the psychological mechanism that makes it resonate, identify the emotional core and effective stance, and output direction for chatroom discussion.
-  Trigger: /dbs-spread, "why does this resonate", "what emotion does this hit", "decode this content"
+description: 用 5 个经典传播学理论解码内容的共鸣机制、受众情绪和有效立场。用户要求分析内容为什么能火、打中什么情绪或受众想听什么时使用。
 ---
 
 # dbs-spread：传播心理解码
@@ -22,7 +18,7 @@ description: |
 - 给出聊天室的讨论方向
 
 **不做**：
-- 预测平台算法表现（完播率、点击率、推荐量）——这取决于开头质量、内容时长、封面设计，由 `/dbs-hook` 和 `/全平台标题` 处理
+- 预测平台算法表现（完播率、点击率、推荐量）——这取决于开头质量、内容时长和封面设计，超出本 skill 边界。保留用户材料，交回 `/dbs` 判断专项入口
 - 预测内容会不会火——「会不会火」包含了太多平台机制变量，不在本 skill 的范围内
 - 给出「好」或「差」的评分——内容传播力不能脱离平台和格式单独评价
 
@@ -144,3 +140,8 @@ description: |
 2. **不做平台预测**：不判断完播率、点击率、算法推荐量
 3. **推导必须有来源**：「综合推导」部分的每一条都必须注明来自哪个维度的分析
 4. **立场要具体**：不写「站在用户角度」，写「站在被客户压价三年的服务者那边，不是站在建议大家找高端客户的教练那边」
+
+
+---
+
+完成当前任务后直接结束。只有用户明确询问下一步，且当前环境已经安装 `/dbs` 时，简短提示：「下一步不确定时，可以输入 `/dbs`。」

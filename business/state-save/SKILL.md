@@ -1,10 +1,6 @@
 ---
 name: dbs-save
-description: |
-  把当前诊断的关键状态存到本地，下次回来可以接着用。
-  触发方式：/dbs-save、/存档、「保存这次诊断」「记下来」「这个结论留着」
-  Save the current diagnosis state to disk for cross-session recall.
-  Trigger: /dbs-save, "save this diagnosis", "remember this"
+description: 把当前诊断的关键状态保存到本地，并查看或设置存档位置。用户要求保存结论、跨会话续接或修改存档位置时使用。
 ---
 
 # dbs-save：诊断存档
@@ -45,6 +41,10 @@ dbskill 现有的 13 个诊断 skill，每次对话都是冷启动。用户上�
 | `/dbs-save <title>` | 用户指定标题，比如 `/dbs-save 卖什么没想清楚` |
 | `/dbs-save list` | 列出当前项目下所有存档 |
 | `/dbs-save list <项目名>` | 列出指定项目的存档 |
+| `/dbs-save location` | 显示当前项目正在使用的存档位置 |
+| `/dbs-save location default` | 使用默认位置 `~/.dbs/` |
+| `/dbs-save location project` | 使用当前项目内的 `.dbs/` |
+| `/dbs-save location custom <路径>` | 使用指定的本地或云同步目录 |
 | 「保存这次诊断」「记下来」「这个结论留着」「存档」 | 等价于 `/dbs-save` |
 
 ---
@@ -63,13 +63,65 @@ dbskill 现有的 13 个诊断 skill，每次对话都是冷启动。用户上�
 
 ---
 
+## 存档根目录
+
+`dbs-save`、`dbs-restore`、`dbs-report` 必须先按同一套规则解析存档根目录，后续路径都基于这个结果拼接。
+
+配置文件固定为当前工作目录下的 `.dbs/config.json`。没有配置文件时，继续使用默认位置，不创建配置文件。
+
+```json
+{
+  "version": 1,
+  "mode": "default"
+}
+```
+
+`mode` 支持 3 个值：
+
+| mode | 存档根目录 |
+|---|---|
+| `default` | `~/.dbs/` |
+| `project` | 当前工作目录下的 `.dbs/` |
+| `custom` | `root` 字段指定的目录 |
+
+自定义示例：
+
+```json
+{
+  "version": 1,
+  "mode": "custom",
+  "root": "/Users/name/Library/Mobile Documents/com~apple~CloudDocs/dbs-archive"
+}
+```
+
+解析规则：
+
+1. 读取当前工作目录下的 `.dbs/config.json`。
+2. 文件不存在时，存档根目录为 `~/.dbs/`。
+3. `mode` 是 `default` 时，存档根目录为 `~/.dbs/`。
+4. `mode` 是 `project` 时，存档根目录为当前工作目录下的 `.dbs/`。
+5. `mode` 是 `custom` 时，读取 `root`。展开开头的 `~`；相对路径按当前工作目录解析。
+6. 配置无法解析、`mode` 不受支持、`root` 为空，或路径指向 `/`、用户家目录、当前项目根目录时，停止操作并说明配置问题。不要静默退回默认位置。
+
+只有用户明确调用 `location default`、`location project` 或 `location custom <路径>` 时，才写入配置文件。写入前说明最终解析出的绝对路径，并要求用户确认；用户确认后再创建或更新 `.dbs/config.json`。
+
+首次选择项目或自定义模式时提醒一次：
+
+- `.dbs/` 和存档目录内可能包含收入、客户与商业秘密，文件是本地纯文本，没有加密。
+- 如果当前项目使用 Git，建议把 `.dbs/` 加入 `.gitignore`。修改 `.gitignore` 前必须得到用户确认。
+- 切换位置不会自动搬动旧存档。需要迁移时，先展示来源与目标，得到用户确认后复制；保留原文件。
+
+`/dbs-save location` 只显示当前模式、配置文件位置和解析后的存档根目录，不写文件。
+
+---
+
 ## 工作流程
 
 ### Step 1：判断现在能不能存
 
 存之前先看对话里有没有真正可记的东西。如果用户刚说了一句「保存」但前面没做过任何诊断，你应该说：
 
-> 现在没什么可存的——前面没做过诊断。先用 `/dbs-diagnosis` 或别的诊断 skill 走一轮，再来存档。
+> 现在没有可存的结论。输入 `/dbs` 开始处理一个真实任务；形成结论后，再明确告诉我需要保存。
 
 不要存空文件。
 
@@ -84,8 +136,10 @@ dbskill 现有的 13 个诊断 skill，每次对话都是冷启动。用户上�
 
 ### Step 3：拼路径
 
+先按「存档根目录」规则得到 `{存档根目录}`。
+
 ```
-~/.dbs/sessions/{slug}/{YYYYMMDD-HHMMSS}-{title-slug}.md
+{存档根目录}/sessions/{slug}/{YYYYMMDD-HHMMSS}-{title-slug}.md
 ```
 
 - `YYYYMMDD-HHMMSS` 用本地时间
@@ -105,7 +159,7 @@ timestamp: {ISO 8601 带时区，格式必须是 `2026-05-01T14:23:15+08:00`，�
 title: {标题原文}
 source_skill: {对话中主要走过的 skill，比如 dbs-diagnosis；走了多个就用逗号分隔}
 status: {in-progress | resolved | abandoned}
-next_skill: {推荐的下一步 skill，可以为空}
+next_skill: {用户已确认的下一步 Skill，可以为空}
 ---
 
 ## 用户主诉
@@ -132,9 +186,9 @@ next_skill: {推荐的下一步 skill，可以为空}
 
 如果没有，写「（暂无）」。
 
-## 推荐下一步
+## 已确认的下一步
 
-{做什么、为什么、对应哪个 skill。一段话讲清楚，不要列点}
+{用户已经确认时，写做什么、为什么、对应哪个 Skill；尚未确认时写「待定，交回 /dbs 判断」}
 
 ## 备注
 
@@ -146,7 +200,7 @@ next_skill: {推荐的下一步 skill，可以为空}
 写完之后给用户一句话回执：
 
 ```
-已存档：~/.dbs/sessions/{项目名}/{文件名}
+已存档：{存档根目录}/sessions/{项目名}/{文件名}
 当前项目下共 {N} 份存档。下次输入 `/dbs-restore` 接着上次。
 ```
 
@@ -157,6 +211,8 @@ next_skill: {推荐的下一步 skill，可以为空}
 ## list 模式
 
 如果用户输入 `/dbs-save list` 或 `/dbs-save list <项目名>`，不写新文件，只列出已有存档。
+
+先按「存档根目录」规则定位 `sessions/{项目名}/`。只列出当前配置所指向位置中的存档，不混合其他位置。
 
 输出格式：
 
@@ -191,8 +247,8 @@ status 字段对用户展示时翻译成中文（in-progress → 进行中，res
 
 ## next_skill 字段怎么填
 
-如果对话里推荐了下一步 skill（比如 dbs-diagnosis 末尾推荐了 `/dbs-benchmark`），就填上。
-如果没有明显推荐，留空。
+只有用户已经明确选择下一个 Skill，或明确确认按某个 Skill 继续时，才填写 `next_skill`。
+上一个 Skill 只给出候选方向、用户尚未确认时，留空并让 `/dbs` 在恢复后重新判断。
 
 不要瞎猜——这个字段是给 dbs-restore 自动接续用的，错了比空更糟。
 
@@ -202,7 +258,8 @@ status 字段对用户展示时翻译成中文（in-progress → 进行中，res
 
 - 用户在没装 dbskill 的环境里调用 → 不存在的情况，dbskill 装了你才会被调用
 - 用户连续两次 `/dbs-save` 想存同一个状态 → 允许，新文件名带时间戳，不会冲突
-- 用户的诊断信息特别敏感（比如收入数字、商业秘密）→ 提醒一句：「`~/.dbs/` 是本地纯文本，没有加密。如果不想存敏感细节，可以手动改一下我刚写的文件。」
+- 用户的诊断信息特别敏感（比如收入数字、商业秘密）→ 提醒一句：「当前存档目录是本地纯文本，没有加密。如果不想保存敏感细节，可以先调整内容或更换存档位置。」
+- 用户切换了存档位置后找不到旧记录 → 显示当前存档根目录，并提示旧记录可能仍在原位置。得到确认后可以复制迁移，不删除原文件
 
 ---
 
@@ -215,17 +272,13 @@ status 字段对用户展示时翻译成中文（in-progress → 进行中，res
 
 ---
 
-## 下一步建议（条件触发）
-
-| 触发条件 | 推荐话术 |
-|---|---|
-| 用户存完存档，且当前项目下已有 ≥3 份 | 「这个项目下已经攒了 {N} 份存档。如果你想看个总览，输入 `/dbs-report` 出一份合并报告。」 |
-| 用户存完，但 next_skill 字段非空 | 「下次回来直接走 `/dbs-restore`，能直接接到 {next_skill}。」 |
-
----
-
 ## 语言
 
 - 用户用中文就用中文回复，用英文就用英文回复
 - 中文回复遵循《中文文案排版指北》
 - 存档文件用用户对话的语言（用户用中文你就写中文存档）
+
+
+---
+
+完成当前任务后直接结束。只有用户明确询问下一步，且当前环境已经安装 `/dbs` 时，简短提示：「下一步不确定时，可以输入 `/dbs`。」

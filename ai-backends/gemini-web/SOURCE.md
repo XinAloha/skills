@@ -13,7 +13,7 @@
 | Canonical URL | [https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-danger-gemini-web](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-danger-gemini-web) |
 | Kind | `composite-danger` |
 | Cluster | `-` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** DANGER: reverse-engineered Gemini Web API; needs browser session.

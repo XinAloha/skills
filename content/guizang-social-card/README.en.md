@@ -4,12 +4,13 @@
 ![License](https://img.shields.io/github/license/op7418/guizang-social-card-skill?style=flat-square)
 ![Skill](https://img.shields.io/badge/Skill-Agent-111111?style=flat-square)
 ![Social Cards](https://img.shields.io/badge/Social-Cards-FF4D6D?style=flat-square)
+![Live Photo](https://img.shields.io/badge/Live%20Photo-Motion%20Cards-002FA7?style=flat-square)
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-Supported-6B5B95?style=flat-square)
 ![Codex](https://img.shields.io/badge/Codex-Supported-222222?style=flat-square)
 
 [中文 README](./README.md)
 
-An agent skill for Claude Code, Codex, and similar coding-agent environments. It generates **Xiaohongshu / Rednote carousel images** and **WeChat 21:9 + 1:1 cover pairs** from articles, copy, screenshots, product notes, subtitles, or photos.
+An agent skill for Claude Code, Codex, and similar coding-agent environments. It generates **Xiaohongshu / Rednote carousel images**, **Live Photo motion cards**, and **WeChat 21:9 + 1:1 cover pairs** from articles, copy, screenshots, product notes, subtitles, photos, or user-supplied videos.
 
 Two visual systems share one workflow:
 
@@ -51,27 +52,61 @@ Make me a 3:4 Xiaohongshu set from this product review, with editorial-style tit
 Turn this article into a WeChat cover pair: 21:9 hero + 1:1 share card, visually consistent.
 I have 3 camping photos — make me an image-led Xiaohongshu carousel.
 Turn this game guide copy into a Xiaohongshu set; pull some game art from Wallhaven.
+I have a coffee video — make it a 5-second Xiaohongshu Live Photo card with text in a quiet zone.
+Turn these three game clips into a triple Live Photo collage with Swiss-style guide copy.
 ```
 
 ## What you get
 
 - 🖋 **Two visual systems**: Editorial for atmosphere and narrative, Swiss for facts and structure, sharing one workflow
 - 📐 **3 canvas sizes**: `.poster.xhs` 1080×1440 (Xiaohongshu 3:4), `.poster.wide` 2100×900 (WeChat 21:9), `.poster.square` 1080×1080 (WeChat 1:1)
+- 🎬 **Live Photo motion cards**: single video, two-grid, three-grid, four-grid, triple collage, and low-cost long-video diagnosis; `5s` for Xiaohongshu, `3s` for WeChat Official Account articles
 - 🧩 **28 layout skeletons**: 16 Editorial (`M01-M16`, including Image-Led Cover, Pipeline, Before/After) + 12 Swiss (`S01-S12`, including KPI Tower, H-Bar Chart, Matrix + Hero)
 - 🎨 **10 theme presets**: 6 Editorial (Ink Classic, Indigo Porcelain, Forest Ink, Kraft Paper, Dune, **Midnight Ink** dark) + 4 Swiss anchor colors (IKB Klein Blue, Lemon, Lemon Green, Safety Orange)
 - 🖼 **Image sourcing workflow**: user images first; otherwise waterfall through Unsplash → Pexels → Flickr CC → Wallhaven → direct search, downloaded locally with auto-generated `SOURCES.md`
 - 🌫 **WebGL ink-flow background**: editorial hero pages can ship a live ink animation; can be disabled for low-power devices or screenshot mode
-- 🪧 **Image overlay + face safety**: full-bleed images must carry a mask; text drop zones must avoid the subject. Hard rules in `references/image-overlay.md`
+- 🪧 **Text-on-image + subject safety**: full-bleed images require quiet-zone and subject mapping first; add only localized tint when needed, not a default full-canvas mask
 - 🧰 **Screenshot beautification assets**: 9 real-texture WebP backgrounds (5 Editorial / 4 Swiss), paired with `.frame-shot` / `.device-browser` / `.device-phone` utilities
 - 🗺 **Map component**: MapLibre + OSM real tiles, multi-pin + connectors, made for travel guides
 - ✅ **Validator**: `validate-social-deck.mjs` auto-detects overflow, type cap violations, 4-band density gaps, and footer collisions
 - 📄 **Single-file HTML + Playwright rendering**: no frontend build pipeline; `node render.mjs` outputs PNG directly
 
+## Live Photo effects and layouts
+
+In this skill, Live Photo means "put the user's video into a social-card layout." It is not random stock-video sourcing and not long-form video editing. First make the first frame work as a still card; then let `3s/5s` of motion add evidence.
+
+| Layout | Effect | Best for |
+|--------|--------|----------|
+| Single-video motion card | One video cropped to full-canvas `3:4`; when text is needed, use one short headline only and follow `M16 Image-Led Cover` / `image-overlay` rules for subject safety, quiet zones, type, and localized tint | Coffee, travel, fitness moves, product states, game moments |
+| Two-grid / three-grid / four-grid puzzle | Multiple video wells inside one Live Photo, usually with no added text so strong footage leads | Travel scenery, fashion picks, room details, food process, workout actions |
+| Triple Live Photo collage | Three short clips in parallel, increasing information density inside the short duration; add at most one real scene headline when needed | Guide steps, before/after, multi-angle demos, model test results |
+| Long-video diagnosis | Sparse frames / contact sheet for long source videos, then recommend trimming, speed-up, splitting, or asking the user for an exact range | 1-3 minute user videos without a chosen moment |
+| Publishing package | Debug `JPG + MOV` plus an iPhone-friendly `.pvt` package | Xiaohongshu and WeChat Official Account article Live Photos |
+
+Judge the information budget first: WeChat `3s` is best for one action point or one state change; Xiaohongshu `5s` can hold one compact process; triple collages are for three parallel results, not a long sequential story.
+
+## Live Photo generation guide
+
+1. **Confirm platform and assets**: user-supplied video is the default input; sourced public video is only for demo / promo testing. Confirm Xiaohongshu, WeChat Official Account article, or local test.
+2. **Judge information density**: ask what the viewer can understand in `3s/5s`. If it needs narration, audio, or a full tutorial, do not force it into Live Photo.
+3. **Choose the structure**: one strong clip becomes a single-video card; multiple strong clips become two-grid / three-grid / four-grid; three parallel results become a triple collage; long videos get low-cost diagnosis first.
+4. **Check the still card first**: the first frame must read as a polished social card. Check crop, subject, text placement, platform safe area, and never turn production requirements into visible audience copy.
+5. **Generate motion assets**: output preview video, key JPG, MOV, and `.pvt` inside the task folder; do not write generated files into the skill root.
+6. **Deliver with publishing notes**: Xiaohongshu uses `5s`; WeChat Official Account article Live Photo should stay at `3s`; usually transfer the `.pvt` as one package to iPhone and publish from the matching mobile app, because desktop/web paths generally cannot publish Live Photo.
+
+Useful prompts:
+
+```text
+Turn this coffee video into a 5-second Xiaohongshu Live Photo. Use only one headline and avoid the cup and hand.
+These four travel clips are strong. Make a four-grid Live Photo with no added text.
+Make a contact sheet from this 2-minute game video and recommend the best 5 seconds for a guide-style Live Photo.
+```
+
 ## Fits / Doesn't fit
 
-**✅ Fits**: Xiaohongshu carousels / WeChat cover pairs / Moments covers / Channels covers / article visuals / tutorial pages / data recaps / travel guides / product reviews / screenshot explainers
+**✅ Fits**: Xiaohongshu carousels / Live Photo motion cards / WeChat cover pairs / Moments covers / Channels covers / article visuals / tutorial pages / data recaps / travel guides / product reviews / screenshot explainers
 
-**❌ Doesn't fit**: Horizontal swipe decks (use [guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill)) / long-form video generation / pure photo retouching / plain-text editing without layout
+**❌ Doesn't fit**: Horizontal swipe decks (use [guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill)) / long-form video editing / pure photo retouching / plain-text editing without layout
 
 ## 11 Xiaohongshu categories
 
@@ -99,6 +134,7 @@ Tiered by "circle of competence" — see [`references/category-cookbook.md`](./r
 | WeChat cover pair | Render the same content twice: `.poster.wide` 21:9 + `.poster.square` 1:1, visually consistent |
 | Screenshot tutorial / tool walkthrough | `.frame-shot` + `.device-browser`, prefer Swiss grid base |
 | Game guide / film recap | Editorial + Midnight Ink, pull game art from Wallhaven for full-bleed hero |
+| User video → Live Photo | Judge the `3s/5s` information budget first, then choose single video / puzzle / triple collage / long-video diagnosis |
 | Data recap / year in review | Swiss + Lemon or Safety Orange, matrix + ledger combo |
 
 ## Why single-file HTML to PNG
@@ -108,6 +144,7 @@ Tiered by "circle of competence" — see [`references/category-cookbook.md`](./r
 - **Open image sourcing**: hook into Unsplash / Pexels / Wallhaven / Mapbox / OSM / any web resource
 - **Verifiable quality**: `validate-social-deck.mjs` runs Playwright DOM measurement, not guesswork
 - **Simple delivery**: `output/*.png` ships directly — no deploys, no export tools
+- **Practical motion-card delivery**: the Live Photo branch exports `JPG + MOV + .pvt`, with Xiaohongshu / WeChat duration limits and mobile publishing paths documented
 
 ## Platform support
 
@@ -153,6 +190,8 @@ Once installed, Claude Code auto-detects the skill. Trigger phrases:
 - "Generate social cards / magazine-style social cards"
 - "Turn this article into a tutorial carousel"
 - "Make a Swiss-style Xiaohongshu review / IKB-style cards"
+- "Turn this video into a Xiaohongshu Live Photo / triple Live Photo collage"
+- "Make a 3-second Live Photo for a WeChat Official Account article"
 
 ## Workflow
 
@@ -166,6 +205,8 @@ The skill is a structured workflow. The agent walks through 7 steps:
 6. **Deliver & Review** — show PNGs first, ask "look at them yourself, or want me to run the validator?" — does not auto-validate
 7. **Iterate** — apply user feedback, tweak inline styles or swap layouts / images, re-render
 
+Live Photo requests branch inside Step 5: judge the `3s/5s` information budget, inspect the first frame or a sparse contact sheet for crop safety, then export `JPG + MOV + .pvt`. Delivery notes include platform limits and publishing paths: `5s` for Xiaohongshu, `3s` for WeChat Official Account articles, usually transferred to iPhone and published from the matching mobile app.
+
 Full spec in [`SKILL.md`](./SKILL.md). Deep details in the matching `references/*.md`.
 
 ## Validator
@@ -174,14 +215,17 @@ Full spec in [`SKILL.md`](./SKILL.md). Deep details in the matching `references/
 node validate-social-deck.mjs path/to/task-dir
 ```
 
-6 rules, based on Playwright real-render measurement, not static scanning:
+9 rules, based on Playwright real-render measurement, not static scanning:
 
-- **R1** Overflow — any section overflowing `.poster` fails immediately
-- **R2** Type Caps — `.h-xl` / `.h-display` size + weight combinations exceeding seed definitions
-- **R3** Footer Collision — content pressing into the bottom footer / page-number
-- **R4** 4-Band Density — 1440-tall canvas split into 4 horizontal bands; each must hold content or have a stated reason for whitespace
-- **R5** Frame Overflow — `.frame-img` / `.frame-shot` children overflowing the frame
-- **R6** Swiss Identity — Swiss templates with inline `font-weight >= 700` warn (violates "bigger means thinner")
+- **R1** Overflow — any section overflowing `.poster` fails immediately and reports a pixel-based fix tier
+- **R2** Footer Collision — content pressing into the bottom footer / page-number
+- **R3** Swiss Bold Display — Swiss large titles violating "bigger means thinner"
+- **R4** Min Readable Font — body, captions, labels, and metadata below mobile-readable floors
+- **R5** 4-Band Density — 1440-tall canvas split into 4 horizontal bands; each must hold content or have a stated whitespace reason
+- **R6** H-XL Line Cap — `.h-xl` / `.h-display` / `.h-statement` line counts exceeding board budgets
+- **R7** Figure Margin Drift — default browser `<figure>` margins causing layout drift
+- **R8** Visual Bounds — true visible top/bottom bounds, visual overflow, and bottom whitespace
+- **R9** Title Gap — display title too close to the next content block
 
 `SKILL.md` Step 7 explicitly states **the validator does not auto-run** — wait for the user to look at the images first, saving tens of seconds per round.
 
@@ -221,6 +265,7 @@ guizang-social-card-skill/
 ├── HANDOFF.md                            ← Handoff doc: facts + version history
 ├── PRODUCT.md                            ← Product doc: thinking + decisions + roadmap
 ├── validate-social-deck.mjs              ← Playwright layout validator
+├── scripts/                              ← Live Photo packaging / contact sheet / doc-test scripts
 ├── assets/
 │   ├── template-editorial-card.html      ← Editorial seed (6 themes / 3 canvases)
 │   ├── template-swiss-card.html          ← Swiss seed (4 accents / 3 canvases)
@@ -238,11 +283,12 @@ guizang-social-card-skill/
     ├── portrait-fill.md                  ← Whitespace strategy for the 3:4 board
     ├── content-planning.md               ← Hooks / page splits / copy compression
     ├── category-cookbook.md              ← 11 Xiaohongshu category routing table
-    ├── image-overlay.md                  ← Full-bleed image mask + face safety rules
+    ├── image-overlay.md                  ← Text-on-image + subject safety rules
     ├── screenshot-treatment.md           ← `.frame-shot` utilities + screenshot beautification
     ├── map-component.md                  ← `.map-block` MapLibre map
     ├── title-shortener.md                ← Short-title strategy for the 1:1 cover
     ├── production-workflow.md            ← Playwright render pipeline
+    ├── live-photo-production.md          ← Live Photo production / puzzle / long-video / publishing rules
     └── qa-checklist.md                   ← Quality checklist
 ```
 
@@ -252,11 +298,12 @@ guizang-social-card-skill/
 2. **Structure over decoration** — type / contrast / grid carries the hierarchy, not shadows or cards
 3. **Layouts over freedom** — pick first, adapt later; do not invent pages outside the 28 skeletons
 4. **User images first** — at intake, present A/B/C once; do not re-pitch shooting their own
-5. **Mask + avoid** — full-bleed images always carry a mask; text drop zones must clear the subject (faces / products / text-dense regions)
+5. **Select and avoid first** — full-bleed images need a quiet zone; text drop zones must clear the subject (faces / products / text-dense regions); add localized tint only when needed
 6. **Bigger means thinner** — Swiss `.h-xl` size goes up → weight must come down. Editorial follows the same rule
 7. **No auto-validation** — let the user look first, then ask before validating; saves tens of seconds per round
 8. **A skill is a product, not a prompt** — has PRODUCT.md, version numbers, CHANGELOG, capability boundaries
 9. **Local tests stay out of git** — all demos / smoke tests live under `local-tests/`, gitignored
+10. **Treat video as a card first** — a Live Photo first frame must work as a good social card; visible copy should describe the real scene, not production terminology
 
 ## Visual references
 
@@ -272,6 +319,7 @@ guizang-social-card-skill/
 - More Swiss data layouts (additional chart skeletons)
 - Post-image-generation: actively ask whether to do local fixes / regenerate the whole image
 - More category-specific recommended layout packs (currently 7 of 11 are end-to-end strong)
+- Expand the Live Photo example library: single video, puzzles, game guides, lifestyle, product updates
 - Marketplace-ready WorkBuddy version
 
 ## FAQ
@@ -284,6 +332,9 @@ Same reason as the PPT skill — the skill's core value is stable output. Free c
 
 **Can I use other models for image generation?**
 Yes. Image generation itself is out of scope. SKILL.md Step 4 spells out the sourcing protocol: user images → AI-generated → web sources. AI generation depends on whichever model your agent connects to.
+
+**Does it support Live Photo?**
+Yes. Plan for `5s` on Xiaohongshu and `3s` inside WeChat Official Account articles. It supports single video, two-grid, three-grid, four-grid, triple collage, and sparse long-video diagnosis. Publishing usually requires the mobile path; desktop upload flows generally cannot recognize `.pvt` as a publishable Live Photo.
 
 **Codex output drifts off-spec — what do I do?**
 Since v0.12 the rule "seed templates and components.md table stay in sync" is a hard constraint. If a violation slips through, it's almost always seed-template defaults diverging from `references/style-system.md` — open an issue.

@@ -23,8 +23,8 @@ AI 越强，你反而越累--每次开新会话它都从零开始：不懂你项
 
 | 目录 | 能干什么 | 代表 skill |
 |---|---|---|
-| `workmode/` | 工作模式：控制 AI 编程认知债务、向上管理汇报、目标澄清、慢即快诊断、最小代码阶梯 | `tame-vibe-coding`、`manage-upward`、`ponytail`、`goal-clarify`、`slowisfast` |
-| `content/` | 写作与发布：排版、翻译、去 AI 痕迹、PPT、社交卡片、配图、漫画、传播策略、多平台发布（微信/微博/X/小红书） | `humanizer-zh`、`format-markdown`、`guizang-ppt`、`post-to-wechat` 等 |
+| `workmode/` | 工作模式：控制 AI 编程认知债务、向上管理汇报、目标澄清、慢即快诊断、最小代码阶梯、agent 任务书 | `tame-vibe-coding`、`manage-upward`、`ponytail`、`goal-clarify`、`slowisfast`、`leader` |
+| `content/` | 写作与发布：排版、翻译、去 AI 痕迹、PPT、社交卡片、配图、漫画、传播策略、多平台发布（微信/微博/X/小红书）、发布风险检查、公众号 HTML | `humanizer-zh`、`format-markdown`、`guizang-ppt`、`post-to-wechat`、`content-risk-check`、`wechat-html` 等 |
 | `productivity/` | 效率工具：网页/YouTube/推文转 Markdown、微信群摘要、AI 热点、图片压缩、存储分析、NotebookLM | `url-to-markdown`、`youtube-transcript`、`wechat-summary` 等 |
 | `business/` | 商业诊断套件：商业诊断、行动诊断、基准对标、路由分发、状态管理集群 | `diagnosis`、`benchmark`、`dbs-router`、`state-save` |
 | `engineering/` | 工程规则：代码风格、接口设计、文档规范、外部集成、安全、Mermaid 图表、Electron 逆向 | `code-style`、`security`、`diagram`、`electron-extract` |
@@ -32,11 +32,11 @@ AI 越强，你反而越累--每次开新会话它都从零开始：不懂你项
 | `testing/` | 测试策略：分层测试（单元/集成/数据质量）、数据库测试、故障恢复、管线测试 | `test-strategy`、`data-quality`、`fault-recovery` |
 | `git/` | Git 工作流：分支策略、code review、commit 规范、回滚恢复、版本发布 | `git-branch-workflow`、`git-code-review`、`release-workflow` |
 | `governance/` | 项目治理：自动清理、避坑清单、项目管理员、重构检查、参考分析 | `auto-cleanup`、`avoid-pitfalls`、`refactoring-checklist` |
-| `methodology/` | 方法论：好问题、决策系统、解构分析、学习计划、HV 分析、聊天室研讨、TDD、原型法 | `good-question`、`decision-system`、`deconstruct`、`tdd` |
+| `methodology/` | 方法论：好问题、决策系统、解构分析、JTBD、学习计划、HV 分析、历史标准答案、聊天室研讨、TDD、原型法 | `good-question`、`decision-system`、`deconstruct`、`jtbd`、`standard-answer`、`tdd` |
 | `domain/` | 领域 skill：A 股数据采集（股票列表、日K线、板块、复权因子、降级策略） | `a-stock-data` |
 | `ai-backends/` | AI 提供商适配：多渠道绘图聚合（Codex / DashScope / Replicate 等）、Gemini Web API | `image-gen`、`gemini-web` |
-| `agent-adapters/` | 平台适配层：跨平台工作流（Claude Code / Codex 工具对照）、Agent 工作台迁移 | `agent-migration`、`tools-discipline` |
-| `meta/` | 元能力：多会话教学、创建新 skill 模板、知识库整洁 | `teach`、`write-a-skill`、`neat-freak` |
+| `agent-adapters/` | 平台适配层：跨平台工作流（Claude Code / Codex 工具对照）、Agent 工作台迁移、跨 Agent 装 skill | `agent-migration`、`tools-discipline`、`bridge` |
+| `meta/` | 元能力：多会话教学、创建新 skill 模板、知识库整洁、skill 安全清理 | `teach`、`write-a-skill`、`neat-freak`、`skill-cleaner` |
 | `misc/` | 低频辅助：Git 安全护栏、迁移工具、脚手架练习、pre-commit | `git-guardrails-claude-code`、`setup-pre-commit` |
 
 > 完整 skill 清单见 [`INDEX.md`](INDEX.md)，维护者指南见 [`_meta/`](_meta/)。

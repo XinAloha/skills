@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-image-gen](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-image-gen) |
 | Kind | `composite` |
 | Cluster | `-` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Multi-provider image generation API (OpenAI/Azure/Google/OpenRouter/DashScope/Z.AI/MiniMax/Jimeng/Seedream/Replicate/Agnes).

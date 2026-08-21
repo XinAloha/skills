@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-deconstruct](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-deconstruct) |
 | Kind | `atomic` |
 | Cluster | `-` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Concept deconstruction via Wittgenstein + Austrian-economics methodology.

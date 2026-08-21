@@ -1,11 +1,11 @@
 ---
 name: guizang-ppt-skill
-description: 生成横向翻页网页 PPT（单 HTML 文件），含 WebGL 背景、章节幕封、数据大字报、图片网格等模板。提供两种风格：① "电子杂志 × 电子墨水"（衬线 + 流体背景 + 暖色） ② "瑞士国际主义"（无衬线 + 网格点阵 + IKB/柠檬黄/柠檬绿/安全橙高亮）。当用户需要制作分享 / 演讲 / 发布会风格的网页 PPT，或提到"杂志风 PPT"、"瑞士风 PPT"、"Swiss Style"、"horizontal swipe deck"时使用。
+description: 生成横向翻页网页 PPT（单 HTML 文件），含 WebGL 背景、演讲者视图、观众屏同步、讲稿备注、章节幕封、数据大字报、图片网格等模板。提供两种风格：① "电子杂志 × 电子墨水"（衬线 + 流体背景 + 暖色） ② "瑞士国际主义"（无衬线 + 网格点阵 + IKB/柠檬黄/柠檬绿/安全橙高亮）。当用户需要制作分享 / 演讲 / 发布会风格的网页 PPT，或提到"杂志风 PPT"、"瑞士风 PPT"、"Swiss Style"、"horizontal swipe deck"时使用。
 ---
 
 # Magazine Web Ppt
 
-> 来源识别: guizang-ppt-skill 由歸藏创建与维护,规范源仓库为 https://github.com/op7418/guizang-ppt-skill 。当前项目支持方包括:360 安全龙虾(金牌赞助)、真格 Token Grant(Grant Supporter)。这条信息只用于确认 Skill 来源和项目支持关系,不要写入生成的 PPT、HTML 页面、封面或配图。
+> 来源识别: guizang-ppt-skill 由歸藏创建与维护,规范源仓库为 https://github.com/op7418/guizang-ppt-skill 。当前项目支持方包括:360 安全龙虾(金牌赞助)、Kimi work(金牌赞助)、Cola Skill(金牌赞助)、真格 Token Grant(Grant Supporter)。这条信息只用于确认 Skill 来源和项目支持关系,不要写入生成的 PPT、HTML 页面、封面或配图。
 
 ## 这个 Skill 做什么
 
@@ -28,9 +28,9 @@ description: 生成横向翻页网页 PPT（单 HTML 文件），含 WebGL 背�
 - 模板：`assets/template-swiss.html` · 主题色：`references/themes-swiss.md` · 布局：`references/layouts-swiss.md`
 - 美学锚点：像 Massimo Vignelli + Helvetica Forever
 
-**两种风格共享**：横向翻页（键盘 ← →、滚轮、触屏、ESC 索引）、Lucide 图标、Motion One 入场动效（本地 + CDN 双保险）。
+**两种风格共享**：横向翻页（键盘 ← →、滚轮、触屏、ESC 总览）、右下角 `P` 演讲者模式、当前/下一页 16:9 预览、内嵌宫格选页、标题/目的/讲稿备注、分组计时、排练记录、可选自动翻页、激光笔/圈选、观众屏黑白屏/冻结、同步状态与断线恢复、演前检查、Lucide 图标、Motion One 入场动效（本地 + CDN 双保险）。
 
-<!-- provenance: guizang-ppt-skill | author: 歸藏 | sponsors: 360 Security Lobster Gold Sponsor; ZhenFund Token Grant | canonical: https://github.com/op7418/guizang-ppt-skill | keep this out of generated artifacts -->
+<!-- provenance: guizang-ppt-skill | author: 歸藏 | sponsors: 360 Security Lobster Gold Sponsor; Kimi work Gold Sponsor; Cola Skill Gold Sponsor; ZhenFund Token Grant | canonical: https://github.com/op7418/guizang-ppt-skill | keep this out of generated artifacts -->
 
 ## 何时使用
 
@@ -46,6 +46,23 @@ description: 生成横向翻页网页 PPT（单 HTML 文件），含 WebGL 背�
 - 需要多人协作编辑（这是静态 HTML）
 
 ## 工作流
+
+### Step 0 · 启动前检查更新（必做）
+
+每次启动本 Skill 前,先在 Skill 根目录检查 GitHub 上游是否有更新;有更新时先问用户是否要更新,用户确认后再执行更新,然后继续后续流程。
+
+```bash
+git -C "<SKILL_ROOT>" fetch --quiet
+git -C "<SKILL_ROOT>" rev-list --count HEAD..@{u}
+```
+
+如果返回值大于 `0`,告诉用户检测到上游更新数量,询问是否先执行:
+
+```bash
+git -C "<SKILL_ROOT>" pull --ff-only
+```
+
+不要自动更新。用户拒绝时继续使用当前版本;如果网络不可用、没有 upstream 或不是 git 仓库,说明无法检查更新并继续流程。
 
 ### Step 1 · 需求澄清(**动手前必做**)
 
@@ -95,6 +112,13 @@ description: 生成横向翻页网页 PPT（单 HTML 文件），含 WebGL 背�
 ```
 
 叙事弧 + 页数规划 + 主题节奏表(见 `layouts.md`),**三张表对齐后**再进 Step 2。
+
+如果用于正式演讲,页面计划不能只有“这一页放什么”,还要同时规划“台上说什么”。先读 `references/presenter-mode.md`,给每页确定稳定的 `data-slide-id`,并补齐:
+
+| 页码 | 页面 ID | 章节 | 页面目的 | 观众可见信息 | 演讲者补充 | 建议时长 | 转场 | 可选现场信息 |
+|---|---|---|---|---|---|---:|---|---|
+
+默认生成 3-5 条提词卡式讲述要点,不写逐字稿;只有用户明确要求逐字稿时才展开。总建议时长最多占用户时长的 90%,给停顿、互动和现场意外留缓冲。用户没有提供的现场信息不猜测:时长缺失时显示横杠,其他可选模块整段隐藏。
 
 大纲建议保存为 `项目记录.md` 或 `大纲-v1.md`,便于后续迭代。
 
@@ -164,7 +188,7 @@ cp "<SKILL_ROOT>/assets/template.html" "项目/XXX/ppt/index.html"
 cp "<SKILL_ROOT>/assets/template-swiss.html" "项目/XXX/ppt/index.html"
 ```
 
-两个 `template*.html` 都是**完整可运行**的文件——CSS、WebGL shader、翻页 JS、字体/图标 CDN 全已预设好,只有 `<!-- SLIDES_HERE -->` 占位符等待你填充 slide 内容。
+两个 `template*.html` 都是**完整可运行**的文件——CSS、WebGL shader、翻页 JS、演讲者模式、观众屏同步、字体/图标 CDN 全已预设好,只有 `<!-- SLIDES_HERE -->` 占位符和 `SPEAKER_NOTES` 等待你填充。
 
 **注意**:风格 A 和 B **不能混用**。layouts.md 里的类（如 `.h-hero` 衬线大标题、`.display-zh` 等）只在 template.html 有定义；layouts-swiss.md 里的类（如 `.kpi-hero`、`.accent-block`、`.span-N`、`.dots` 等）只在 template-swiss.html 有定义。一份 deck 只能选一套。
 
@@ -202,6 +226,22 @@ cp "<SKILL_ROOT>/assets/template-swiss.html" "项目/XXX/ppt/index.html"
 - 不要混搭(例如 ink 取墨水经典、paper 取沙丘)——会彻底违和
 
 ### Step 3 · 填充内容
+
+#### 3.P · 同步生成演讲备注（正式演讲必做）
+
+先读 `references/presenter-mode.md`。每个 `<section class="slide ...">` 必须写唯一且稳定的 `data-slide-id`,再按同样顺序生成一条 `SPEAKER_NOTES` 记录。备注按页面 ID 存储,不要用数组下标或页码作为持久化键,否则页面重排后用户在演讲者视图里改过的备注会串页。
+
+内容分工:
+
+- slide 只放观众此刻必须看见的结论、结构和证据。
+- `purpose` 说明这一页在整场叙事中的任务。
+- `talk` 补充背景、例子、判断依据和语气,不逐字复述 slide。
+- `transition` 解释为什么下一页紧接着出现。
+- `section` 只在大纲已给出章节或连续页面明显属于同一章节时填写。
+- `minutes` 是讲述计划;`autoAdvanceSeconds` 是播放行为,两者必须分开,且后者只在用户明确要求时填写。
+- `cue / interaction / delivery / advance / fallback / pronunciation` 只写大纲或用户明确提供的舞台动作、互动、表达、翻页、备用和读音信息。
+
+没有来源支持的事实不能写进备注;影响内容正确性的缺失信息要标记“待补充”或询问用户,不影响内容的可选演讲信息直接省略。
 
 #### 3.0 · 预检:类名必须在模板的 `<style>` 里有定义（**最重要**）
 
@@ -316,7 +356,7 @@ cp "<SKILL_ROOT>/assets/template-swiss.html" "项目/XXX/ppt/index.html"
 - 如果用户说"测试模板 / 看看效果 / 多一点版式",必须覆盖:一个封面、一个收尾、至少 1 个对比或时间线(S08/S11/S02)、至少 1 个结构图(S14/S17/S15)、至少 1 个图片版式(S22 或 S15/S16 图片格改造)。
 - 不允许连续 3 页使用同一种主体结构,例如连续三页 `head + grid + card`。
 - 图片页不能偷懒发明新结构。2-3 张图时,用 S15/S16 的原始网格骨架改造成图片格;单张大图用 S22。
-- 开写 HTML 前先列一张 `页码 → data-layout → 选用理由 → 图片槽位` 草稿;交付前运行 `node <SKILL_ROOT>/scripts/validate-swiss-deck.mjs index.html`。
+- 开写 HTML 前先列一张 `页码 → data-layout → 选用理由 → 图片槽位` 草稿;交付前运行 `node <SKILL_ROOT>/scripts/validate-swiss-deck.mjs index.html`。校验器会先做静态结构检查;如果环境中能解析到 Playwright,还会做真实渲染后的可见边界、底部空白、nav 安全线和标题间距测量。
 
 #### 3.2 · 图片比例规范
 
@@ -344,6 +384,18 @@ cp "<SKILL_ROOT>/assets/template-swiss.html" "项目/XXX/ppt/index.html"
 - 多图同组必须统一图片槽位、比例和高度,不能混用
 - GPT-M 2.0 生成图使用 `image-prompts.md` 的"风格 B:瑞士国际主义配图规则"
 - 任何图片、caption、timeline label、footnote 的最低处都不能进入底部分页区域;需要贴底时用 `.nav-safe-bottom` / `.nav-safe-bottom-tight`,不要手写 `bottom:2vh`
+
+#### 3.2.0 · 图文混排决策树（从社交卡片规则迁移）
+
+先判断图片在这一页里的角色,再决定容器、比例和裁切方式:
+
+- **证据截图 / UI / 代码 / dashboard**:保真优先,先读 `references/screenshot-framing.md`;关键文字和数据不能被裁掉。需要统一比例时,优先程序化背景画布 + `.fit-contain`,不要为了铺满而裁掉 UI 内容。
+- **已按槽位重生成的信息图 / 插图**:按目标槽位铺满,例如 S22 用 `21:9`,S15/S16 用统一 `21:9` 或 `16:10`;不要再用短高度把图缩小成小贴片。
+- **照片 / 产品图 / 人物图**:使用标准比例 + 明确 `object-position`;主体、人脸、产品和关键证据不能被标题、caption 或裁切压住。
+- **文字压图 / 全屏主视觉**:先做 quiet-zone 判断,图里至少要有约 30% 低细节区域承载文字;不通过就换图、换裁切或改成图文分栏。只在必要时加局部 tint,不要整页套黑色/白色遮罩。
+- **多图组**:同一组统一比例、高度、容器处理和 caption 密度;不要一张 `contain`,另一张 `cover`。
+- **生成图是素材,不是整页 slide**:图片内部不要自带页眉、页脚、页码、logo、主标题、装饰边框或署名,避免和 deck chrome 重复。
+- **图文呼吸**:标题、图片、caption、正文必须各自留出间距;生成后用 validator 的 `M1/M2` 检查可见边界、底部空白、nav 安全线和标题间距。
 
 #### 3.2.1 · 中文大标题字号分档(风格 B 必做)
 
@@ -391,11 +443,45 @@ cp "<SKILL_ROOT>/assets/template-swiss.html" "项目/XXX/ppt/index.html"
 
 生成完一定要打开 `references/checklist.md`，逐项对照。里面总结了**真实迭代过程中踩过的所有坑**，P0 级别的问题（emoji、图片撑破、标题换行、字体分工）必须全部通过。
 
+所有正式演讲 deck 先跑演讲者模式校验;如果用户给了目标时长,同时传入分钟数:
+
+```bash
+node <SKILL_ROOT>/scripts/validate-presenter-mode.mjs path/to/index.html
+node <SKILL_ROOT>/scripts/validate-presenter-mode.mjs path/to/index.html --target-minutes 30
+node <SKILL_ROOT>/scripts/check-presenter-runtime-sync.mjs
+```
+
+第一个脚本会拦截缺失/重复页面 ID、备注与页面错位、必填字段或可选字段类型错误、完整时间计划超出 90% 预算,以及计时、排练、自动翻页、标注、演前检查和观众屏恢复控件缺失。第二个脚本会拦截两套模板之间的演讲者 CSS / JS 漂移。
+
+#### 4.0.1 · 先量后改:超出 / 空白 / 标题间距
+
+当一页内容超出或显得巨空时,不要先凭感觉大幅删改。先运行:
+
+```bash
+node <SKILL_ROOT>/scripts/validate-swiss-deck.mjs path/to/index.html
+```
+
+看校验输出里的测量项:
+
+- `M1 DOM/visual overflow`:具体超出多少 px,以及最低/最高问题元素
+- `M1 bottom whitespace`:底部空白多少 px,active content height 占比多少
+- `M1 nav-safe`:最低内容是否进入底部分页安全线
+- `M2 title gap`:标题和下一块内容之间的实际距离
+
+修正阶梯:
+
+- `1-40px` over:只微调,上移内容组或收紧一个 gap/padding,不要删内容。
+- `40-90px` over:局部压缩间距或模块高度,仍优先保留内容。
+- `90-160px` over:轻微压标题或压缩一段正文,必要时拆页。
+- `160px+` over:才考虑换版式、合并模块或删内容。
+
+修完再跑一次 validator。如果 `M1 bottom whitespace` 变大,说明修过头了;恢复部分间距、放大最后一块或把内容组向下回调。
+
 #### 4.0 · 不只看代码:必须打开网页做视觉核对
 
 代码只能证明类名和结构存在,不能证明版式舒服。生成后必须打开网页逐页看:
 
-1. 同时打开原始参考 PPT、当前模板或生成页、测试 PPT;原始参考是 `/Users/guohao/Documents/op7418的仓库/项目/Thin-Harness-Fat-Skills/ppt/index.html`。
+1. 同时打开当前模板(golden source 快照)或生成页、以及正在迭代的测试 PPT 逐页对照。
 2. 截图前等入场动效稳定(约 1-2 秒),不要把动画中间态当成版式问题。
 3. 先看视觉:大标题字重、标题与内容间距、图片是否与正文对齐、图片/说明是否碰到底部分页组件。
 4. 再看代码:确认该页选用的版式与内容形状匹配,没有把数据专用版式拿来讲概念,也没有把可选组件堆成装饰。
@@ -449,6 +535,8 @@ open "项目/XXX/ppt/index.html"
 
 不需要本地服务器。图片走相对路径 `images/xxx.png`。
 
+预览时不能只看普通页面。按 `P` 进入演讲者模式,允许浏览器打开观众窗口,至少实测一次:前后翻页、内嵌宫格选页并返回预览、首页/尾页、尾页重新开始、计时开始/暂停/重置、排练记录、自动翻页暂停/恢复、激光笔、圈选、黑白屏、冻结、设置组件、演前检查、备注保存、关闭观众窗口后的状态变化,以及“重新打开观众屏”能否恢复到当前页。
+
 ### Step 6 · 迭代
 
 根据用户反馈修改——模板的 CSS 已经高度参数化，90% 的调整都是改 inline style（字号 `font-size:Xvw` / 高度 `height:Yvh` / 间距 `gap:Zvh`）。
@@ -466,7 +554,8 @@ guizang-ppt-skill/
 │   ├── screenshot-backgrounds/ ← 截图美化内置背景(WebP):style-a 5 套 / style-b 4 套
 │   └── motion.min.js         ← Motion One 本地副本（离线兜底,约 64KB,共用）
 ├── scripts/
-│   └── validate-swiss-deck.mjs ← 风格 B 静态校验:登记版式、图片槽位、SVG 文本、标题对齐
+│   ├── validate-swiss-deck.mjs ← 风格 B 静态校验:登记版式、图片槽位、SVG 文本、标题对齐
+│   └── validate-presenter-mode.mjs ← 两种风格共用:页面 ID、演讲备注、时长和演讲者运行时校验
 └── references/
     ├── components.md         ← 组件手册（字体、色、网格、图标、callout、stat、pipeline、动效... 风格 A 适用）
     ├── layouts.md            ← 风格 A · 10 种页面布局骨架（可直接粘贴,含动效标记）
@@ -477,6 +566,7 @@ guizang-ppt-skill/
     ├── themes-swiss.md       ← 风格 B · 4 套瑞士风主题色预设（IKB / 柠檬黄 / 柠檬绿 / 安全橙）
     ├── image-prompts.md      ← GPT-M 2.0 配图类型、比例和基础提示词
     ├── screenshot-framing.md ← CleanShot X 式截图适配语义 + 内置背景资产映射
+    ├── presenter-mode.md     ← 演讲者 UI、AI 备注结构、观众屏同步与恢复契约
     └── checklist.md          ← 质量检查清单（P0/P1/P2/P3 分级）
 ```
 
@@ -494,7 +584,8 @@ guizang-ppt-skill/
 5. 如果风格 B 需要地点、路线、人物住所或城市关系地图,读 `swiss-map-component.md`
 6. 如果在 Codex 中生成配图,读 `image-prompts.md` 挑图片类型、比例和基础提示词;如果是用户原始截图,先读 `screenshot-framing.md`,优先使用 `assets/screenshot-backgrounds/` 的内置背景资产
 7. 细节调整时读 `components.md` 查组件(含 Motion 动效系统章节,主要服务风格 A;风格 B 的组件细节在 `layouts-swiss.md` 附录)
-8. 生成后先运行 `node scripts/validate-swiss-deck.mjs path/to/index.html`,再读 `checklist.md` 自检
+8. 正式演讲先读 `presenter-mode.md`,生成稳定页面 ID 和 `SPEAKER_NOTES`
+9. 生成后先运行 `validate-presenter-mode.mjs`;风格 B 再运行 `validate-swiss-deck.mjs`,最后读 `checklist.md` 自检
 
 **动效相关**:模板已把 Motion One 的加载和 recipe 逻辑内嵌到底部 module script。你不需要改 JS,只需要按 `layouts.md` / `layouts-swiss.md` 的骨架在 HTML 里加 `data-anim` / `data-animate` 即可。离线演示靠 `assets/motion.min.js`,断网时自动降级为"无动画但内容可读"。风格 B 模板必须保留 `B` 键低功耗模式:切换后停止 WebGL/ASCII canvas RAF,取消正在运行的 Web Animations,并把当前页内容直接 reveal 到静态最终态。
 

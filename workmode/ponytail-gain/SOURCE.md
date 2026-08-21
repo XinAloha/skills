@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/DietrichGebert/ponytail/tree/main/skills/ponytail-gain](https://github.com/DietrichGebert/ponytail/tree/main/skills/ponytail-gain) |
 | Kind | `atomic` |
 | Cluster | `ponytail` |
-| Imported on | 2026-07-04 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Display ponytail's measured benchmark scoreboard (less code/cost, more speed). One-shot display, not a persistent mode.

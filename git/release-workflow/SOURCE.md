@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/JimLiu/baoyu-skills/tree/main/.claude/skills/release-skills](https://github.com/JimLiu/baoyu-skills/tree/main/.claude/skills/release-skills) |
 | Kind | `atomic` |
 | Cluster | `-` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Universal release workflow (Node/Python/Rust/Claude plugin/GitHub Releases/tags/backfill).
