@@ -1,0 +1,22 @@
+---
+description: Use the Intraday Data Quality Auditor skill when the request matches its SKILL.md description.
+alwaysApply: false
+---
+
+# Intraday Data Quality Auditor Skill
+
+When the user asks to audit normalized intraday OHLCV bars for timestamp, interval, price, volume, session, or trading-date defects, use the local skill package.
+
+Preferred local project path:
+
+```text
+.cursor/skills/intraday-data-quality-auditor
+```
+
+Workflow:
+
+1. Read `.cursor/skills/intraday-data-quality-auditor/SKILL.md`.
+2. Load files under `references/` only when the workflow or task requires them.
+3. Run bundled scripts from the skill root exactly as documented.
+4. Preserve the input contract, time-zone and session rules, validation limits, and evidence boundaries.
+5. Do not invent data interfaces, credentials, market sessions, bars, or audit results.

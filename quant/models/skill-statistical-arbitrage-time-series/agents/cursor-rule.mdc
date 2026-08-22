@@ -1,0 +1,7 @@
+---
+description: Load the statistical arbitrage time-series skill for research tasks
+globs:
+alwaysApply: false
+---
+
+When a request concerns statistical arbitrage, pairs trading, cointegration, or time-series backtesting, read the repository root `SKILL.md` and follow it. Keep conclusions evidence-based; do not make investment recommendations or return promises.

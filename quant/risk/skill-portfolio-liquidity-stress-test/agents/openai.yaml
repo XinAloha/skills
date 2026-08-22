@@ -1,0 +1,4 @@
+interface:
+  display_name: "组合流动性压力测试"
+  short_description: "Stress liquidation time impact and redemption pressure"
+  default_prompt: "Use $portfolio-liquidity-stress-test to stress this portfolio under market-depth and redemption shocks."

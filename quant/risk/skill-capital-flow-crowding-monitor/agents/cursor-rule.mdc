@@ -1,0 +1,8 @@
+---
+description: Load the capital-flow and crowding monitor instructions.
+globs: ["**/*.py", "**/*.csv", "**/*.md"]
+alwaysApply: false
+---
+
+Read `SKILL.md` before changing or running this skill. Preserve source dates, degraded
+fields, and the research-only boundary in every report.

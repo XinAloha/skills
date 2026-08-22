@@ -1,0 +1,41 @@
+{
+  "run_name": "factor_selection_sage_mlp_smoke",
+  "output_root": "../outputs/sage_mlp_smoke",
+  "random_seed": 42,
+  "mode": "sage",
+  "selection_count": 3,
+  "input": {
+    "feature_path": "toy_factors.csv",
+    "label_path": "toy_labels.csv"
+  },
+  "data": {
+    "date_col": "date",
+    "ticker_col": "symbol",
+    "label_col": "y"
+  },
+  "validation": {
+    "method": "fixed",
+    "train_start": 20200102,
+    "train_end": 20200214,
+    "valid_start": 20200217,
+    "valid_end": 20200331,
+    "embargo_days": 0
+  },
+  "model": {
+    "type": "mlp",
+    "params": {
+      "hidden_layer_sizes": [16, 8],
+      "max_iter": 80,
+      "early_stopping": false
+    }
+  },
+  "sage": {
+    "loss": "mse",
+    "background_size": 32,
+    "evaluation_size": 128,
+    "batch_size": 64,
+    "n_permutations": 2,
+    "detect_convergence": false,
+    "convergence_threshold": 0.025
+  }
+}

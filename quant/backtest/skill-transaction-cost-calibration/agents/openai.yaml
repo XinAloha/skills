@@ -1,0 +1,4 @@
+interface:
+  display_name: "Execution cost calibration"
+  short_description: "Estimate trading friction from executions, quotes, and bars."
+  default_prompt: "Use $skill-transaction-cost-calibration to produce an auditable analysis from the supplied data."

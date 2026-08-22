@@ -1,0 +1,27 @@
+metadata:
+  organization: QuantSkills
+  organization_url: https://github.com/quantskills
+  repository: skill-factor-pool-evolution
+  repository_url: https://github.com/quantskills/skill-factor-pool-evolution
+  project_type: skill
+  collection: factor-evolution
+  project_status: community-project
+  maintainer: Lubin Xie
+  language: zh-en
+  license: GPL-3.0-only
+  platforms:
+    - claude-code
+    - codex
+    - cursor
+    - hermes
+    - openclaw
+  runtime_entrypoints:
+    codex: SKILL.md
+    claude_code: SKILL.md
+    cursor: agents/cursor-rule.mdc
+    hermes: agents/portable-loader.md
+    openclaw: SKILL.md
+  upstream_dependencies:
+    - repository: skill-factor-alpha191-alpha101-main
+      usage: vendored alpha library runtime
+      license: see vendor/skill-factor-alpha191-alpha101-main/LICENSE

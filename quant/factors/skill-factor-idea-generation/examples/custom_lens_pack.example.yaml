@@ -1,0 +1,51 @@
+schema_version: 1
+pack_id: example-a-share-research
+pack_title: A股外部研究视角示例
+
+sources:
+  - source_id: report-liquidity-202607
+    title: 某市场流动性研报
+    source_type: research_report
+    date: 2026-07-16
+    market: A-share
+    frequency: daily
+    citation: User-provided research report
+    evidence_scope: 报告结论来自A股日频历史样本，尚未在其他市场验证。
+
+custom_lenses:
+  - lens_id: custom.liquidity.recovery_after_volume_shock
+    origin: custom_pack
+    status: experimental
+    source_ids:
+      - report-liquidity-202607
+    proposed_layer: price_volume_dynamics
+    proposed_agent: liquidity
+    title: Recovery After Volume Shock
+    title_zh: 放量冲击后的流动性恢复
+    research_question: 放量冲击后价格影响的衰减速度是否包含后续收益信息？
+    mechanism: 冲击后单位成交价格影响快速下降，可能表明交易对手重新进入、吸收能力恢复。
+    required_fields:
+      - close
+      - high
+      - low
+      - volume
+    construction_space:
+      transforms:
+        - volume_shock
+        - price_impact
+        - impact_decay
+        - recovery_half_life
+      relations:
+        - shock_to_recovery
+        - persistent_illiquidity
+    degenerate_patterns:
+      - 只计算单日放量
+      - 使用未来窗口确认恢复
+      - 把价格反转直接等同于流动性恢复
+    allowed_roles:
+      - primary
+      - confirmation
+      - stabilizer
+    limitations:
+      - OHLCV 只能构造流动性代理，不能声称使用真实订单簿深度。
+    prompt: 研究成交冲击后价格影响与量能的历史衰减路径，并表达流动性吸收能力的恢复速度。

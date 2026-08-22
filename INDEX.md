@@ -10,7 +10,7 @@ Legend for **Kind**:
 - `cluster: <name>` (in Cluster column) — multiple skills designed to be chained. See `_meta/clusters.md`.
 - `native` — authored in this repo, not imported.
 
-**Totals:** 70 imported · 59 native · 129 skills across 15 categories.
+**Totals:** 128 imported · 60 native · 188 skills across 16 categories.
 
 ## `engineering/`
 
@@ -63,6 +63,7 @@ Project governance: cleanup, anti-patterns, requirement abstraction, refactor ch
 |---|---|---|---|---|
 | [`auto-cleanup.md`](governance/auto-cleanup.md) | native | — | this repo | — |
 | [`avoid-pitfalls.md`](governance/avoid-pitfalls.md) | native | — | this repo | — |
+| [`ecosystem-governance.md`](governance/ecosystem-governance.md) | native | — | this repo | — |
 | [`project-manager.md`](governance/project-manager.md) | native | — | this repo | — |
 | [`refactoring-checklist.md`](governance/refactoring-checklist.md) | native | — | this repo | — |
 | [`reference-analysis.md`](governance/reference-analysis.md) | native | — | this repo | — |
@@ -245,6 +246,71 @@ Project-level agent loop qualification, contracts, state, harnesses, scaffolding
 | [`qualify-loop-task`](loop-engineering/qualify-loop-task/) | native | — | this repo | — |
 | [`specify-loop-contract`](loop-engineering/specify-loop-contract/) | native | — | this repo | — |
 | [`verify-loop-delivery`](loop-engineering/verify-loop-delivery/) | native | — | this repo | — |
+
+## `quant/`
+
+Quantitative investment skills (quantskills community): data, factor research, market analysis, risk, backtesting, models, validation, news, infrastructure.
+
+| Slug | Kind | Cluster | Source | Summary |
+|---|---|---|---|---|
+| [`skill-backtest`](quant/backtest/skill-backtest/) | `composite` | `—` | [quantskills/skill-backtest](https://github.com/quantskills/skill-backtest) | 提供横截面多头回测协议，固定 T+1 开盘成交、费用、涨跌停剔除与诊断图表。 |
+| [`skill-brinson-performance-attribution`](quant/backtest/skill-brinson-performance-attribution/) | `composite` | `—` | [quantskills/skill-brinson-performance-attribution](https://github.com/quantskills/skill-brinson-performance-attribution) | 执行 Brinson-Fachler 或 BHB 归因、HHI 与贡献排序，并支持 Carino 多期链接。 |
+| [`skill-factor-backtest`](quant/backtest/skill-factor-backtest/) | `composite` | `—` | [quantskills/skill-factor-backtest](https://github.com/quantskills/skill-factor-backtest) | 对给定因子和行情数据执行long-only横截面因子回测并生成诊断报告。 |
+| [`skill-portfolio-attribution`](quant/backtest/skill-portfolio-attribution/) | `composite` | `—` | [quantskills/skill-portfolio-attribution](https://github.com/quantskills/skill-portfolio-attribution) | 将组合主动收益分解为行业配置、个股选择、交互效应和因子贡献。 |
+| [`skill-portfolio-optimize`](quant/backtest/skill-portfolio-optimize/) | `composite` | `—` | [quantskills/skill-portfolio-optimize](https://github.com/quantskills/skill-portfolio-optimize) | 将alpha信号转为受权重、行业、暴露和换手约束的优化组合权重。 |
+| [`skill-risk-return-metrics`](quant/backtest/skill-risk-return-metrics/) | `composite` | `—` | [quantskills/skill-risk-return-metrics](https://github.com/quantskills/skill-risk-return-metrics) | 计算投资组合或策略的风险收益指标。 |
+| [`skill-transaction-cost-analysis`](quant/backtest/skill-transaction-cost-analysis/) | `composite` | `—` | [quantskills/skill-transaction-cost-analysis](https://github.com/quantskills/skill-transaction-cost-analysis) | 将成交记录相对 VWAP/TWAP 分解为多类交易成本。 |
+| [`skill-transaction-cost-calibration`](quant/backtest/skill-transaction-cost-calibration/) | `composite` | `—` | [quantskills/skill-transaction-cost-calibration](https://github.com/quantskills/skill-transaction-cost-calibration) | 从成交和市场数据校准佣金、价差、滑点与冲击成本假设。 |
+| [`skill-a-share-pit-fundamental-vintage-builder`](quant/data/skill-a-share-pit-fundamental-vintage-builder/) | `composite` | `—` | [quantskills/skill-a-share-pit-fundamental-vintage-builder](https://github.com/quantskills/skill-a-share-pit-fundamental-vintage-builder) | 按披露可见时点构建并审计 A 股财务数据，避免使用后续重述信息。 |
+| [`skill-corporate-action-adjustment-auditor`](quant/data/skill-corporate-action-adjustment-auditor/) | `composite` | `—` | [quantskills/skill-corporate-action-adjustment-auditor](https://github.com/quantskills/skill-corporate-action-adjustment-auditor) | 在研究或回测前审计原始与复权价格中的拆分和现金分红一致性。 |
+| [`skill-intraday-data-quality-auditor`](quant/data/skill-intraday-data-quality-auditor/) | `composite` | `—` | [quantskills/skill-intraday-data-quality-auditor](https://github.com/quantskills/skill-intraday-data-quality-auditor) | 审计标准化日内OHLCV数据的时间戳、缺口、价格、成交量和交易日缺陷。 |
+| [`skill-build-b10-factor-evaluation`](quant/factors/skill-build-b10-factor-evaluation/) | `atomic` | `—` | [quantskills/skill-build-b10-factor-evaluation](https://github.com/quantskills/skill-build-b10-factor-evaluation) | 评估因子的 IC、IR、分层回测、单调性、换手率和衰减表现。 |
+| [`skill-factor-alpha191-alpha101`](quant/factors/skill-factor-alpha191-alpha101/) | `composite` | `—` | [quantskills/skill-factor-alpha191-alpha101](https://github.com/quantskills/skill-factor-alpha191-alpha101) | 从长表OHLCV CSV批量计算Alpha101和Alpha191因子并输出宽表CSV。 |
+| [`skill-factor-blend`](quant/factors/skill-factor-blend/) | `composite` | `—` | [quantskills/skill-factor-blend](https://github.com/quantskills/skill-factor-blend) | 将多个因子信号去冗余、加权并合成为复合信号。 |
+| [`skill-factor-evaluate`](quant/factors/skill-factor-evaluate/) | `composite` | `—` | [quantskills/skill-factor-evaluate](https://github.com/quantskills/skill-factor-evaluate) | 对单个截面因子计算IC、夏普、回撤、单调性和换手的综合评分。 |
+| [`skill-factor-idea-generation`](quant/factors/skill-factor-idea-generation/) | `composite` | `—` | [quantskills/skill-factor-idea-generation](https://github.com/quantskills/skill-factor-idea-generation) | 根据默认数据范围生成包含经济逻辑和风险说明的因子候选想法。 |
+| [`skill-factor-mason`](quant/factors/skill-factor-mason/) | `composite` | `—` | [quantskills/skill-factor-mason](https://github.com/quantskills/skill-factor-mason) | 检查单因子研究中的时点、IC/IR、成本和中性化质量。 |
+| [`skill-factor-mine`](quant/factors/skill-factor-mine/) | `composite` | `—` | [quantskills/skill-factor-mine](https://github.com/quantskills/skill-factor-mine) | 提供从假设、实验记录到评分和接受或回滚的因子挖掘SOP。 |
+| [`skill-factor-optimize`](quant/factors/skill-factor-optimize/) | `composite` | `—` | [quantskills/skill-factor-optimize](https://github.com/quantskills/skill-factor-optimize) | 对已有股票或期货因子执行参数扫描、消融和版本增强。 |
+| [`skill-factor-orthogonalize`](quant/factors/skill-factor-orthogonalize/) | `composite` | `—` | [quantskills/skill-factor-orthogonalize](https://github.com/quantskills/skill-factor-orthogonalize) | 对截面因子进行逐日OLS正交化，并输出残差因子和暴露诊断。 |
+| [`skill-factor-pool-evolution`](quant/factors/skill-factor-pool-evolution/) | `composite` | `—` | [quantskills/skill-factor-pool-evolution](https://github.com/quantskills/skill-factor-pool-evolution) | 根据种子因子池的评估生成变异、交叉和推荐。 |
+| [`skill-factor-ranking-sage`](quant/factors/skill-factor-ranking-sage/) | `composite` | `—` | [quantskills/skill-factor-ranking-sage](https://github.com/quantskills/skill-factor-ranking-sage) | 在本地因子和标签数据上运行mRMR或Marginal-SAGE并输出Top-K排名。 |
+| [`skill-factor-review`](quant/factors/skill-factor-review/) | `composite` | `—` | [quantskills/skill-factor-review](https://github.com/quantskills/skill-factor-review) | 扫描因子库和实验日志，生成量化盘点、结构分析和研究建议。 |
+| [`skill-factormad-debate-factor-mining`](quant/factors/skill-factormad-debate-factor-mining/) | `composite` | `—` | [quantskills/skill-factormad-debate-factor-mining](https://github.com/quantskills/skill-factormad-debate-factor-mining) | 参考FactorMAD多智能体辩论框架进行可解释的股票Alpha因子挖掘。 |
+| [`skill-fundamental-factor-analysis`](quant/factors/skill-fundamental-factor-analysis/) | `composite` | `—` | [quantskills/skill-fundamental-factor-analysis](https://github.com/quantskills/skill-fundamental-factor-analysis) | 从季度财报计算并验证A股估值、质量和成长因子。 |
+| [`skill-ic-analysis`](quant/factors/skill-ic-analysis/) | `composite` | `—` | [quantskills/skill-ic-analysis](https://github.com/quantskills/skill-ic-analysis) | 评估量化因子的IC、分组表现和预测有效性。 |
+| [`skill-ml-factor-ensemble`](quant/factors/skill-ml-factor-ensemble/) | `composite` | `—` | [quantskills/skill-ml-factor-ensemble](https://github.com/quantskills/skill-ml-factor-ensemble) | 用防泄漏滚动验证将机器学习模型集成为因子元信号。 |
+| [`skill-overseas-equity-factor-miner`](quant/factors/skill-overseas-equity-factor-miner/) | `composite` | `—` | [quantskills/skill-overseas-equity-factor-miner](https://github.com/quantskills/skill-overseas-equity-factor-miner) | 发现并以IC、衰减和换手率验证港美股横截面alpha因子。 |
+| [`skill-quant-factor-directional-alpha`](quant/factors/skill-quant-factor-directional-alpha/) | `atomic` | `—` | [quantskills/skill-quant-factor-directional-alpha](https://github.com/quantskills/skill-quant-factor-directional-alpha) | 提供用于趋势、突破和反转研究的 OHLCV 方向因子库。 |
+| [`skill-quant-factor-risk-pattern-alpha`](quant/factors/skill-quant-factor-risk-pattern-alpha/) | `atomic` | `—` | [quantskills/skill-quant-factor-risk-pattern-alpha](https://github.com/quantskills/skill-quant-factor-risk-pattern-alpha) | 提供用于波动、K 线形态和回撤压力研究的 OHLCV 因子库。 |
+| [`skill-quant-factor-volume-stat-alpha`](quant/factors/skill-quant-factor-volume-stat-alpha/) | `atomic` | `—` | [quantskills/skill-quant-factor-volume-stat-alpha](https://github.com/quantskills/skill-quant-factor-volume-stat-alpha) | 提供用于成交量和量价统计研究的 OHLCV 因子库。 |
+| [`skill-residual-guided-factor-selection`](quant/factors/skill-residual-guided-factor-selection/) | `composite` | `—` | [quantskills/skill-residual-guided-factor-selection](https://github.com/quantskills/skill-residual-guided-factor-selection) | 使用残差 IC 和样本外评估筛选因子组合。 |
+| [`skill-quant-factor-skill-factory`](quant/infra/skill-quant-factor-skill-factory/) | `composite` | `—` | [quantskills/skill-quant-factor-skill-factory](https://github.com/quantskills/skill-quant-factor-skill-factory) | 批量生成、验证并打包框架中立的 OHLCV 因子技能。 |
+| [`skill-template`](quant/infra/skill-template/) | `composite` | `—` | [quantskills/skill-template](https://github.com/quantskills/skill-template) | 提供 QuantSkills 技能项目的模板结构和说明。 |
+| [`skill-index-rebalance-event-study`](quant/market/skill-index-rebalance-event-study/) | `composite` | `—` | [quantskills/skill-index-rebalance-event-study](https://github.com/quantskills/skill-index-rebalance-event-study) | 围绕指数纳入、剔除和权重调整公告或生效日运行可复现事件研究。 |
+| [`skill-model-hpo-evidence-driven`](quant/models/skill-model-hpo-evidence-driven/) | `composite` | `—` | [quantskills/skill-model-hpo-evidence-driven](https://github.com/quantskills/skill-model-hpo-evidence-driven) | 以固定验证流程和试验级证据优化量化多因子模型超参数。 |
+| [`skill-pair-correlation`](quant/models/skill-pair-correlation/) | `composite` | `—` | [quantskills/skill-pair-correlation](https://github.com/quantskills/skill-pair-correlation) | 计算和解释资产对的相关性、滚动关系及其研究用途。 |
+| [`skill-paper-replication`](quant/models/skill-paper-replication/) | `composite` | `—` | [quantskills/skill-paper-replication](https://github.com/quantskills/skill-paper-replication) | 支持论文检索、数据提取、实验复现和研究结果报告。 |
+| [`skill-quant-research`](quant/models/skill-quant-research/) | `composite` | `—` | [quantskills/skill-quant-research](https://github.com/quantskills/skill-quant-research) | 指导量化研究、回测设计和统计验证工作流。 |
+| [`skill-statistical-arbitrage-time-series`](quant/models/skill-statistical-arbitrage-time-series/) | `composite` | `—` | [quantskills/skill-statistical-arbitrage-time-series](https://github.com/quantskills/skill-statistical-arbitrage-time-series) | 构建统计套利时间序列研究并生成可追溯报告。 |
+| [`skill-time-series-analysis`](quant/models/skill-time-series-analysis/) | `composite` | `—` | [quantskills/skill-time-series-analysis](https://github.com/quantskills/skill-time-series-analysis) | 对金融时间序列进行诊断并生成分析报告。 |
+| [`skill-capital-flow-crowding-monitor`](quant/risk/skill-capital-flow-crowding-monitor/) | `composite` | `—` | [quantskills/skill-capital-flow-crowding-monitor](https://github.com/quantskills/skill-capital-flow-crowding-monitor) | 聚合融资融券、北向持股和大宗交易，计算资金一致性、背离与拥挤度分位信号。 |
+| [`skill-market-regime-analysis`](quant/risk/skill-market-regime-analysis/) | `composite` | `—` | [quantskills/skill-market-regime-analysis](https://github.com/quantskills/skill-market-regime-analysis) | 结合指数、宏观、期货期限结构和波动率特征划分A股市场状态。 |
+| [`skill-northbound-margin-monitor`](quant/risk/skill-northbound-margin-monitor/) | `composite` | `—` | [quantskills/skill-northbound-margin-monitor](https://github.com/quantskills/skill-northbound-margin-monitor) | 监测北向资金、融资融券和期货全景的多类风险信号。 |
+| [`skill-portfolio-liquidity-stress-test`](quant/risk/skill-portfolio-liquidity-stress-test/) | `composite` | `—` | [quantskills/skill-portfolio-liquidity-stress-test](https://github.com/quantskills/skill-portfolio-liquidity-stress-test) | 在成交量压力下估算组合清算天数、期限内变现、赎回缺口和冲击成本。 |
+| [`skill-quant-portfolio-risk`](quant/risk/skill-quant-portfolio-risk/) | `composite` | `—` | [quantskills/skill-quant-portfolio-risk](https://github.com/quantskills/skill-quant-portfolio-risk) | 分析组合风险暴露、约束和压力情景。 |
+| [`skill-risk-model`](quant/risk/skill-risk-model/) | `composite` | `—` | [quantskills/skill-risk-model](https://github.com/quantskills/skill-risk-model) | 构建多因子风险模型并进行风险归因。 |
+| [`skill-rolling-beta-exposure`](quant/risk/skill-rolling-beta-exposure/) | `composite` | `—` | [quantskills/skill-rolling-beta-exposure](https://github.com/quantskills/skill-rolling-beta-exposure) | 估计资产或组合相对于基准的滚动贝塔暴露。 |
+| [`skill-backtest-overfit`](quant/validation/skill-backtest-overfit/) | `composite` | `—` | [quantskills/skill-backtest-overfit](https://github.com/quantskills/skill-backtest-overfit) | 评估回测过拟合与多重检验风险，计算 DSR、PBO、净化交叉验证和 Harvey-Liu 折减。 |
+| [`skill-backtesting-bias-avoidance`](quant/validation/skill-backtesting-bias-avoidance/) | `composite` | `—` | [quantskills/skill-backtesting-bias-avoidance](https://github.com/quantskills/skill-backtesting-bias-avoidance) | 构建无前视偏差的回测并审计前视、幸存者、过拟合、成本和样本外检验风险。 |
+| [`skill-calendar-anomaly-scanner`](quant/validation/skill-calendar-anomaly-scanner/) | `composite` | `—` | [quantskills/skill-calendar-anomaly-scanner](https://github.com/quantskills/skill-calendar-anomaly-scanner) | 从带日期收益序列扫描日历异常，结合稳健检验、Bootstrap 和多重检验校正输出结果。 |
+| [`skill-factor-debug`](quant/validation/skill-factor-debug/) | `composite` | `—` | [quantskills/skill-factor-debug](https://github.com/quantskills/skill-factor-debug) | 提供按症状、病因和验证手段组织的因子失效诊断手册。 |
+| [`skill-factor-decay`](quant/validation/skill-factor-decay/) | `composite` | `—` | [quantskills/skill-factor-decay](https://github.com/quantskills/skill-factor-decay) | 分析多期限Rank IC、换手和分组收益的衰减，并估计半衰期。 |
+| [`skill-forecast-calibration-audit`](quant/validation/skill-forecast-calibration-audit/) | `composite` | `—` | [quantskills/skill-forecast-calibration-audit](https://github.com/quantskills/skill-forecast-calibration-audit) | 审计概率预测的校准程度，而非只评估样本排序。 |
+| [`skill-numerical-leak-check`](quant/validation/skill-numerical-leak-check/) | `composite` | `—` | [quantskills/skill-numerical-leak-check](https://github.com/quantskills/skill-numerical-leak-check) | 通过数值测试检测量化研究流程中的前视和数据泄漏。 |
+| [`skill-signal-stability-audit`](quant/validation/skill-signal-stability-audit/) | `composite` | `—` | [quantskills/skill-signal-stability-audit](https://github.com/quantskills/skill-signal-stability-audit) | 审计量化信号跨期和跨样本的稳定性。 |
+| [`skill-survivorship-universe-auditor`](quant/validation/skill-survivorship-universe-auditor/) | `composite` | `—` | [quantskills/skill-survivorship-universe-auditor](https://github.com/quantskills/skill-survivorship-universe-auditor) | 审计回测前的点时证券池成员、标识和退市收益数据。 |
+| [`skill-walk-forward-validator`](quant/validation/skill-walk-forward-validator/) | `composite` | `—` | [quantskills/skill-walk-forward-validator](https://github.com/quantskills/skill-walk-forward-validator) | 用净化和隔离的滚动窗口验证截面信号的样本外表现。 |
 
 ---
 

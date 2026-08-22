@@ -34,6 +34,7 @@ AI 越强，你反而越累--每次开新会话它都从零开始：不懂你项
 | `governance/` | 项目治理：自动清理、避坑清单、项目管理员、重构检查、参考分析 | `auto-cleanup`、`avoid-pitfalls`、`refactoring-checklist` |
 | `methodology/` | 方法论：好问题、决策系统、解构分析、JTBD、学习计划、HV 分析、历史标准答案、聊天室研讨、TDD、原型法 | `good-question`、`decision-system`、`deconstruct`、`jtbd`、`standard-answer`、`tdd` |
 | `domain/` | 领域 skill：A 股数据采集（股票列表、日K线、板块、复权因子、降级策略） | `a-stock-data` |
+| `quant/` | 量化投资 skill（[quantskills](https://github.com/quantskills/quantskills) 社区精选导入 58 个）：因子挖掘方法论、风控与组合优化、数据质量/PIT 验证、回测与模型 | `skill-factor-mine`、`skill-ic-analysis`、`skill-risk-model`、`skill-walk-forward-validator` 等 |
 | `ai-backends/` | AI 提供商适配：多渠道绘图聚合（Codex / DashScope / Replicate 等）、Gemini Web API | `image-gen`、`gemini-web` |
 | `agent-adapters/` | 平台适配层：跨平台工作流（Claude Code / Codex 工具对照）、Agent 工作台迁移、跨 Agent 装 skill | `agent-migration`、`tools-discipline`、`bridge` |
 | `meta/` | 元能力：多会话教学、创建新 skill 模板、知识库整洁、skill 安全清理 | `teach`、`write-a-skill`、`neat-freak`、`skill-cleaner` |

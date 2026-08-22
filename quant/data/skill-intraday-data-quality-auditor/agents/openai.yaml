@@ -1,0 +1,4 @@
+interface:
+  display_name: "日内行情质量审计"
+  short_description: "Audit intraday timestamps prices volumes and missing bars"
+  default_prompt: "Use $intraday-data-quality-auditor to audit these intraday OHLCV bars before research or backtesting."

@@ -1,0 +1,2 @@
+# 跨市场资金面/拥挤监测仅用标准库（statistics/手写标准化与分位）；
+# 生产取数依赖 panda_data SDK（由组织 skill-pandadata-api 提供，不在此强制安装）。

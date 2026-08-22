@@ -1,0 +1,22 @@
+name: skill-build-b10-factor-evaluation
+description: QuantSkills B10 factor evaluation skill for IC/RankIC, ICIR, stratified backtests, turnover, decay curves, and HTML reports.
+license: GPL-3.0-only
+maintainer: quantskills
+entrypoint: ../SKILL.md
+load:
+  - ../SKILL.md
+  - ../开发产物/SKILL.md
+  - ../生产产物/SKILL.md
+runtime_adapters:
+  - codex
+  - claude-code
+  - cursor
+  - hermes
+  - openclaw
+commands:
+  test: python scripts/test.py
+  demo: python scripts/demo.py
+scope:
+  data_access: caller_provided_factor_panel
+  network: false
+  advice: research_diagnostics_only

@@ -1,0 +1,56 @@
+{
+  "name": "build-b10-factor-evaluation",
+  "version": "1.5.0",
+  "license": "GPL-3.0-only",
+  "maintainer": "quantskills",
+  "repository_type": "skill",
+  "metadata": {
+    "organization": "QuantSkills",
+    "organization_url": "https://github.com/quantskills",
+    "repository": "skill-build-b10-factor-evaluation",
+    "repository_url": "https://github.com/quantskills/skill-build-b10-factor-evaluation",
+    "project_type": "skill",
+    "collection": "build"
+  },
+  "build_id": "B10",
+  "build_name": "IC测试与因子评估体系",
+  "description": "IC测试与因子评估体系，提供 IC/RankIC、ICIR、时间稳定性、分布诊断、分层回测、换手率、衰减曲线、股票池筛选、达标表与科研级 HTML 可视化报告。",
+  "tags": ["quant", "build", "development", "factor-evaluation"],
+  "entrypoint": "scripts/build.py",
+  "delivery_mode": "hybrid",
+  "inputs": [
+    {
+      "name": "factor_panel",
+      "schema": {
+        "trade_date": "date/string",
+        "ts_code": "string",
+        "factor_value": "float",
+        "forward_return": "float"
+      },
+      "optional_columns": [
+        "forward_return_{1,2,3,5,10,20}d",
+        "is_pool_{all_a,hs300,zz500,zz1000,zz2000}",
+        "stock_pool_memberships",
+        "primary_stock_pool"
+      ],
+      "source": "调用方传入的标准结构化数据 / PandaAI data 桥接生成"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "evaluation_result",
+      "schema_ref": "scripts/constants.py:OUTPUT_COLUMNS",
+      "primary_key": ["trade_date", "build_id", "target_id", "result_type"]
+    }
+  ],
+  "production_artifact": {
+    "path": "生产产物/数据库.parquet",
+    "format": "parquet",
+    "write_modes": ["overwrite", "append"]
+  },
+  "callable_by": ["agent", "alpha"],
+  "compatible_with": ["any-alpha-*"],
+  "data_sources": ["caller_provided_panel"],
+  "changelog": "references/CHANGELOG.md",
+  "scheduler": "scripts/daily_runner.py"
+}

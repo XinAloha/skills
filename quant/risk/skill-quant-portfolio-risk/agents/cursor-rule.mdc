@@ -1,0 +1,11 @@
+---
+description: "Apply the Quant Portfolio Risk skill to governed, constraint-aware portfolio decisions."
+globs:
+alwaysApply: true
+---
+
+# Quant Portfolio Risk
+
+Read `SKILL.md` before making changes. Start with the mandate and risk budget; keep hard limits testable; distinguish targets, orders, fills, and accounting positions; and fail closed on missing or stale risk inputs. Include costs, liquidity, stress, governance, and reconciliation checks.
+
+Default to analysis, simulation, or paper trading. Do not alter broker or account state, promise returns, or present output as personalized investment advice.

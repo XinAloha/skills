@@ -1,0 +1,4 @@
+interface:
+  display_name: "双标的相关性 / 对冲"
+  short_description: "两标的收益相关性、对冲 beta 与对数价差 z-score，自动路由 A股/港股/美股"
+  default_prompt: "Use $pair_correlation to analyze the relationship between these two symbols: report full and recent 20/60d return correlation, the hedge beta (A on B), and the latest log-spread z-score, then reproduce the disclaimer."

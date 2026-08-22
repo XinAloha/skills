@@ -1,0 +1,67 @@
+---
+description: 当用户请求计算 Alpha101 / Alpha191 公式因子，或从长表 OHLCV CSV 生成宽表因子值时，使用本 Skill。
+alwaysApply: false
+---
+
+# Factor Alpha191 Alpha101 Skill
+
+当用户请求 Alpha101、Alpha191、公式因子库、从长表 OHLCV CSV 计算因子值、批量计算因子或指定因子计算时，使用本地 Skill 包。
+
+首选本地项目路径：
+
+```text
+.cursor/skills/factor-alpha191-alpha101
+```
+
+工作流：
+
+1. 先读取 `.cursor/skills/factor-alpha191-alpha101/SKILL.md`。
+2. 仅当 `SKILL.md` 要求或任务需要细节时，读取 `references/` 下的引用文件。
+3. 按照 `SKILL.md` 的说明，从 Skill 根目录运行内置脚本。
+4. 保持文档中定义的 API 名称、参数名、文件路径、公式名称、输出约定、验证边界和数据来源边界。
+5. 不要编造 Skill 文件中未支持的数据接口、凭证、因子定义、公式行为或运行时行为。
+6. 将输出视为公式因子值，不要解释为投资建议、交易信号、收益承诺或生产交易验证。
+
+## 常用入口
+
+在仓库根目录运行：
+
+```bash
+python scripts/compute_alpha_factors.py --input examples/compute_input.json
+```
+
+使用自定义输入文件：
+
+```bash
+python scripts/compute_alpha_factors.py --input <input-json>
+```
+
+指定输出目录：
+
+```bash
+python scripts/compute_alpha_factors.py --input <input-json> --output <output-dir>
+```
+
+## 输入输出
+
+运行前阅读：
+
+```text
+references/input_schema.md
+```
+
+运行后阅读：
+
+```text
+references/output_contract.md
+```
+
+稳定输出可能包括：
+
+```text
+alpha101_values.csv
+alpha191_values.csv
+alpha_compute_summary.json
+skipped_factors.json
+run_config.json
+```

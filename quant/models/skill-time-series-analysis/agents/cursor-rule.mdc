@@ -1,0 +1,17 @@
+---
+description: Time-series diagnostics -- stationarity, cointegration, half-life, KDE/QQ
+globs: ["**/*time*series*.py", "**/*stationarity*.py", "**/*cointegration*.py"]
+alwaysApply: false
+---
+
+# Time Series Analysis
+
+When diagnosing a financial time series, use the API pyramid:
+
+1. For user-facing single-series output, start with `generate_time_series_report`.
+2. For user-facing spread output, start with `generate_spread_report`.
+3. For user-facing pair output, start with `generate_pair_cointegration_report`.
+4. Include original-series evidence and Log diff 1/5/10 diagnostics in price reports.
+5. Use `analyze_price_series`, `analyze_spread`, or `analyze_pair_cointegration` for custom workflows.
+6. Report conclusions before evidence.
+7. Phrase strategy and factor output as research directions only.

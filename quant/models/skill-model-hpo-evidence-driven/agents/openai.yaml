@@ -1,0 +1,4 @@
+interface:
+  display_name: "Model HPO Evidence Driven"
+  short_description: "Evidence-driven and grid HPO for quant models"
+  default_prompt: "Use $model-hpo-evidence-driven to run a reproducible LGBM or MLP hyperparameter search and report the selected compatibility profile, trial evidence, and best parameters."

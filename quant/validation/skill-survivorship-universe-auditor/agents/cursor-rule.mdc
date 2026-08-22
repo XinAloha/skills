@@ -1,0 +1,22 @@
+---
+description: Use the Survivorship Universe Auditor skill when the request matches its SKILL.md description.
+alwaysApply: false
+---
+
+# Survivorship Universe Auditor Skill
+
+When the user asks to reconstruct point-in-time universes or audit listing, delisting, stable-identity, eligibility, and delisting-return evidence, use the local skill package.
+
+Preferred local project path:
+
+```text
+.cursor/skills/survivorship-universe-auditor
+```
+
+Workflow:
+
+1. Read `.cursor/skills/survivorship-universe-auditor/SKILL.md`.
+2. Load files under `references/` only when the workflow or task requires them.
+3. Run bundled scripts from the skill root exactly as documented.
+4. Preserve the input contract, lifecycle boundaries, formulas, validation limits, and evidence limitations.
+5. Do not invent security histories, data interfaces, credentials, returns, or audit results.

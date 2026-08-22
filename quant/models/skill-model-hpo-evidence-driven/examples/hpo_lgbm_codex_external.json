@@ -1,0 +1,176 @@
+{
+  "output_root": "../outputs/lgbm_codex_external_smoke",
+  "config": {
+    "compatibility": {
+      "profile": "legacy_v1"
+    },
+    "task": {
+      "name": "skill_lgbm_codex_external_smoke",
+      "seed": 42
+    },
+    "input": {
+      "feature_path": "toy_factors.csv",
+      "label_path": "toy_labels.csv"
+    },
+    "data": {
+      "start_date": 20200102,
+      "end_date": 20200331,
+      "date_col": "date",
+      "ticker_col": "symbol",
+      "label_col": "y",
+      "ticker_dtype": "preserve",
+      "all_null_feature_policy": "allow",
+      "strict_point_in_time": false,
+      "compute_hash": false
+    },
+    "search": {
+      "model_type": "lgbm",
+      "method": "adaptive_tpe",
+      "sampler": "evidence_probe",
+      "probe_fraction": 0.5,
+      "max_trials": 4,
+      "max_rounds": 2,
+      "trials_per_round": 2,
+      "random_start_trials": 2,
+      "top_fraction": 0.5,
+      "seed": 42,
+      "space": {
+        "num_leaves": {
+          "type": "choice",
+          "values": [
+            7,
+            15
+          ]
+        },
+        "max_depth": {
+          "type": "choice",
+          "values": [
+            3,
+            4
+          ]
+        },
+        "learning_rate": {
+          "type": "loguniform",
+          "low": 0.03,
+          "high": 0.12
+        },
+        "n_estimators": {
+          "type": "choice",
+          "values": [
+            20,
+            40
+          ]
+        },
+        "min_child_samples": {
+          "type": "choice",
+          "values": [
+            4,
+            8
+          ]
+        },
+        "subsample": {
+          "type": "uniform",
+          "low": 0.8,
+          "high": 1.0
+        },
+        "colsample_bytree": {
+          "type": "uniform",
+          "low": 0.8,
+          "high": 1.0
+        },
+        "lambda_l1": {
+          "type": "loguniform",
+          "low": 1e-06,
+          "high": 0.01
+        },
+        "lambda_l2": {
+          "type": "loguniform",
+          "low": 1e-06,
+          "high": 0.1
+        },
+        "min_split_gain": {
+          "type": "choice",
+          "values": [
+            0.0,
+            0.001
+          ]
+        }
+      }
+    },
+    "model": {
+      "type": "lgbm"
+    },
+    "validation": {
+      "method": "fixed_train_valid_test",
+      "train_start": 20200102,
+      "train_end": 20200214,
+      "valid_start": 20200218,
+      "valid_end": 20200306,
+      "test_start": 20200310,
+      "test_end": 20200331,
+      "embargo_days": 1,
+      "min_assets_per_date": 3
+    },
+    "training": {
+      "label_window": 1
+    },
+    "time": {
+      "trade_lag_days": 0
+    },
+    "evaluation": {
+      "inner_loop": "fast_evaluator",
+      "objective": "rankic_ir"
+    },
+    "fast_evaluator": {
+      "top_quantile": 0.25,
+      "bottom_quantile": 0.25
+    },
+    "preprocess": {
+      "winsorize": {
+        "enabled": true,
+        "lower": 0.01,
+        "upper": 0.99,
+        "by": "date"
+      },
+      "normalize": {
+        "method": "zscore_by_date"
+      },
+      "fillna": {
+        "method": "none"
+      },
+      "after_normalize_fillna": "none"
+    },
+    "space_controller": {
+      "enabled": true,
+      "mode": "llm_guarded",
+      "min_trials_for_adapt": 2,
+      "max_next_round_trials": 2,
+      "allow_stop": false
+    },
+    "llm": {
+      "enabled": false
+    },
+    "final_selector": {
+      "enabled": true,
+      "mode": "llm_guarded",
+      "top_k": 2,
+      "neighbors_per_candidate": 1,
+      "max_extra_trials": 2,
+      "numeric_radius": 0.05,
+      "log_numeric_radius": 0.1,
+      "choice_neighbor_steps": 1,
+      "min_neighbor_success": 1,
+      "max_score_drop": 0.03,
+      "fallback": "score_best"
+    },
+    "decision_provider": {
+      "type": "codex_external",
+      "decision_dir": "codex_decisions",
+      "wait_for_decision": false,
+      "on_missing": "fallback",
+      "on_invalid": "fallback",
+      "timeout_seconds": 0,
+      "poll_interval_seconds": 2
+    }
+  }
+}

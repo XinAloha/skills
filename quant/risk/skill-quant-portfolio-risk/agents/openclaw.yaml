@@ -1,0 +1,5 @@
+name: quant-portfolio-risk
+description: Governed quantitative portfolio construction, risk, constraints, stress testing, and monitoring.
+entrypoint: ../SKILL.md
+license: GPL-3.0-only
+project_type: skill

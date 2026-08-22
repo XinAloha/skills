@@ -1,0 +1,20 @@
+{
+  "stock_code_a": "0700.HK",
+  "stock_code_b": "9988.HK",
+  "market_a": "hk",
+  "market_b": "hk",
+  "start_date": "20260101",
+  "end_date": "20260526",
+  "aligned_observations": 96,
+  "correlation": 0.712,
+  "correlation_recent_20": 0.664,
+  "correlation_recent_60": 0.731,
+  "beta_a_on_b": 0.884,
+  "hedge_ratio": 0.884,
+  "spread_zscore": -1.83,
+  "spread_zscore_window": 60,
+  "last_close_a": 402.0,
+  "last_close_b": 78.5,
+  "price_ratio": 5.121,
+  "interpretation_hint": "z<-2 → A cheap vs B (long A / short B mean-revert setup); z>2 → reverse."
+}

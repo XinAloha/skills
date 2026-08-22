@@ -21,6 +21,7 @@ CATEGORY_ORDER = [
     "engineering", "testing", "git", "governance", "methodology", "workmode",
     "meta", "misc", "domain", "agent-adapters",
     "content", "productivity", "business", "ai-backends", "loop-engineering",
+    "quant",
 ]
 
 CATEGORY_BLURB = {
@@ -39,6 +40,7 @@ CATEGORY_BLURB = {
     "business": "Business / product / personal diagnostic frameworks (dontbesilent toolkit).",
     "ai-backends": "AI provider adapters (image gen, gemini-web, etc.).",
     "loop-engineering": "Project-level agent loop qualification, contracts, state, harnesses, scaffolding, and audits.",
+    "quant": "Quantitative investment skills (quantskills community): data, factor research, market analysis, risk, backtesting, models, validation, news, infrastructure.",
 }
 
 
@@ -67,6 +69,10 @@ def list_native_skills(imported_targets: set[str]) -> list[tuple[str, str]]:
                 continue
             # Skip auxiliary files; both dirs and standalone .md files count
             if entry.is_dir():
+                # A category subdir is only a skill if it carries a SKILL.md; otherwise
+                # it's a container (e.g. quant/<subdir>) holding imported skills.
+                if not (cat_dir / entry.name / "SKILL.md").exists():
+                    continue
                 found.append((cat, entry.name + "/"))
             elif entry.suffix == ".md":
                 found.append((cat, entry.name))

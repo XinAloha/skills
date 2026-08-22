@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local outputs
+outputs/
+examples/outputs/
+.skill_outputs/
+
+# Local-only configs and data
+*.local.json
+*.local.yaml
+.env
+
+# Editors and operating systems
+.DS_Store
+
+# Raw exports and large datasets
+*.parquet
+prices/
+real_runs/
+sources/
+examples/residual_search/toy_data/

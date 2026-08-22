@@ -1,0 +1,4 @@
+interface:
+  display_name: "Calendar Anomaly Scanner"
+  short_description: "Calendar contrasts with HAC, block bootstrap, BH-FDR and robustness."
+  default_prompt: "Scan dated returns for weekday, month and turn-of-month contrasts. Keep HAC and bootstrap p-values separate, apply BH-FDR to one p-value family, and report half-sample robustness."

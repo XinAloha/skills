@@ -1,0 +1,5 @@
+name: quant-research
+description: Reproducible, point-in-time quantitative research and validation workflow.
+entrypoint: ../SKILL.md
+license: GPL-3.0-only
+project_type: skill

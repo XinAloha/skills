@@ -1,0 +1,8 @@
+---
+description: Load the leakage-safe ML factor ensemble instructions.
+globs: ["**/*.py", "**/*.csv", "**/*.md"]
+alwaysApply: false
+---
+
+Read `SKILL.md` before changing or running this skill. Keep chronological walk-forward,
+purging, embargo, and explicit OOS labeling intact.

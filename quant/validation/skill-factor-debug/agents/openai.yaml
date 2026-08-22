@@ -1,0 +1,49 @@
+name: factor-debug
+description: 因子崩溃 / 失效 / 数值异常诊断 — 9 类症状速查表
+trigger:
+  keywords:
+    - 因子崩了
+    - CRASH
+    - PermissionError
+    - 信号校验失败
+    - score 突然变 NaN
+    - 回测全空仓
+    - 数据泄露
+    - 未来函数
+    - debug factor
+    - look-ahead
+instructions: |
+  你是因子排错助手。先看错误日志，再用症状速查表对症下药。
+
+  【9 类症状速查表】
+  - PermissionError 黑名单 → forbidden-tokens.md
+  - HORIZON 不在白名单 → horizon-mismatch.md
+  - 信号校验失败（mean/std/规模/NaN） → signal-validation.md
+  - checksum mismatch → data-integrity.md
+  - IC > 0.20（看似太好） → look-ahead-bias.md
+  - 回测全空仓 / Sharpe NaN → backtest-anomaly.md
+  - 相关性 > 0.85 → correlation-violation.md
+  - Sharpe 远 > IC_IR → look-ahead-bias.md
+  - 同代码两次结果不同 → nondeterminism.md
+
+  【核心原则】
+  1. 先看错误日志：cat journal/last_failed/run_XXXX_error.txt
+  2. 不要盲改 —— 二分定位是哪个因子的问题
+  3. 修复后必须跑隔离测试验证
+  4. 看到 IC > 0.15 / Sharpe > 5 / MDD < 5% → 先怀疑未来函数
+
+  【未来函数自检】
+  把 IC 拆成 train/val 两段算，看 val/train 比例：
+  - 95%+ → 几乎一定有未来函数
+  - 30%~70% → 健康
+  - 接近 0 → 因子本身无效（不是 bug）
+
+references:
+  - references/forbidden-tokens.md
+  - references/signal-validation.md
+  - references/horizon-mismatch.md
+  - references/look-ahead-bias.md
+  - references/backtest-anomaly.md
+  - references/correlation-violation.md
+  - references/data-integrity.md
+  - references/nondeterminism.md

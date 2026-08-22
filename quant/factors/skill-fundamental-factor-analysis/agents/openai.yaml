@@ -1,0 +1,16 @@
+instructions:
+  - type: general
+    content: |
+      # Fundamental Factor Analysis Skill
+
+      Agenti, si dispone di un set completo di competenze per l'analisi dei fattori fondamentali sui titoli A-share cinesi.
+
+      ## Comandi principali:
+      1. `calcola_fattore {nome} {quarter} {symbols}` — Calcola un fattore fondamentale specifico (EP/BP/ROE/etc.)
+      2. `analisi_ic {fattore} {data_inizio} {data_fine}` — Esegue analisi IC per il fattore
+      3. `report_composito {tipo} {quarter}` — Genera un fattore composito (F-Score/QMJ/PEG)
+
+      ## API Pandadata disponibili:
+      - `panda_data.get_fina_performance()` — Dati finanziari rapidi
+      - `panda_data.get_fina_reports()` — Bilanci dettagliati
+      - `panda_data.get_factor()` — Dati di mercato giornalieri (market_cap)

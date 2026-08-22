@@ -1,0 +1,33 @@
+---
+description: IC 多维诊断 — 双 IC + 衰减 + 子样本 + Jaccard + 时序
+globs: ["ic_*.py", "**/ic/*.py", "metrics*.py", "diagnose*.py"]
+alwaysApply: false
+---
+
+# IC Analysis（Cursor 项目规则）
+
+当用户要求"看 IC 衰减 / 在哪类股票上有效 / IC 时序"时，遵循以下规则：
+
+## 核心规则
+
+1. **5 项分析全做**：双 IC / IC decay / 子样本 / Jaccard / 时序图
+2. **forward return 公式**：`open.shift(-1).pct_change(H).shift(-H)`
+3. **IC_IR 年化因子**：`√(252/h)` 不是 `√252`
+4. **子样本切分至少做市值** —— 波动 / 行业推荐
+5. **报告末尾必须给综合判读**：因子类型 / 推荐 H / 实盘风险 / 后续动作
+
+## 触发条件
+
+- 用户问"IC 衰减 / IC decay / 在哪类股票上有效 / 信号稳不稳"
+- 编辑 `ic_*.py` / `metrics*.py` / `diagnose*.py`
+
+## 详细参考
+
+打开 `skills/ic-analysis/references/`：
+
+- `dual-ic.md` — rank vs Pearson 对照
+- `ic-decay.md` — 衰减曲线 + 形态分类
+- `subsample-ic.md` — 市值/波动/行业切片
+- `top-basket-stability.md` — Jaccard 算法 + 解读表
+- `ic-timeline.md` — 时序图 + regime shift 检测
+- `report-format.md` — 综合诊断报告模板

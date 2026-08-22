@@ -1,0 +1,27 @@
+[project]
+name = "residual-guided-factor-selection"
+version = "0.3.0"
+description = "Residual-guided multi-path factor selection for quantitative factor banks"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.2",
+  "pyarrow>=17",
+  "PyYAML>=6",
+  "threadpoolctl>=3.5",
+  "lightgbm>=4.5",
+  "scikit-learn>=1.3",
+]
+
+[project.scripts]
+residual-factor-selection = "residual_factor_selection.cli:main"
+residual-selection-backtest = "residual_factor_selection.backtest_adapter:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["scripts"]
+include = ["residual_factor_selection*"]

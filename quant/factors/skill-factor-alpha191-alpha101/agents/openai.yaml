@@ -1,0 +1,5 @@
+name: factor-alpha191-alpha101
+entrypoint: SKILL.md
+display_name: Factor Alpha191 Alpha101
+short_description: Compute Alpha101 and Alpha191 factor-library values based on JoinQuant formulas from OHLCV CSV data.
+default_prompt: Read examples/compute_input.json, run the Alpha101/Alpha191 factor computation, and report the output artifact paths.

@@ -1,0 +1,11 @@
+metadata:
+  organization: QuantSkills
+  organization_url: https://github.com/quantskills
+  repository: skill-residual-guided-factor-selection
+  repository_url: https://github.com/quantskills/skill-residual-guided-factor-selection
+  project_type: skill
+  collection: factor-selection
+  license: GPL-3.0-only
+  status: community-project
+  maintainer: X-Tech-group
+  maintainer_type: team

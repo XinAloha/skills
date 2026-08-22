@@ -1,0 +1,22 @@
+---
+description: Use the Corporate Action Adjustment Auditor skill when the request matches its SKILL.md description.
+alwaysApply: false
+---
+
+# Corporate Action Adjustment Auditor Skill
+
+When the user asks to audit raw and adjusted equity prices, dividends, splits, adjustment factors, or related return consistency, use the local skill package.
+
+Preferred local project path:
+
+```text
+.cursor/skills/corporate-action-adjustment-auditor
+```
+
+Workflow:
+
+1. Read `.cursor/skills/corporate-action-adjustment-auditor/SKILL.md`.
+2. Load files under `references/` only when the workflow or task requires them.
+3. Run bundled scripts from the skill root exactly as documented.
+4. Preserve the input contract, event conventions, formulas, validation limits, and evidence boundaries.
+5. Do not invent data interfaces, credentials, corporate actions, or audit results.

@@ -1,0 +1,7 @@
+interface:
+  display_name: "因子砌墙师"
+  short_description: "单因子回测与 alpha 研究"
+  icon_small: "./assets/factor-mason.svg"
+  icon_large: "./assets/factor-mason.svg"
+  brand_color: "#0F766E"
+  default_prompt: "使用 $factor-mason 设计一个单因子回测，并解释信号逻辑、坑点和验证步骤。"

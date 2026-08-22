@@ -1,0 +1,56 @@
+interface:
+  display_name: "Northbound-Margin-Monitor"
+  short_description: "Daily A-share panorama monitor: 25 signal detectors across northbound, margin, futures, microstructure with LLM macro analysis."
+  default_prompt: "Use the northbound-margin-monitor MCP server to run today's A-share capital flow panorama analysis."
+
+tools:
+  - name: run_panorama_monitor
+    description: |
+      Run the full A-share panorama monitor: northbound capital + margin trading
+      + stock index futures + microstructure signals. 25 detectors, 4 resonance
+      patterns, 0-100 composite score with LLM macro analysis.
+    parameters:
+      date:
+        type: string
+        description: Target trading date (YYYYMMDD). Defaults to latest trading day.
+        required: false
+      summary:
+        type: boolean
+        description: Use summary mode for LLM analysis (150-200 chars). Default false.
+        required: false
+      top_n:
+        type: integer
+        description: Number of top margin stocks to display. Default 20.
+        required: false
+
+  - name: get_latest_report
+    description: |
+      Read and return the most recent panorama monitor report (Markdown or JSON).
+      Use this to check results without re-running the analysis.
+    parameters:
+      full_content:
+        type: boolean
+        description: Return full report content. Default true.
+        required: false
+
+  - name: check_trading_day
+    description: |
+      Check if a given date is an A-share trading day.
+      Use this before running analysis to avoid running on holidays.
+    parameters:
+      date:
+        type: string
+        description: Date in YYYYMMDD format. Defaults to latest trading day.
+        required: false
+
+# MCP server configuration
+mcp:
+  command: python
+  args: ["mcp_server.py"]
+  cwd: "${SKILL_ROOT}"
+  env:
+    ANTHROPIC_AUTH_TOKEN: "${ANTHROPIC_AUTH_TOKEN}"
+    ANTHROPIC_BASE_URL: "${ANTHROPIC_BASE_URL}"
+    ANTHROPIC_MODEL: "${ANTHROPIC_MODEL}"
+    DEFAULT_USERNAME: "${DEFAULT_USERNAME}"
+    DEFAULT_PASSWORD: "${DEFAULT_PASSWORD}"

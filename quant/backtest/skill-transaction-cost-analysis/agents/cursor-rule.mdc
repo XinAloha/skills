@@ -1,0 +1,8 @@
+---
+description: Load the transaction cost analysis instructions.
+globs: ["**/*.py", "**/*.csv", "**/*.md"]
+alwaysApply: false
+---
+
+Read `SKILL.md` before changing or running this skill. Keep benchmark conventions,
+fill-level attribution, source dates, and model approximations explicit.

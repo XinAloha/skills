@@ -1,0 +1,52 @@
+{
+  "factors": [
+    {
+      "name": "factor_volume_exhaustion_reversal",
+      "description": "放量下跌后量能衰竭的短期反转研究候选。",
+      "formula": "negative_return_3d * volume_shock_20d * positive_volume_decay_3d",
+      "code": "def factor_volume_exhaustion_reversal(df):\n    ordered = df.copy().sort_values(['instrument', 'date'])\n    grouped = ordered.groupby('instrument', group_keys=False)\n    ret_3d = grouped['close'].pct_change(3)\n    vol_avg_20d = grouped['volume'].transform(lambda s: s.rolling(20, min_periods=10).mean())\n    volume_shock = ordered['volume'] / vol_avg_20d.replace(0, np.nan)\n    volume_decay = -grouped['volume'].pct_change(3)\n    values = (-ret_3d) * volume_shock * volume_decay.clip(lower=0)\n    values = values.replace([np.inf, -np.inf], np.nan)\n    return values.reindex(df.index)\n",
+      "metadata": {
+        "source_skill": "factor-idea-generation",
+        "source_layer": "price_volume_dynamics",
+        "source_idea": "seed_volume_exhaustion_reversal",
+        "source_lenses": [{"lens_id": "price_volume_coherence.volume_exhaustion", "origin": "builtin", "source_ids": []}],
+        "research_source_ids": [],
+        "suggested_horizon_days": 5,
+        "validation_status": "unvalidated_research_candidate"
+      }
+    },
+    {
+      "name": "factor_multiscale_trend_consistency",
+      "description": "短中期方向一致并经历史波动调整的趋势研究候选。",
+      "formula": "return_5d / volatility_20d * same_sign(return_5d, return_20d)",
+      "code": "def factor_multiscale_trend_consistency(df):\n    ordered = df.copy().sort_values(['instrument', 'date'])\n    grouped = ordered.groupby('instrument', group_keys=False)\n    ret_5d = grouped['close'].pct_change(5)\n    ret_20d = grouped['close'].pct_change(20)\n    daily_ret = grouped['close'].pct_change()\n    volatility_20d = daily_ret.groupby(ordered['instrument']).transform(lambda s: s.rolling(20, min_periods=10).std())\n    consistency = (np.sign(ret_5d) == np.sign(ret_20d)).astype(float)\n    values = ret_5d / volatility_20d.replace(0, np.nan) * consistency\n    values = values.replace([np.inf, -np.inf], np.nan)\n    return values.reindex(df.index)\n",
+      "metadata": {
+        "source_skill": "factor-idea-generation",
+        "source_layer": "multiscale_complexity",
+        "source_idea": "seed_multiscale_trend_consistency",
+        "source_lenses": [{"lens_id": "fractal.cross_horizon_consistency", "origin": "builtin", "source_ids": []}],
+        "research_source_ids": [],
+        "suggested_horizon_days": 5,
+        "validation_status": "unvalidated_research_candidate"
+      }
+    },
+    {
+      "name": "factor_lower_shadow_volume_absorption",
+      "description": "放量长下影并收于日内高位的卖压吸收研究候选。",
+      "formula": "lower_shadow_ratio * close_location * volume_shock_20d",
+      "code": "def factor_lower_shadow_volume_absorption(df):\n    ordered = df.copy().sort_values(['instrument', 'date'])\n    grouped = ordered.groupby('instrument', group_keys=False)\n    price_range = (ordered['high'] - ordered['low']).replace(0, np.nan)\n    lower_shadow = np.minimum(ordered['open'], ordered['close']) - ordered['low']\n    lower_shadow_ratio = lower_shadow / price_range\n    close_location = (ordered['close'] - ordered['low']) / price_range\n    vol_avg_20d = grouped['volume'].transform(lambda s: s.rolling(20, min_periods=10).mean())\n    volume_shock = ordered['volume'] / vol_avg_20d.replace(0, np.nan)\n    values = lower_shadow_ratio.clip(lower=0) * close_location.clip(0, 1) * volume_shock\n    values = values.replace([np.inf, -np.inf], np.nan)\n    return values.reindex(df.index)\n",
+      "metadata": {
+        "source_skill": "factor-idea-generation",
+        "source_layer": "geometric_fusion",
+        "source_idea": "seed_lower_shadow_volume_absorption",
+        "source_lenses": [
+          {"lens_id": "bar_shape.shadow_balance", "origin": "builtin", "source_ids": []},
+          {"lens_id": "price_volume_coherence.price_volume_synchronization", "origin": "builtin", "source_ids": []}
+        ],
+        "research_source_ids": [],
+        "suggested_horizon_days": 3,
+        "validation_status": "unvalidated_research_candidate"
+      }
+    }
+  ]
+}

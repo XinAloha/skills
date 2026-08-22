@@ -1,0 +1,4 @@
+interface:
+  display_name: "Signal Stability Audit"
+  short_description: "Rank persistence, basket churn, half-life and cost-drag diagnostics."
+  default_prompt: "Audit the supplied signal panel for rank persistence, Jaccard turnover, half-life, quintile migration and cost drag using the user's actual rebalance interval."

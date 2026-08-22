@@ -1,0 +1,22 @@
+---
+description: Use the Index Rebalance Event Study skill when the request matches its SKILL.md description.
+alwaysApply: false
+---
+
+# Index Rebalance Event Study Skill
+
+When the user asks to study index additions, deletions, weight changes, announcement dates, effective dates, abnormal returns, or abnormal volume, use the local skill package.
+
+Preferred local project path:
+
+```text
+.cursor/skills/index-rebalance-event-study
+```
+
+Workflow:
+
+1. Read `.cursor/skills/index-rebalance-event-study/SKILL.md`.
+2. Load files under `references/` only when the workflow or task requires them.
+3. Run bundled scripts from the skill root exactly as documented.
+4. Preserve event anchors, input contracts, formulas, validation limits, and evidence boundaries.
+5. Do not invent data interfaces, credentials, index notices, events, or study results.

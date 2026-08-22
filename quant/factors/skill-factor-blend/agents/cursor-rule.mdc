@@ -1,0 +1,15 @@
+---
+description: Factor combination workflow for Cursor agents
+globs:
+alwaysApply: false
+---
+
+When the user asks to combine factors, build a composite alpha, choose factor weights, reduce redundant factors, or construct a multi-factor signal, follow `SKILL.md`.
+
+Key requirements:
+
+- Only combine factors with the same horizon, label kind, universe, and standardization.
+- Require single-factor evaluation reports before weighting.
+- Compute factor correlation and top-bucket overlap before assigning final weights.
+- Do not use test-period results for selection or weighting.
+- Re-evaluate the composite signal as a new factor.

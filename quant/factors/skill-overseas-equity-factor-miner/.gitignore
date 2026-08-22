@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.DS_Store
+# Git hygiene: raw exports and large data stay out of the repo
+*.parquet
+prices/
+real_runs/
+sources/

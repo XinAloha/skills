@@ -1,0 +1,37 @@
+name: time-series-analysis
+description: Time-series diagnostics for price, spread, and pair-analysis workflows.
+trigger:
+  keywords:
+    - time series analysis
+    - 时序分析
+    - stationarity
+    - 平稳性
+    - Hurst
+    - ADF
+    - KPSS
+    - cointegration
+    - 协整
+    - half-life
+    - 半衰期
+    - KDE
+    - QQ plot
+    - time-series report
+    - 自动时序检测报告
+instructions: |
+  For a user-facing single-series request, call generate_time_series_report
+  first and return its Markdown. For spread requests, call generate_spread_report.
+  For two related series, call generate_pair_cointegration_report. Use
+  analyze_price_series, analyze_spread, or analyze_pair_cointegration for custom
+  workflows. Single-series reports should include original-series evidence and
+  Log diff 1/5/10 diagnostics. Report conclusions before evidence, and describe
+  strategy/factor output as research directions only.
+interface:
+  display_name: "Time Series Analysis"
+  short_description: "Price-series diagnostics and stationarity checks"
+  default_prompt: "Use $time-series-analysis to generate a Markdown diagnostic report for this price series."
+references:
+  - references/workflow.md
+  - references/api.md
+  - references/interpretation.md
+  - references/report-format.md
+  - references/anti-patterns.md

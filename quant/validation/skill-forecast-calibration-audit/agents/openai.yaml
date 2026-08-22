@@ -1,0 +1,4 @@
+interface:
+  display_name: "Forecast calibration audit"
+  short_description: "Measure reliability, scores, and drift in binary forecasts."
+  default_prompt: "Use $skill-forecast-calibration-audit to produce an auditable analysis from the supplied data."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Paper Replication"
+  short_description: "Local QuantSkills agent skill for Paper Replication"
+  default_prompt: "Use $paper-replication to help with my QuantSkills request."

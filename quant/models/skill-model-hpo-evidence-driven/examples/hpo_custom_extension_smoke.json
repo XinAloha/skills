@@ -1,0 +1,82 @@
+{
+  "output_root": "../outputs/custom_extension_smoke",
+  "config": {
+    "compatibility": {"profile": "legacy_v1"},
+    "task": {
+      "name": "skill_custom_extension_smoke",
+      "seed": 42
+    },
+    "extensions": {
+      "allow_external": true,
+      "plugin_roots": ["../extension_templates"],
+      "modules": ["example_extensions"]
+    },
+    "input": {
+      "feature_path": "toy_factors.csv",
+      "label_path": "toy_labels.csv"
+    },
+    "data": {
+      "provider": {
+        "name": "example_file_panel",
+        "params": {
+          "retain_features": ["alpha_001", "alpha_002", "alpha_003"]
+        }
+      },
+      "start_date": 20200102,
+      "end_date": 20200331,
+      "date_col": "date",
+      "ticker_col": "symbol",
+      "label_col": "y",
+      "strict_point_in_time": false,
+      "compute_hash": false
+    },
+    "features": {
+      "pipeline": {
+        "name": "example_identity",
+        "params": {}
+      }
+    },
+    "model": {
+      "type": "example_ridge",
+      "plugin": "example_ridge"
+    },
+    "search": {
+      "model_type": "example_ridge",
+      "method": "grid",
+      "max_trials": 3,
+      "max_rounds": 1,
+      "trials_per_round": 3,
+      "space": {
+        "alpha": {"type": "choice", "values": [0.1, 1.0, 10.0]}
+      },
+      "grid_trials": [
+        {"alpha": 0.1},
+        {"alpha": 1.0},
+        {"alpha": 10.0}
+      ]
+    },
+    "validation": {
+      "method": "fixed_train_valid_test",
+      "train_start": 20200102,
+      "train_end": 20200214,
+      "valid_start": 20200218,
+      "valid_end": 20200306,
+      "test_start": 20200310,
+      "test_end": 20200331,
+      "embargo_days": 1,
+      "min_assets_per_date": 3
+    },
+    "training": {"label_window": 1},
+    "time": {"trade_lag_days": 0},
+    "evaluation": {"objective": "rankic_ir"},
+    "reproducibility": {
+      "trial_seed_policy": "legacy_trial_index",
+      "confirmation": {
+        "enabled": false
+      }
+    },
+    "space_controller": {"enabled": false},
+    "llm": {"enabled": false},
+    "final_selector": {"enabled": false}
+  }
+}

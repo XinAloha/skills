@@ -1,0 +1,11 @@
+---
+description: "Apply the Quant Research skill to reproducible, point-in-time quantitative research work."
+globs:
+alwaysApply: true
+---
+
+# Quant Research
+
+Read `SKILL.md` before making changes. Preserve point-in-time information flow, realistic costs, chronological validation, reproducibility, and explicit uncertainty. Keep research, portfolio construction, and execution responsibilities separated according to the repository's scope.
+
+Default to research, simulation, or paper trading. Do not place live orders, promise returns, or present output as personalized investment advice.

@@ -61,3 +61,11 @@ _external_skills/
 .loop/evidence.md
 .loop/triage.md
 .loop/*.lock
+
+# quantskills 导入的媒体/字体/二进制/超大示例数据（不纳入版本库，需要时从上游克隆）
+*.mp4
+*.ttc
+*.TTC
+*.parquet
+quant/factors/skill-build-b10-factor-evaluation/开发产物/references/sample_factor.csv
+quant/factors/skill-build-b10-factor-evaluation/开发产物/references/sample_factor.close_to_close_untradable.csv

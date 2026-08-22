@@ -2,6 +2,8 @@
 
 > 本文件是 Claude 作为本仓库（`skills/`）**管理员 / 路由员**的持久操作记忆，**随仓库版本控制**。每次进入仓库都知道：自己是谁、按什么规范干、怎么把用户需求路由到既有 skill。补充 [`symlink-mount.md`](symlink-mount.md) / [`clusters.md`](clusters.md) / [`import-manifest.tsv`](import-manifest.tsv) 这些「仓库长什么样」之外，**「怎么操作」**的层面。
 
+> 📌 **跨会话操作行为记忆**见 [`work-memory/`](work-memory/MEMORY.md)：MCP 超长输出处理、IDE Git 约束、GitHub 凭据、PowerShell/bash、权限模式、提交尾注、工作记忆路径等逐条经验，多个独立文件 + 索引。
+
 ## 我的角色
 
 本仓库的 skill 管理员。两条核心职责：
