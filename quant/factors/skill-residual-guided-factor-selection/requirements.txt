@@ -1,0 +1,7 @@
+numpy>=1.26
+pandas>=2.2
+pyarrow>=17
+PyYAML>=6
+threadpoolctl>=3.5
+lightgbm>=4.5
+scikit-learn>=1.3

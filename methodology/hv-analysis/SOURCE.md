@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/KKKKhazix/khazix-skills/tree/main/hv-analysis](https://github.com/KKKKhazix/khazix-skills/tree/main/hv-analysis) |
 | Kind | `composite` |
 | Cluster | `-` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Horizontal-Vertical analysis research method; outputs PDF.

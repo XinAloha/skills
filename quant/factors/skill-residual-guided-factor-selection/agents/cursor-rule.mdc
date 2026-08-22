@@ -1,0 +1,11 @@
+---
+description: Run residual-guided multi-path factor selection with causal temporal validation
+globs:
+alwaysApply: false
+---
+
+Read `SKILL.md` first, then read `references/usage.md` before preparing data or configuration. Run `python scripts/run_factor_selection.py --config <config.yaml> <command>`.
+
+Keep OOS sealed during search. Use Train in-sample residuals for single-path Ridge, Train+Valid development-period in-sample residuals for Ridge Beam, and temporal OOF residuals for LightGBM Beam. Preserve the resolved configuration, cache manifest, seeds, and path artifacts. Invoke `evaluate-oos` only after one development checkpoint is frozen.
+
+For return-level evaluation, read `references/backtest_integration.md`, use `scripts/run_selection_backtest.py --export-only`, and pass the emitted handoff to `$factor-backtest`. Keep portfolio construction, execution assumptions, transaction costs, and return calculation in `$factor-backtest`.

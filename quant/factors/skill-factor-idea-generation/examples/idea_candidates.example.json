@@ -1,0 +1,327 @@
+{
+  "generation_context": {
+    "available_fields": ["open", "high", "low", "close", "volume"],
+    "field_scope_source": "default",
+    "market": "generic equity panel",
+    "frequency": "daily",
+    "idea_count": 5,
+    "shortlist_count": 2,
+    "research_sources": [],
+    "custom_lens_pack_ids": []
+  },
+  "idea_candidates": [
+    {
+      "name": "seed_volume_exhaustion_reversal",
+      "layer": "price_volume_dynamics",
+      "agent_tags": ["price_volume_coherence"],
+      "selected_lenses": [
+        {
+          "lens_id": "price_volume_coherence.volume_exhaustion",
+          "role": "primary",
+          "origin": "builtin",
+          "source_ids": []
+        }
+      ],
+      "prompt_lens_ids": ["price_volume_coherence.volume_exhaustion"],
+      "combination_type": "single_tag_single_lens",
+      "composition_operator": "none",
+      "hypothesis": "急跌放量后，如果量能开始衰减，边际卖压减弱可能带来短期修复。",
+      "economic_rationale": "恐慌性成交释放部分卖压后，成交量下降且价格跌势减缓可能对应短期供需再平衡。",
+      "inputs": ["close", "volume"],
+      "operators": ["pct_change", "rolling_mean", "clip"],
+      "formula_sketch": "negative_return_3d * volume_shock_20d * positive_volume_decay_3d",
+      "factor_shape": {
+        "formula_family": "path_decay_interaction",
+        "shape_type": "interaction",
+        "primary_signal": "downside_return_shock",
+        "auxiliary_signal": "post_shock_volume_decay",
+        "composition": "primary * confirmation",
+        "pseudo_formula": "clip(-return_3d, 0, inf) * positive(volume_zscore_20d) * positive(-volume_change_3d)",
+        "windows": {"shock": 3, "volume_baseline": 20, "decay": 3},
+        "normalization": "rolling robust scale and bounded component product",
+        "direction": "数值越高表示下行冲击后的边际卖压衰减越明显。",
+        "implementation_steps": [
+          "计算历史 3 日下行收益冲击",
+          "计算成交量相对 20 日基线的冲击",
+          "计算冲击后的 3 日量能衰减",
+          "对各分量做历史滚动稳健缩放",
+          "用确认算子组合冲击和衰减分量"
+        ]
+      },
+      "implementation_hint": "按 instrument 计算 3 日收益、20 日平均成交量和 3 日成交量变化，处理除零和无穷值。",
+      "expected_behavior": "偏短期反转候选，在非系统性持续下跌环境中更值得优先验证。",
+      "failure_mode": "系统性去杠杆阶段，缩量可能代表流动性冻结而非卖压出清。",
+      "suggested_horizon_days": 5,
+      "implementation_priority": 1,
+      "shortlisted": true,
+      "similarity_tags": ["downside_shock", "volume_decay", "path_dependent"],
+      "anti_homogeneity_check": {
+        "mechanism_signature": "downside_shock|volume_decay|pressure_release",
+        "only_parameter_variant": false,
+        "same_formula_new_labels": false,
+        "nearest_candidate": "seed_compression_break_instability",
+        "distinction": "核心是已发生下行冲击后的量能衰减，不是压缩状态向下行扩张的破裂。"
+      },
+      "self_check": {
+        "uses_allowed_fields_only": true,
+        "no_future_information": true,
+        "logic_formula_aligned": true,
+        "duplicate_of": null
+      }
+    },
+    {
+      "name": "seed_multiscale_trend_consistency",
+      "layer": "multiscale_complexity",
+      "agent_tags": ["fractal"],
+      "selected_lenses": [
+        {
+          "lens_id": "fractal.cross_horizon_consistency",
+          "role": "primary",
+          "origin": "builtin",
+          "source_ids": []
+        }
+      ],
+      "prompt_lens_ids": ["fractal.cross_horizon_consistency"],
+      "combination_type": "single_tag_single_lens",
+      "composition_operator": "none",
+      "hypothesis": "短中期方向一致且经波动调整后仍较强的趋势，可能比单窗口动量更稳定。",
+      "economic_rationale": "多时间尺度的一致性可减少由单一窗口噪声造成的伪趋势。",
+      "inputs": ["close"],
+      "operators": ["pct_change", "rolling_std", "sign"],
+      "formula_sketch": "return_5d / volatility_20d * same_sign(return_5d, return_20d)",
+      "factor_shape": {
+        "formula_family": "multiscale_confirmation",
+        "shape_type": "gated_signal",
+        "primary_signal": "volatility_adjusted_short_trend",
+        "auxiliary_signal": "cross_horizon_direction_agreement",
+        "composition": "primary * confirmation",
+        "pseudo_formula": "return_5d / (volatility_20d + epsilon) * smooth_agreement(return_5d, return_20d)",
+        "windows": {"short": 5, "long": 20, "volatility": 20},
+        "normalization": "epsilon-protected volatility scaling and bounded agreement",
+        "direction": "正值表示多尺度一致的上行趋势，负值表示多尺度一致的下行趋势。",
+        "implementation_steps": [
+          "计算日收益和 5 日、20 日累计收益",
+          "计算 20 日历史波动",
+          "构造短期波动调整趋势",
+          "构造短长方向连续一致度",
+          "用一致度确认主趋势"
+        ]
+      },
+      "implementation_hint": "先构造日收益，再计算 5 日、20 日收益和 20 日历史波动，仅保留方向一致部分。",
+      "expected_behavior": "偏趋势候选，可能在方向明确且横截面分化较强时更有效。",
+      "failure_mode": "快速反转或高噪声震荡阶段可能频繁失效。",
+      "suggested_horizon_days": 5,
+      "implementation_priority": 2,
+      "shortlisted": true,
+      "similarity_tags": ["multiscale", "trend", "direction_agreement"],
+      "anti_homogeneity_check": {
+        "mechanism_signature": "cross_horizon_agreement|vol_adjusted_trend|trend_quality",
+        "only_parameter_variant": false,
+        "same_formula_new_labels": false,
+        "nearest_candidate": "seed_low_noise_trend_gate",
+        "distinction": "以短长方向一致作为确认，后者以价格路径效率识别趋势状态。"
+      },
+      "self_check": {
+        "uses_allowed_fields_only": true,
+        "no_future_information": true,
+        "logic_formula_aligned": true,
+        "duplicate_of": null
+      }
+    },
+    {
+      "name": "seed_lower_shadow_volume_absorption",
+      "layer": "geometric_fusion",
+      "agent_tags": ["bar_shape", "price_volume_coherence"],
+      "selected_lenses": [
+        {
+          "lens_id": "bar_shape.shadow_balance",
+          "role": "primary",
+          "origin": "builtin",
+          "source_ids": []
+        },
+        {
+          "lens_id": "price_volume_coherence.price_volume_synchronization",
+          "role": "confirmation",
+          "origin": "builtin",
+          "source_ids": []
+        }
+      ],
+      "prompt_lens_ids": [
+        "bar_shape.shadow_balance",
+        "price_volume_coherence.price_volume_synchronization"
+      ],
+      "combination_type": "cross_layer",
+      "composition_operator": "confirmation",
+      "hypothesis": "放量长下影且收盘靠近日内高位，可能代表下方卖压被吸收。",
+      "economic_rationale": "日内下探后价格回收并伴随活跃成交，可能反映买方承接与短期情绪修复。",
+      "inputs": ["open", "high", "low", "close", "volume"],
+      "operators": ["rolling_mean", "minimum", "clip"],
+      "formula_sketch": "lower_shadow_ratio * close_location * volume_shock_20d",
+      "factor_shape": {
+        "formula_family": "geometry_confirmation",
+        "shape_type": "interaction",
+        "primary_signal": "lower_shadow_absorption",
+        "auxiliary_signal": "directional_volume_confirmation",
+        "composition": "primary * confirmation",
+        "pseudo_formula": "lower_shadow_ratio * positive(close_location_value) * bounded(volume_shock_20d)",
+        "windows": {"shape": 1, "volume_baseline": 20},
+        "normalization": "daily range normalization with epsilon and bounded volume shock",
+        "direction": "数值越高表示下探被收回且成交参与支持承接的程度越强。",
+        "implementation_steps": [
+          "计算上下影线和日内 range",
+          "构造下影线占比和收盘位置",
+          "计算成交量相对 20 日基线的异常程度",
+          "对极窄 range 和极端量能做保护",
+          "用成交确认项调节下影承接信号"
+        ]
+      },
+      "implementation_hint": "用日内振幅归一化下影线和收盘位置，再乘以成交量相对 20 日均值。",
+      "expected_behavior": "偏形态反转候选，更适合在个股冲击而非全市场崩跌环境中验证。",
+      "failure_mode": "低流动性标的或连续跌停附近可能产生误导性长下影。",
+      "suggested_horizon_days": 3,
+      "implementation_priority": 3,
+      "shortlisted": false,
+      "similarity_tags": ["bar_geometry", "lower_shadow", "volume_confirmation"],
+      "anti_homogeneity_check": {
+        "mechanism_signature": "lower_rejection|close_recovery|volume_confirmation",
+        "only_parameter_variant": false,
+        "same_formula_new_labels": false,
+        "nearest_candidate": null,
+        "distinction": "以单日几何拒绝及成交确认表达承接，不是历史收益冲击后的路径反转。"
+      },
+      "self_check": {
+        "uses_allowed_fields_only": true,
+        "no_future_information": true,
+        "logic_formula_aligned": true,
+        "duplicate_of": null
+      }
+    },
+    {
+      "name": "seed_compression_break_instability",
+      "layer": "extreme_risk_fragility",
+      "agent_tags": ["crash_predictor"],
+      "selected_lenses": [
+        {
+          "lens_id": "crash_predictor.compression_break_instability",
+          "role": "primary",
+          "origin": "builtin",
+          "source_ids": []
+        }
+      ],
+      "prompt_lens_ids": ["crash_predictor.compression_break_instability"],
+      "combination_type": "single_tag_single_lens",
+      "composition_operator": "none",
+      "hypothesis": "长时间 range 压缩后若出现下行扩张和弱收盘，可能代表结构性压力开始破裂。",
+      "economic_rationale": "平静压缩后的释放并不总是健康突破；若释放方向偏下且收盘位置弱，可能说明承接不足和脆弱性上升。",
+      "inputs": ["open", "high", "low", "close", "volume"],
+      "operators": ["rolling_mean", "rolling_sum", "ratio", "clip"],
+      "formula_sketch": "compression_duration_20d * downside_range_expansion * weak_close_location",
+      "factor_shape": {
+        "formula_family": "state_break_interaction",
+        "shape_type": "interaction",
+        "primary_signal": "historical_range_compression",
+        "auxiliary_signal": "downside_break_fragility",
+        "composition": "state * directional release",
+        "pseudo_formula": "compression_score_20d * positive(range_expansion) * negative(close_location_value)",
+        "windows": {"compression": 20, "range_baseline": 20, "release": 1},
+        "normalization": "price-scaled range and bounded historical percentile",
+        "direction": "数值越高表示历史压缩后发生向下脆弱释放的程度越强。",
+        "implementation_steps": [
+          "计算价格归一化日内 range",
+          "构造 20 日压缩程度和持续性",
+          "衡量当前 range 相对历史基线的扩张",
+          "用收盘位置确定释放方向",
+          "组合压缩状态和向下释放强度"
+        ]
+      },
+      "implementation_hint": "先构造历史 range 压缩持续分数，再计算当前 range 扩张和收盘位置弱度，全部只用当前及历史数据。",
+      "expected_behavior": "更适合检验平静状态向下行不稳定释放的场景。",
+      "failure_mode": "健康上行突破或低流动性噪声可能让压缩扩张信号误判为脆弱性。",
+      "suggested_horizon_days": 3,
+      "implementation_priority": 4,
+      "shortlisted": false,
+      "similarity_tags": ["range_compression", "downside_release", "fragility"],
+      "anti_homogeneity_check": {
+        "mechanism_signature": "compression_state|downside_expansion|fragility_release",
+        "only_parameter_variant": false,
+        "same_formula_new_labels": false,
+        "nearest_candidate": "seed_volume_exhaustion_reversal",
+        "distinction": "核心是压缩到扩张的状态破裂，而不是冲击发生后的量能衰竭。"
+      },
+      "self_check": {
+        "uses_allowed_fields_only": true,
+        "no_future_information": true,
+        "logic_formula_aligned": true,
+        "duplicate_of": null
+      }
+    },
+    {
+      "name": "seed_low_noise_trend_gate",
+      "layer": "stability_regime_gating",
+      "agent_tags": ["daily_trend", "regime_gating"],
+      "selected_lenses": [
+        {
+          "lens_id": "daily_trend.path_efficiency",
+          "role": "primary",
+          "origin": "builtin",
+          "source_ids": []
+        },
+        {
+          "lens_id": "regime_gating.trend_regime_gate",
+          "role": "gate",
+          "origin": "builtin",
+          "source_ids": []
+        }
+      ],
+      "prompt_lens_ids": [
+        "daily_trend.path_efficiency",
+        "regime_gating.trend_regime_gate"
+      ],
+      "combination_type": "cross_layer",
+      "composition_operator": "gate",
+      "hypothesis": "只在路径噪声较低时启用短期趋势，可能减少震荡期的错误信号。",
+      "economic_rationale": "趋势信号在价格路径连续时更可信，在高噪声状态中应降低权重。",
+      "inputs": ["close"],
+      "operators": ["pct_change", "rolling_std", "rolling_sum"],
+      "formula_sketch": "return_10d * low_path_noise_gate",
+      "factor_shape": {
+        "formula_family": "path_efficiency_gate",
+        "shape_type": "gated_signal",
+        "primary_signal": "signed_path_efficiency",
+        "auxiliary_signal": "trend_regime_probability",
+        "composition": "primary * soft_gate",
+        "pseudo_formula": "return_10d / (sum(abs(daily_return), 10) + epsilon) * sigmoid(trend_state_score)",
+        "windows": {"trend": 10, "state": 20},
+        "normalization": "bounded path-efficiency ratio and soft regime gate",
+        "direction": "正负表示高效率趋势方向，绝对值表示在趋势状态下的路径质量。",
+        "implementation_steps": [
+          "计算 10 日净收益和逐日绝对收益路径",
+          "构造带方向的路径效率",
+          "用历史价格路径构造连续趋势状态分数",
+          "把状态分数映射为软 gate",
+          "用 gate 调节路径效率主信号"
+        ]
+      },
+      "implementation_hint": "比较净位移与绝对日收益之和，构造路径效率 gate。",
+      "expected_behavior": "趋势状态过滤候选。",
+      "failure_mode": "突发跳空可能使历史稳定状态失效。",
+      "suggested_horizon_days": 5,
+      "implementation_priority": 5,
+      "shortlisted": false,
+      "similarity_tags": ["path_efficiency", "trend_regime", "soft_gate"],
+      "anti_homogeneity_check": {
+        "mechanism_signature": "net_displacement|path_length|trend_state_gate",
+        "only_parameter_variant": false,
+        "same_formula_new_labels": false,
+        "nearest_candidate": "seed_multiscale_trend_consistency",
+        "distinction": "以净位移相对路径长度衡量趋势质量，并由状态门控；不是短长收益方向确认。"
+      },
+      "self_check": {
+        "uses_allowed_fields_only": true,
+        "no_future_information": true,
+        "logic_formula_aligned": true,
+        "duplicate_of": null
+      }
+    }
+  ]
+}

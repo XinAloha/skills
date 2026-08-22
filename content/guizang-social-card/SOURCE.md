@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/op7418/guizang-social-card-skill](https://github.com/op7418/guizang-social-card-skill) |
 | Kind | `composite` |
 | Cluster | `card` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Guizang-style social cards + WeChat cover pairs (Swiss/editorial layouts). Sibling: content/xhs-images-baoyu.

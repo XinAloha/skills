@@ -1,0 +1,22 @@
+{
+  "market_data_csv_path": "toy_market_data.csv",
+  "output_dir": "outputs/alpha_compute_example",
+  "alpha_sets": [
+    "alpha101",
+    "alpha191"
+  ],
+  "alpha_names": [
+    "alpha101:alpha_001",
+    "alpha101:alpha_002",
+    "alpha191:alpha_001",
+    "alpha191:alpha_018"
+  ],
+  "exclude_alpha_names": [],
+  "start_date": "",
+  "end_date": "",
+  "symbols": [],
+  "output_format": "csv",
+  "output_layout": "wide",
+  "n_jobs": 1,
+  "show_progress": true
+}

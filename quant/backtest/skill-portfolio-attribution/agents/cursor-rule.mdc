@@ -1,0 +1,17 @@
+---
+description: Use portfolio-attribution to decompose active return into allocation, selection, interaction, and factor contributions with identity checks.
+alwaysApply: false
+---
+
+# Portfolio Attribution
+
+When the user asks for portfolio attribution, performance attribution, active
+return sources, Brinson-Fachler analysis, or factor contributions, read
+`.cursor/skills/portfolio-attribution/SKILL.md` and follow its workflow.
+
+Read `.cursor/skills/portfolio-attribution/references/methodology.md` before
+interpreting formulas or changing attribution assumptions. Use
+`.cursor/skills/portfolio-attribution/scripts/attribution.py` for deterministic
+calculations. Preserve the built-in identity checks, disclose input and
+benchmark assumptions, and do not turn historical attribution into investment
+advice or promised performance.

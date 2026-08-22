@@ -1,0 +1,11 @@
+---
+description: Invoke this skill for its documented quantitative diagnostics.
+globs:
+  - "**/*.csv"
+  - "**/*.py"
+alwaysApply: false
+---
+
+# Cursor runtime adapter
+
+Read `SKILL.md` first. Follow its input contract, run the documented script when an executable report is requested, and report assumptions, validation gates, and limitations. Do not present research output as investment advice or guaranteed performance.

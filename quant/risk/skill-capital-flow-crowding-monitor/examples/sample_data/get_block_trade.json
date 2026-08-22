@@ -1,0 +1,42 @@
+[
+ {
+  "symbol": "600519.SH",
+  "date": "20260713",
+  "price": 1688.0,
+  "volume": 30000.0,
+  "amount": 50640000.0,
+  "buyer": "机构专用",
+  "seller": "中信证券股份有限公司北京分公司",
+  "sequence_id": 1
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260714",
+  "price": 1702.5,
+  "volume": 25000.0,
+  "amount": 42562500.0,
+  "buyer": "机构专用",
+  "seller": "中金财富证券上海分公司",
+  "sequence_id": 2
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260713",
+  "price": 152.8,
+  "volume": 800000.0,
+  "amount": 122240000.0,
+  "buyer": "机构专用",
+  "seller": "华泰证券股份有限公司深圳益田路",
+  "sequence_id": 3
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260714",
+  "price": 155.2,
+  "volume": 600000.0,
+  "amount": 93120000.0,
+  "buyer": "机构专用",
+  "seller": "国泰君安证券深圳分公司",
+  "sequence_id": 4
+ }
+]

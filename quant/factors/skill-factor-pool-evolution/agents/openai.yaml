@@ -1,0 +1,6 @@
+interface:
+  display_name: "Factor Pool Evolution"
+  short_description: "一轮因子池建议与评估"
+  default_prompt: "使用 $factor-pool-evolution 先评估一组现有股票因子并生成 mutation/crossover prompt pack，再在模型生成候选因子后完成 RankIC、RankICIR 和相关性评估，输出推荐用于下一轮继续迭代的因子。"
+policy:
+  allow_implicit_invocation: true

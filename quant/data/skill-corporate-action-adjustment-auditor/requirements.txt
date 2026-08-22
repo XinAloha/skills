@@ -1,0 +1,2 @@
+# Python 3.10+; offline analyzer has no third-party dependencies.
+# Optional real-data acquisition is delegated to sibling skill-pandadata-api.

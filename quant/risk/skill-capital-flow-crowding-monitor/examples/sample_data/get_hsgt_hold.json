@@ -1,0 +1,982 @@
+[
+ {
+  "symbol": "600519.SH",
+  "date": "20260408",
+  "shares_num": 86515841.0,
+  "holding_ratio": 6.8882,
+  "adjusted_holding_ratio": 6.8951
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260409",
+  "shares_num": 86561578.0,
+  "holding_ratio": 6.8918,
+  "adjusted_holding_ratio": 6.8987
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260410",
+  "shares_num": 86265150.0,
+  "holding_ratio": 6.8682,
+  "adjusted_holding_ratio": 6.8751
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260413",
+  "shares_num": 86306319.0,
+  "holding_ratio": 6.8715,
+  "adjusted_holding_ratio": 6.8784
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260414",
+  "shares_num": 86225733.0,
+  "holding_ratio": 6.8651,
+  "adjusted_holding_ratio": 6.872
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260415",
+  "shares_num": 85981799.0,
+  "holding_ratio": 6.8457,
+  "adjusted_holding_ratio": 6.8525
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260416",
+  "shares_num": 86072823.0,
+  "holding_ratio": 6.8529,
+  "adjusted_holding_ratio": 6.8598
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260417",
+  "shares_num": 86038219.0,
+  "holding_ratio": 6.8502,
+  "adjusted_holding_ratio": 6.857
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260420",
+  "shares_num": 85758126.0,
+  "holding_ratio": 6.8279,
+  "adjusted_holding_ratio": 6.8347
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260421",
+  "shares_num": 85648218.0,
+  "holding_ratio": 6.8191,
+  "adjusted_holding_ratio": 6.8259
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260422",
+  "shares_num": 85684771.0,
+  "holding_ratio": 6.822,
+  "adjusted_holding_ratio": 6.8289
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260423",
+  "shares_num": 85627173.0,
+  "holding_ratio": 6.8175,
+  "adjusted_holding_ratio": 6.8243
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260424",
+  "shares_num": 85725139.0,
+  "holding_ratio": 6.8252,
+  "adjusted_holding_ratio": 6.8321
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260427",
+  "shares_num": 85819032.0,
+  "holding_ratio": 6.8327,
+  "adjusted_holding_ratio": 6.8396
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260428",
+  "shares_num": 85902711.0,
+  "holding_ratio": 6.8394,
+  "adjusted_holding_ratio": 6.8462
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260429",
+  "shares_num": 85943736.0,
+  "holding_ratio": 6.8427,
+  "adjusted_holding_ratio": 6.8495
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260430",
+  "shares_num": 86111248.0,
+  "holding_ratio": 6.856,
+  "adjusted_holding_ratio": 6.8628
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260501",
+  "shares_num": 86194123.0,
+  "holding_ratio": 6.8626,
+  "adjusted_holding_ratio": 6.8695
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260504",
+  "shares_num": 86250796.0,
+  "holding_ratio": 6.8671,
+  "adjusted_holding_ratio": 6.874
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260505",
+  "shares_num": 85989048.0,
+  "holding_ratio": 6.8463,
+  "adjusted_holding_ratio": 6.8531
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260506",
+  "shares_num": 86101656.0,
+  "holding_ratio": 6.8552,
+  "adjusted_holding_ratio": 6.8621
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260507",
+  "shares_num": 86266120.0,
+  "holding_ratio": 6.8683,
+  "adjusted_holding_ratio": 6.8752
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260508",
+  "shares_num": 86228829.0,
+  "holding_ratio": 6.8654,
+  "adjusted_holding_ratio": 6.8722
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260511",
+  "shares_num": 86169859.0,
+  "holding_ratio": 6.8607,
+  "adjusted_holding_ratio": 6.8675
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260512",
+  "shares_num": 86413561.0,
+  "holding_ratio": 6.8801,
+  "adjusted_holding_ratio": 6.8869
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260513",
+  "shares_num": 86192739.0,
+  "holding_ratio": 6.8625,
+  "adjusted_holding_ratio": 6.8693
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260514",
+  "shares_num": 86251628.0,
+  "holding_ratio": 6.8672,
+  "adjusted_holding_ratio": 6.874
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260515",
+  "shares_num": 86556046.0,
+  "holding_ratio": 6.8914,
+  "adjusted_holding_ratio": 6.8983
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260518",
+  "shares_num": 86439540.0,
+  "holding_ratio": 6.8821,
+  "adjusted_holding_ratio": 6.889
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260519",
+  "shares_num": 86526152.0,
+  "holding_ratio": 6.889,
+  "adjusted_holding_ratio": 6.8959
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260520",
+  "shares_num": 86763081.0,
+  "holding_ratio": 6.9079,
+  "adjusted_holding_ratio": 6.9148
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260521",
+  "shares_num": 86747983.0,
+  "holding_ratio": 6.9067,
+  "adjusted_holding_ratio": 6.9136
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260522",
+  "shares_num": 86818469.0,
+  "holding_ratio": 6.9123,
+  "adjusted_holding_ratio": 6.9192
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260525",
+  "shares_num": 86931833.0,
+  "holding_ratio": 6.9213,
+  "adjusted_holding_ratio": 6.9282
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260526",
+  "shares_num": 86818068.0,
+  "holding_ratio": 6.9123,
+  "adjusted_holding_ratio": 6.9192
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260527",
+  "shares_num": 86806878.0,
+  "holding_ratio": 6.9114,
+  "adjusted_holding_ratio": 6.9183
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260528",
+  "shares_num": 86843654.0,
+  "holding_ratio": 6.9143,
+  "adjusted_holding_ratio": 6.9212
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260529",
+  "shares_num": 86947322.0,
+  "holding_ratio": 6.9226,
+  "adjusted_holding_ratio": 6.9295
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260601",
+  "shares_num": 86942985.0,
+  "holding_ratio": 6.9222,
+  "adjusted_holding_ratio": 6.9291
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260602",
+  "shares_num": 86918450.0,
+  "holding_ratio": 6.9203,
+  "adjusted_holding_ratio": 6.9272
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260603",
+  "shares_num": 86790831.0,
+  "holding_ratio": 6.9101,
+  "adjusted_holding_ratio": 6.917
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260604",
+  "shares_num": 86745743.0,
+  "holding_ratio": 6.9065,
+  "adjusted_holding_ratio": 6.9134
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260605",
+  "shares_num": 86857737.0,
+  "holding_ratio": 6.9154,
+  "adjusted_holding_ratio": 6.9223
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260608",
+  "shares_num": 86870516.0,
+  "holding_ratio": 6.9164,
+  "adjusted_holding_ratio": 6.9234
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260609",
+  "shares_num": 86763376.0,
+  "holding_ratio": 6.9079,
+  "adjusted_holding_ratio": 6.9148
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260610",
+  "shares_num": 86657671.0,
+  "holding_ratio": 6.8995,
+  "adjusted_holding_ratio": 6.9064
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260611",
+  "shares_num": 86992605.0,
+  "holding_ratio": 6.9262,
+  "adjusted_holding_ratio": 6.9331
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260612",
+  "shares_num": 87135776.0,
+  "holding_ratio": 6.9376,
+  "adjusted_holding_ratio": 6.9445
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260615",
+  "shares_num": 87215833.0,
+  "holding_ratio": 6.9439,
+  "adjusted_holding_ratio": 6.9509
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260616",
+  "shares_num": 86890162.0,
+  "holding_ratio": 6.918,
+  "adjusted_holding_ratio": 6.9249
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260617",
+  "shares_num": 86968221.0,
+  "holding_ratio": 6.9242,
+  "adjusted_holding_ratio": 6.9311
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260618",
+  "shares_num": 87028596.0,
+  "holding_ratio": 6.929,
+  "adjusted_holding_ratio": 6.936
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260619",
+  "shares_num": 87240118.0,
+  "holding_ratio": 6.9459,
+  "adjusted_holding_ratio": 6.9528
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260622",
+  "shares_num": 87293845.0,
+  "holding_ratio": 6.9501,
+  "adjusted_holding_ratio": 6.9571
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260623",
+  "shares_num": 87285368.0,
+  "holding_ratio": 6.9495,
+  "adjusted_holding_ratio": 6.9564
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260624",
+  "shares_num": 87350987.0,
+  "holding_ratio": 6.9547,
+  "adjusted_holding_ratio": 6.9617
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260625",
+  "shares_num": 87106795.0,
+  "holding_ratio": 6.9353,
+  "adjusted_holding_ratio": 6.9422
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260626",
+  "shares_num": 87236571.0,
+  "holding_ratio": 6.9456,
+  "adjusted_holding_ratio": 6.9525
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260629",
+  "shares_num": 87277377.0,
+  "holding_ratio": 6.9488,
+  "adjusted_holding_ratio": 6.9558
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260630",
+  "shares_num": 87189197.0,
+  "holding_ratio": 6.9418,
+  "adjusted_holding_ratio": 6.9488
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260701",
+  "shares_num": 87355689.0,
+  "holding_ratio": 6.9551,
+  "adjusted_holding_ratio": 6.962
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260702",
+  "shares_num": 87582942.0,
+  "holding_ratio": 6.9732,
+  "adjusted_holding_ratio": 6.9801
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260703",
+  "shares_num": 87406800.0,
+  "holding_ratio": 6.9591,
+  "adjusted_holding_ratio": 6.9661
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260706",
+  "shares_num": 87323109.0,
+  "holding_ratio": 6.9525,
+  "adjusted_holding_ratio": 6.9594
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260707",
+  "shares_num": 87359692.0,
+  "holding_ratio": 6.9554,
+  "adjusted_holding_ratio": 6.9623
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260708",
+  "shares_num": 87382735.0,
+  "holding_ratio": 6.9572,
+  "adjusted_holding_ratio": 6.9642
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260709",
+  "shares_num": 87332686.0,
+  "holding_ratio": 6.9532,
+  "adjusted_holding_ratio": 6.9602
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260710",
+  "shares_num": 87210325.0,
+  "holding_ratio": 6.9435,
+  "adjusted_holding_ratio": 6.9504
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260713",
+  "shares_num": 87476655.0,
+  "holding_ratio": 6.9647,
+  "adjusted_holding_ratio": 6.9717
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260714",
+  "shares_num": 87508055.0,
+  "holding_ratio": 6.9672,
+  "adjusted_holding_ratio": 6.9742
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260408",
+  "shares_num": 124230497.0,
+  "holding_ratio": 3.2018,
+  "adjusted_holding_ratio": 3.205
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260409",
+  "shares_num": 124148334.0,
+  "holding_ratio": 3.1997,
+  "adjusted_holding_ratio": 3.2029
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260410",
+  "shares_num": 124132886.0,
+  "holding_ratio": 3.1993,
+  "adjusted_holding_ratio": 3.2025
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260413",
+  "shares_num": 124249166.0,
+  "holding_ratio": 3.2023,
+  "adjusted_holding_ratio": 3.2055
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260414",
+  "shares_num": 124112886.0,
+  "holding_ratio": 3.1988,
+  "adjusted_holding_ratio": 3.202
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260415",
+  "shares_num": 124212217.0,
+  "holding_ratio": 3.2013,
+  "adjusted_holding_ratio": 3.2045
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260416",
+  "shares_num": 124501290.0,
+  "holding_ratio": 3.2088,
+  "adjusted_holding_ratio": 3.212
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260417",
+  "shares_num": 124415222.0,
+  "holding_ratio": 3.2066,
+  "adjusted_holding_ratio": 3.2098
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260420",
+  "shares_num": 124437962.0,
+  "holding_ratio": 3.2072,
+  "adjusted_holding_ratio": 3.2104
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260421",
+  "shares_num": 124414611.0,
+  "holding_ratio": 3.2066,
+  "adjusted_holding_ratio": 3.2098
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260422",
+  "shares_num": 124653654.0,
+  "holding_ratio": 3.2127,
+  "adjusted_holding_ratio": 3.2159
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260423",
+  "shares_num": 124702756.0,
+  "holding_ratio": 3.214,
+  "adjusted_holding_ratio": 3.2172
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260424",
+  "shares_num": 124842083.0,
+  "holding_ratio": 3.2176,
+  "adjusted_holding_ratio": 3.2208
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260427",
+  "shares_num": 124734983.0,
+  "holding_ratio": 3.2148,
+  "adjusted_holding_ratio": 3.218
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260428",
+  "shares_num": 124732478.0,
+  "holding_ratio": 3.2148,
+  "adjusted_holding_ratio": 3.218
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260429",
+  "shares_num": 124730950.0,
+  "holding_ratio": 3.2147,
+  "adjusted_holding_ratio": 3.2179
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260430",
+  "shares_num": 124455326.0,
+  "holding_ratio": 3.2076,
+  "adjusted_holding_ratio": 3.2108
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260501",
+  "shares_num": 124678940.0,
+  "holding_ratio": 3.2134,
+  "adjusted_holding_ratio": 3.2166
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260504",
+  "shares_num": 124818528.0,
+  "holding_ratio": 3.217,
+  "adjusted_holding_ratio": 3.2202
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260505",
+  "shares_num": 124547060.0,
+  "holding_ratio": 3.21,
+  "adjusted_holding_ratio": 3.2132
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260506",
+  "shares_num": 124662585.0,
+  "holding_ratio": 3.213,
+  "adjusted_holding_ratio": 3.2162
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260507",
+  "shares_num": 124642229.0,
+  "holding_ratio": 3.2124,
+  "adjusted_holding_ratio": 3.2156
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260508",
+  "shares_num": 124711823.0,
+  "holding_ratio": 3.2142,
+  "adjusted_holding_ratio": 3.2174
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260511",
+  "shares_num": 124768697.0,
+  "holding_ratio": 3.2157,
+  "adjusted_holding_ratio": 3.2189
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260512",
+  "shares_num": 124536057.0,
+  "holding_ratio": 3.2097,
+  "adjusted_holding_ratio": 3.2129
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260513",
+  "shares_num": 124503148.0,
+  "holding_ratio": 3.2088,
+  "adjusted_holding_ratio": 3.2121
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260514",
+  "shares_num": 124734802.0,
+  "holding_ratio": 3.2148,
+  "adjusted_holding_ratio": 3.218
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260515",
+  "shares_num": 124645584.0,
+  "holding_ratio": 3.2125,
+  "adjusted_holding_ratio": 3.2157
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260518",
+  "shares_num": 124486840.0,
+  "holding_ratio": 3.2084,
+  "adjusted_holding_ratio": 3.2116
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260519",
+  "shares_num": 124275833.0,
+  "holding_ratio": 3.203,
+  "adjusted_holding_ratio": 3.2062
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260520",
+  "shares_num": 124086316.0,
+  "holding_ratio": 3.1981,
+  "adjusted_holding_ratio": 3.2013
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260521",
+  "shares_num": 124138386.0,
+  "holding_ratio": 3.1994,
+  "adjusted_holding_ratio": 3.2026
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260522",
+  "shares_num": 124401075.0,
+  "holding_ratio": 3.2062,
+  "adjusted_holding_ratio": 3.2094
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260525",
+  "shares_num": 124467724.0,
+  "holding_ratio": 3.2079,
+  "adjusted_holding_ratio": 3.2111
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260526",
+  "shares_num": 124505827.0,
+  "holding_ratio": 3.2089,
+  "adjusted_holding_ratio": 3.2121
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260527",
+  "shares_num": 124852489.0,
+  "holding_ratio": 3.2178,
+  "adjusted_holding_ratio": 3.2211
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260528",
+  "shares_num": 124771872.0,
+  "holding_ratio": 3.2158,
+  "adjusted_holding_ratio": 3.219
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260529",
+  "shares_num": 124667257.0,
+  "holding_ratio": 3.2131,
+  "adjusted_holding_ratio": 3.2163
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260601",
+  "shares_num": 124749273.0,
+  "holding_ratio": 3.2152,
+  "adjusted_holding_ratio": 3.2184
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260602",
+  "shares_num": 124834405.0,
+  "holding_ratio": 3.2174,
+  "adjusted_holding_ratio": 3.2206
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260603",
+  "shares_num": 124676920.0,
+  "holding_ratio": 3.2133,
+  "adjusted_holding_ratio": 3.2165
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260604",
+  "shares_num": 124495340.0,
+  "holding_ratio": 3.2086,
+  "adjusted_holding_ratio": 3.2119
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260605",
+  "shares_num": 124540506.0,
+  "holding_ratio": 3.2098,
+  "adjusted_holding_ratio": 3.213
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260608",
+  "shares_num": 124578902.0,
+  "holding_ratio": 3.2108,
+  "adjusted_holding_ratio": 3.214
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260609",
+  "shares_num": 124376076.0,
+  "holding_ratio": 3.2056,
+  "adjusted_holding_ratio": 3.2088
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260610",
+  "shares_num": 124344687.0,
+  "holding_ratio": 3.2048,
+  "adjusted_holding_ratio": 3.208
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260611",
+  "shares_num": 124260466.0,
+  "holding_ratio": 3.2026,
+  "adjusted_holding_ratio": 3.2058
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260612",
+  "shares_num": 124331866.0,
+  "holding_ratio": 3.2044,
+  "adjusted_holding_ratio": 3.2076
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260615",
+  "shares_num": 124313745.0,
+  "holding_ratio": 3.204,
+  "adjusted_holding_ratio": 3.2072
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260616",
+  "shares_num": 124300394.0,
+  "holding_ratio": 3.2036,
+  "adjusted_holding_ratio": 3.2068
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260617",
+  "shares_num": 124245532.0,
+  "holding_ratio": 3.2022,
+  "adjusted_holding_ratio": 3.2054
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260618",
+  "shares_num": 124409044.0,
+  "holding_ratio": 3.2064,
+  "adjusted_holding_ratio": 3.2096
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260619",
+  "shares_num": 124624890.0,
+  "holding_ratio": 3.212,
+  "adjusted_holding_ratio": 3.2152
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260622",
+  "shares_num": 124567935.0,
+  "holding_ratio": 3.2105,
+  "adjusted_holding_ratio": 3.2137
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260623",
+  "shares_num": 124699251.0,
+  "holding_ratio": 3.2139,
+  "adjusted_holding_ratio": 3.2171
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260624",
+  "shares_num": 124581670.0,
+  "holding_ratio": 3.2109,
+  "adjusted_holding_ratio": 3.2141
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260625",
+  "shares_num": 124592843.0,
+  "holding_ratio": 3.2112,
+  "adjusted_holding_ratio": 3.2144
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260626",
+  "shares_num": 124709228.0,
+  "holding_ratio": 3.2142,
+  "adjusted_holding_ratio": 3.2174
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260629",
+  "shares_num": 124944235.0,
+  "holding_ratio": 3.2202,
+  "adjusted_holding_ratio": 3.2234
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260630",
+  "shares_num": 124884861.0,
+  "holding_ratio": 3.2187,
+  "adjusted_holding_ratio": 3.2219
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260701",
+  "shares_num": 125729839.0,
+  "holding_ratio": 3.2405,
+  "adjusted_holding_ratio": 3.2437
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260702",
+  "shares_num": 126606300.0,
+  "holding_ratio": 3.263,
+  "adjusted_holding_ratio": 3.2663
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260703",
+  "shares_num": 127285521.0,
+  "holding_ratio": 3.2806,
+  "adjusted_holding_ratio": 3.2838
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260706",
+  "shares_num": 128140972.0,
+  "holding_ratio": 3.3026,
+  "adjusted_holding_ratio": 3.3059
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260707",
+  "shares_num": 128915900.0,
+  "holding_ratio": 3.3226,
+  "adjusted_holding_ratio": 3.3259
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260708",
+  "shares_num": 129812740.0,
+  "holding_ratio": 3.3457,
+  "adjusted_holding_ratio": 3.349
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260709",
+  "shares_num": 130534812.0,
+  "holding_ratio": 3.3643,
+  "adjusted_holding_ratio": 3.3677
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260710",
+  "shares_num": 131158305.0,
+  "holding_ratio": 3.3804,
+  "adjusted_holding_ratio": 3.3837
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260713",
+  "shares_num": 132016361.0,
+  "holding_ratio": 3.4025,
+  "adjusted_holding_ratio": 3.4059
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260714",
+  "shares_num": 132900296.0,
+  "holding_ratio": 3.4253,
+  "adjusted_holding_ratio": 3.4287
+ }
+]

@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/op7418/guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill) |
 | Kind | `composite` |
 | Cluster | `slide` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Horizontal swipe web PPT as single HTML file (WebGL bg, chapter covers, big-number data pages). Sibling: content/slide-deck-baoyu.

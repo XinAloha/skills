@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/KKKKhazix/khazix-skills/tree/main/storage-analyzer](https://github.com/KKKKhazix/khazix-skills/tree/main/storage-analyzer) |
 | Kind | `composite` |
 | Cluster | `-` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Read-only storage analysis (macOS+Windows); interactive HTML report.

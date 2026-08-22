@@ -1,0 +1,4 @@
+interface:
+  display_name: "Walk-Forward Validator"
+  short_description: "Purged OOS factor validation with IC, spreads and block-bootstrap gates."
+  default_prompt: "Validate the supplied signal and forward-return panels. Confirm label horizon, purge overlapping labels, run walk-forward folds, and report OOS gates without making investment claims."

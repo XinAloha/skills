@@ -1,0 +1,22 @@
+---
+description: Use the Portfolio Liquidity Stress Test skill when the request matches its SKILL.md description.
+alwaysApply: false
+---
+
+# Portfolio Liquidity Stress Test Skill
+
+When the user asks to stress holdings, liquidity, liquidation horizons, redemption cash, shortfalls, spreads, or market impact, use the local skill package.
+
+Preferred local project path:
+
+```text
+.cursor/skills/portfolio-liquidity-stress-test
+```
+
+Workflow:
+
+1. Read `.cursor/skills/portfolio-liquidity-stress-test/SKILL.md`.
+2. Load files under `references/` only when the workflow or task requires them.
+3. Run bundled scripts from the skill root exactly as documented.
+4. Preserve the input contract, liquidation assumptions, formulas, validation limits, and risk boundaries.
+5. Do not invent holdings, data interfaces, credentials, market inputs, or stress-test results.

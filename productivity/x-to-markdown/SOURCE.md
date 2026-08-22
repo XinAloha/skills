@@ -13,7 +13,7 @@
 | Canonical URL | [https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-danger-x-to-markdown](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-danger-x-to-markdown) |
 | Kind | `composite-danger` |
 | Cluster | `extract` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** DANGER: reverse-engineered X/Twitter API to Markdown. Sibling: productivity/url-to-markdown.

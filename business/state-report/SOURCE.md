@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-report](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-report) |
 | Kind | `atomic` |
 | Cluster | `dbs-state` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Merge dbs-save snapshots into a Markdown report. Cluster: business/state-save + state-restore + state-report.

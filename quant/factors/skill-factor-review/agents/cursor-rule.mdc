@@ -1,0 +1,33 @@
+---
+description: 因子库复盘 — 三层报告（量化盘点 + 结构分析 + 研究建议）
+globs: ["journal/runs.jsonl", "factor_library/INDEX.md", "review*.md"]
+alwaysApply: false
+---
+
+# Factor Review（Cursor 项目规则）
+
+当用户说"复盘因子库 / 看看跑过哪些 / 下一步挖什么 / 准备阶段验收"时，遵循以下规则：
+
+## 核心规则
+
+1. **三层结构强制**：Layer 1（量化）→ Layer 2（结构）→ Layer 3（建议）
+2. **建议必含**：op_type + 理由 + 实施 + 预期 score 区间
+3. **优先级排序**：填空缺 > 小调参 > 结构改动 > 高方差实验
+4. **数据要求**：≥ 30 轮 + ≥ 10 因子才复盘
+5. **风险预警**：≥ 3 条
+6. **配图**：分数轨迹 + 相关性热图
+
+## 触发条件
+
+- 用户说"复盘 / review / 看看跑过哪些 / 阶段验收"
+- 编辑 `review*.md` / 扫描 `journal/runs.jsonl` / `INDEX.md` 时
+
+## 详细参考
+
+打开 `skills/factor-review/references/`：
+
+- `quantitative-stats.md` — Layer 1 怎么算
+- `structural-analysis.md` — Layer 2 三个子分析
+- `research-recommendations.md` — Layer 3 假设格式
+- `report-template.md` — 标准报告模板
+- `anti-patterns.md` — 12 种反模式

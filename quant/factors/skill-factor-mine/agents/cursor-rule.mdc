@@ -1,0 +1,35 @@
+---
+description: 量化因子挖掘 SOP — 单点假设、ITER_NOTE、相关性门控
+globs: ["alpha.py", "factor*.py", "**/factors/*.py"]
+alwaysApply: false
+---
+
+# Factor Mine（Cursor 项目规则）
+
+当用户要求"加因子 / 挖 alpha / 迭代因子"时，遵循以下规则：
+
+## 核心规则
+
+1. **读宪法优先**：动 `alpha.py` 之前，先读 `evaluation.md` / `program.md`
+2. **单点假设**：一轮只改一个 `op_type`（add_factor / modify_factor / combine_method / label_kind / horizon / preprocess / delete_factor / other）
+3. **ITER_NOTE 强制**：改 `alpha.py` 必须同步更新 `ITER_NOTE: dict`，含 `op_type` / `hypothesis` / `change` / `expected` 四个必填字段
+4. **信号契约**：返回信号必须截面 winsorize + MAD z-score
+5. **相关性门控**：新因子与任一已有因子 |ρ| ≥ 0.85 → 拒绝
+6. **禁止单股建模**：LSTM / RNN / Transformer / 按 symbol 分组拟合 → 一律拒绝
+
+## 触发条件
+
+- 用户明确说"加个因子 / 挖个 alpha / 改 alpha.py"
+- 编辑 `alpha.py` 或 `factor_library/` 下文件时
+
+## 详细参考
+
+打开 `skills/factor-mine/references/` 下的对应文档：
+
+- `op-types.md` — 8 种合法 op_type
+- `iter-note.md` — ITER_NOTE 模板
+- `signal-contract.md` — 信号约束 + winsorize 实现
+- `correlation-gate.md` — 相关性门控规则
+- `factor-families.md` — 8 大因子族 + 决策树
+- `anti-patterns.md` — 12 种反模式
+- `example-auto-alpha.md` — auto_research_alpha 实战示例

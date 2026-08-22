@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/KKKKhazix/khazix-skills/tree/main/aihot](https://github.com/KKKKhazix/khazix-skills/tree/main/aihot) |
 | Kind | `atomic` |
 | Cluster | `-` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Chinese AI news brief via aihot.virxact.com public REST API.

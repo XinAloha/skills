@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.DS_Store
+# 本地运行留档（对抗性测试脚本可保留本地，不随包发布）
+logs/
+# Git 卫生:原始导出与大数据不入库
+*.parquet
+prices/
+real_runs/
+sources/
+# 测试时从真实库拉的持仓（含隐私，永不入库/发布）
+backtest_real/
+examples/backtest_real/

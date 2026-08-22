@@ -1,0 +1,430 @@
+{
+  "meta": {
+    "method": "Brinson-Fachler + Carino linking",
+    "periods": 20,
+    "Rp_total": 0.007752569081906913,
+    "Rb_total": 0.007153936406564032,
+    "active_total": 0.0005986326753428806
+  },
+  "sector_attribution": [
+    {
+      "sector": "半导体",
+      "wp": 0.4124642143,
+      "wb": 0.3,
+      "allocation": 0.0005320363,
+      "selection": 0.000237,
+      "interaction": 8.67455e-05,
+      "total": 0.0008557817
+    },
+    {
+      "sector": "银行",
+      "wp": 0.2392451319,
+      "wb": 0.35,
+      "allocation": -3.95882e-05,
+      "selection": 0.0003596821,
+      "interaction": -0.0001158914,
+      "total": 0.0002042025
+    },
+    {
+      "sector": "白酒",
+      "wp": 0.3482906537,
+      "wb": 0.35,
+      "allocation": 3.497e-07,
+      "selection": -0.0004762856,
+      "interaction": 1.45844e-05,
+      "total": -0.0004613515
+    }
+  ],
+  "period_returns": [
+    {
+      "date": "2026-06-01",
+      "Rp": -0.0020677974,
+      "Rb": -0.0024963817,
+      "active": 0.0004285842
+    },
+    {
+      "date": "2026-06-02",
+      "Rp": -0.0013777763,
+      "Rb": -0.0007449643,
+      "active": -0.000632812
+    },
+    {
+      "date": "2026-06-03",
+      "Rp": -0.0010172707,
+      "Rb": -0.0007145765,
+      "active": -0.0003026942
+    },
+    {
+      "date": "2026-06-04",
+      "Rp": 0.0002575214,
+      "Rb": 0.0001469753,
+      "active": 0.000110546
+    },
+    {
+      "date": "2026-06-05",
+      "Rp": 0.0002105528,
+      "Rb": -0.000757214,
+      "active": 0.0009677669
+    },
+    {
+      "date": "2026-06-08",
+      "Rp": -0.0063761397,
+      "Rb": -0.0052143006,
+      "active": -0.001161839
+    },
+    {
+      "date": "2026-06-09",
+      "Rp": -9.88926e-05,
+      "Rb": -0.0009841962,
+      "active": 0.0008853036
+    },
+    {
+      "date": "2026-06-10",
+      "Rp": 0.0048463747,
+      "Rb": 0.0051776049,
+      "active": -0.0003312302
+    },
+    {
+      "date": "2026-06-11",
+      "Rp": 0.0025118594,
+      "Rb": 0.0022902574,
+      "active": 0.000221602
+    },
+    {
+      "date": "2026-06-12",
+      "Rp": -0.0042240466,
+      "Rb": -0.0037160075,
+      "active": -0.0005080392
+    },
+    {
+      "date": "2026-06-15",
+      "Rp": 0.0031064996,
+      "Rb": 0.0031527098,
+      "active": -4.62103e-05
+    },
+    {
+      "date": "2026-06-16",
+      "Rp": 0.0041959999,
+      "Rb": 0.0041627372,
+      "active": 3.32627e-05
+    },
+    {
+      "date": "2026-06-17",
+      "Rp": -0.0024399196,
+      "Rb": -0.0019984093,
+      "active": -0.0004415104
+    },
+    {
+      "date": "2026-06-18",
+      "Rp": -0.0005211823,
+      "Rb": 0.0007131648,
+      "active": -0.0012343471
+    },
+    {
+      "date": "2026-06-19",
+      "Rp": 0.0030222601,
+      "Rb": 0.003221829,
+      "active": -0.000199569
+    },
+    {
+      "date": "2026-06-22",
+      "Rp": 0.004467586,
+      "Rb": 0.0045595736,
+      "active": -9.19876e-05
+    },
+    {
+      "date": "2026-06-23",
+      "Rp": -0.00440567,
+      "Rb": -0.0053732831,
+      "active": 0.0009676131
+    },
+    {
+      "date": "2026-06-24",
+      "Rp": 0.0009859219,
+      "Rb": 0.0015063117,
+      "active": -0.0005203898
+    },
+    {
+      "date": "2026-06-25",
+      "Rp": 0.0062375497,
+      "Rb": 0.0048412069,
+      "active": 0.0013963428
+    },
+    {
+      "date": "2026-06-26",
+      "Rp": 0.0005180728,
+      "Rb": -0.0005447464,
+      "active": 0.0010628193
+    }
+  ],
+  "factor_attribution": {
+    "summary": {
+      "mom": -0.0015692284856992384,
+      "value": 0.0001511632192483075,
+      "specific": 0.002016697941794171,
+      "active_total": 0.0005986326753428806
+    },
+    "detail": [
+      {
+        "date": "2026-06-01",
+        "active_ret": 0.0004285842,
+        "specific_scaled": 7.9108e-05,
+        "expo_mom": 0.0758807024,
+        "expo_value": -0.1617316892,
+        "fret_mom": 0.0015915993,
+        "fret_value": -0.0014188253,
+        "contrib_mom": 0.0001207717,
+        "contrib_value": 0.000229469,
+        "contrib_scaled_mom": 0.0001219501,
+        "contrib_scaled_value": 0.0002317081
+      },
+      {
+        "date": "2026-06-02",
+        "active_ret": -0.000632812,
+        "specific_scaled": -0.0003576449,
+        "expo_mom": -0.0409805585,
+        "expo_value": 0.0241097618,
+        "fret_mom": 0.0048342842,
+        "fret_value": -0.0033213996,
+        "contrib_mom": -0.0001981117,
+        "contrib_value": -8.00782e-05,
+        "contrib_scaled_mom": -0.0001998003,
+        "contrib_scaled_value": -8.07607e-05
+      },
+      {
+        "date": "2026-06-03",
+        "active_ret": -0.0003026942,
+        "specific_scaled": -0.0001014297,
+        "expo_mom": 0.0609041624,
+        "expo_value": 0.1548864023,
+        "fret_mom": 0.0013174597,
+        "fret_value": -0.0018228895,
+        "contrib_mom": 8.02388e-05,
+        "contrib_value": -0.0002823408,
+        "contrib_scaled_mom": 8.09069e-05,
+        "contrib_scaled_value": -0.0002846917
+      },
+      {
+        "date": "2026-06-04",
+        "active_ret": 0.000110546,
+        "specific_scaled": 0.0005716973,
+        "expo_mom": -0.102033242,
+        "expo_value": 0.0445304122,
+        "fret_mom": 0.0039033297,
+        "fret_value": -0.0013197089,
+        "contrib_mom": -0.0003982694,
+        "contrib_value": -5.87672e-05,
+        "contrib_scaled_mom": -0.0004011566,
+        "contrib_scaled_value": -5.91932e-05
+      },
+      {
+        "date": "2026-06-05",
+        "active_ret": 0.0009677669,
+        "specific_scaled": 0.0009756141,
+        "expo_mom": 0.0331428192,
+        "expo_value": 0.0317988746,
+        "fret_mom": 0.0023689955,
+        "fret_value": -0.0024805894,
+        "contrib_mom": 7.85152e-05,
+        "contrib_value": -7.888e-05,
+        "contrib_scaled_mom": 7.9122e-05,
+        "contrib_scaled_value": -7.94896e-05
+      },
+      {
+        "date": "2026-06-08",
+        "active_ret": -0.001161839,
+        "specific_scaled": -0.0011564179,
+        "expo_mom": 0.010351461,
+        "expo_value": 0.0098231774,
+        "fret_mom": -0.0009642238,
+        "fret_value": -0.001083923,
+        "contrib_mom": -9.9811e-06,
+        "contrib_value": -1.06476e-05,
+        "contrib_scaled_mom": -1.01141e-05,
+        "contrib_scaled_value": -1.07895e-05
+      },
+      {
+        "date": "2026-06-09",
+        "active_ret": 0.0008853036,
+        "specific_scaled": 0.0006720957,
+        "expo_mom": -0.0036767281,
+        "expo_value": -0.0351400544,
+        "fret_mom": 0.0024536417,
+        "fret_value": -0.0064758811,
+        "contrib_mom": -9.0214e-06,
+        "contrib_value": 0.0002275628,
+        "contrib_scaled_mom": -9.0935e-06,
+        "contrib_scaled_value": 0.0002293831
+      },
+      {
+        "date": "2026-06-10",
+        "active_ret": -0.0003312302,
+        "specific_scaled": -0.0001661506,
+        "expo_mom": -0.0116268887,
+        "expo_value": 0.0424003551,
+        "fret_mom": 0.0049044256,
+        "fret_value": -0.0025579734,
+        "contrib_mom": -5.70232e-05,
+        "contrib_value": -0.000108459,
+        "contrib_scaled_mom": -5.71617e-05,
+        "contrib_scaled_value": -0.0001087224
+      },
+      {
+        "date": "2026-06-11",
+        "active_ret": 0.000221602,
+        "specific_scaled": -9.36823e-05,
+        "expo_mom": 0.0357174443,
+        "expo_value": -0.0597007643,
+        "fret_mom": 0.0042879587,
+        "fret_value": -0.0027078307,
+        "contrib_mom": 0.0001531549,
+        "contrib_value": 0.0001616596,
+        "contrib_scaled_mom": 0.0001539268,
+        "contrib_scaled_value": 0.0001624743
+      },
+      {
+        "date": "2026-06-12",
+        "active_ret": -0.0005080392,
+        "specific_scaled": -0.0004488988,
+        "expo_mom": 0.0044987582,
+        "expo_value": 0.0416663184,
+        "fret_mom": 0.0022947392,
+        "fret_value": -0.0017893076,
+        "contrib_mom": 1.03235e-05,
+        "contrib_value": -7.45539e-05,
+        "contrib_scaled_mom": 1.04419e-05,
+        "contrib_scaled_value": -7.54089e-05
+      },
+      {
+        "date": "2026-06-15",
+        "active_ret": -4.62103e-05,
+        "specific_scaled": -3.4928e-05,
+        "expo_mom": 0.0603940706,
+        "expo_value": -0.0066295106,
+        "fret_mom": -0.0003230584,
+        "fret_value": -0.001218581,
+        "contrib_mom": -1.95108e-05,
+        "contrib_value": 8.0786e-06,
+        "contrib_scaled_mom": -1.95949e-05,
+        "contrib_scaled_value": 8.1134e-06
+      },
+      {
+        "date": "2026-06-16",
+        "active_ret": 3.32627e-05,
+        "specific_scaled": 4.1826e-05,
+        "expo_mom": 0.0339878451,
+        "expo_value": 0.0723492156,
+        "fret_mom": 0.0040217045,
+        "fret_value": -0.0020057776,
+        "contrib_mom": 0.0001366891,
+        "contrib_value": -0.0001451164,
+        "contrib_scaled_mom": 0.0001371347,
+        "contrib_scaled_value": -0.0001455896
+      },
+      {
+        "date": "2026-06-17",
+        "active_ret": -0.0004415104,
+        "specific_scaled": -4.91585e-05,
+        "expo_mom": -0.0460566408,
+        "expo_value": 0.0136205855,
+        "fret_mom": 0.0070097861,
+        "fret_value": -0.0051375611,
+        "contrib_mom": -0.0003228472,
+        "contrib_value": -6.99766e-05,
+        "contrib_scaled_mom": -0.0003259769,
+        "contrib_scaled_value": -7.06549e-05
+      },
+      {
+        "date": "2026-06-18",
+        "active_ret": -0.0012343471,
+        "specific_scaled": -0.0004752434,
+        "expo_mom": -0.2267543671,
+        "expo_value": -0.0051354973,
+        "fret_mom": 0.0033841896,
+        "fret_value": -0.0009357343,
+        "contrib_mom": -0.0007673798,
+        "contrib_value": 4.8055e-06,
+        "contrib_scaled_mom": -0.0007730251,
+        "contrib_scaled_value": 4.8408e-06
+      },
+      {
+        "date": "2026-06-19",
+        "active_ret": -0.000199569,
+        "specific_scaled": -0.0002164382,
+        "expo_mom": 0.0106649926,
+        "expo_value": -0.0958427891,
+        "fret_mom": 0.000715399,
+        "fret_value": -8.66941e-05,
+        "contrib_mom": 7.6297e-06,
+        "contrib_value": 8.309e-06,
+        "contrib_scaled_mom": 7.6627e-06,
+        "contrib_scaled_value": 8.3449e-06
+      },
+      {
+        "date": "2026-06-22",
+        "active_ret": -9.19876e-05,
+        "specific_scaled": -0.0002849918,
+        "expo_mom": 0.0819320787,
+        "expo_value": 0.0512725218,
+        "fret_mom": 0.0033641999,
+        "fret_value": -0.0016278361,
+        "contrib_mom": 0.0002756359,
+        "contrib_value": -8.34633e-05,
+        "contrib_scaled_mom": 0.0002764425,
+        "contrib_scaled_value": -8.37075e-05
+      },
+      {
+        "date": "2026-06-23",
+        "active_ret": 0.0009676131,
+        "specific_scaled": 0.0007081966,
+        "expo_mom": -0.1368289722,
+        "expo_value": -0.1298725669,
+        "fret_mom": 0.0011700705,
+        "fret_value": -0.0032970204,
+        "contrib_mom": -0.0001600995,
+        "contrib_value": 0.0004281925,
+        "contrib_scaled_mom": -0.0001620853,
+        "contrib_scaled_value": 0.0004335036
+      },
+      {
+        "date": "2026-06-24",
+        "active_ret": -0.0005203898,
+        "specific_scaled": -0.0001570542,
+        "expo_mom": -0.0766481942,
+        "expo_value": 0.1311822464,
+        "fret_mom": 0.0043862043,
+        "fret_value": -0.0002142708,
+        "contrib_mom": -0.0003361946,
+        "contrib_value": -2.81085e-05,
+        "contrib_scaled_mom": -0.0003382788,
+        "contrib_scaled_value": -2.82828e-05
+      },
+      {
+        "date": "2026-06-25",
+        "active_ret": 0.0013963428,
+        "specific_scaled": 0.0014911307,
+        "expo_mom": -0.0285092222,
+        "expo_value": 0.1568821979,
+        "fret_mom": 0.0058047592,
+        "fret_value": 0.0004687217,
+        "contrib_mom": -0.0001654892,
+        "contrib_value": 7.35341e-05,
+        "contrib_scaled_mom": -0.0001658042,
+        "contrib_scaled_value": 7.36741e-05
+      },
+      {
+        "date": "2026-06-26",
+        "active_ret": 0.0010628193,
+        "specific_scaled": 0.0010190679,
+        "expo_mom": 0.0240420882,
+        "expo_value": 0.0248280895,
+        "fret_mom": 0.0010435092,
+        "fret_value": 0.0010558993,
+        "contrib_mom": 2.50881e-05,
+        "contrib_value": 2.6216e-05,
+        "contrib_scaled_mom": 2.52755e-05,
+        "contrib_scaled_value": 2.64117e-05
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+---
+description: QuantSkills B10 factor evaluation skill adapter for Cursor.
+globs:
+  - "**/*"
+alwaysApply: false
+---
+
+# Cursor Adapter: B10 Factor Evaluation
+
+Use this repository when the task is to evaluate Alpha factor panels with IC/RankIC, ICIR, stratified backtests, turnover, decay curves, stock-pool filters, and HTML factor reports.
+
+Start with the root `SKILL.md`, then read `开发产物/SKILL.md` for the full callable contract. The implementation lives under `开发产物/scripts/`.
+
+Important constraints:
+
+- Do not fetch market data inside B10. The caller must provide the factor panel, forward returns, and optional industry/style exposures.
+- Do not present outputs as investment advice, promised returns, or official endorsement.
+- Keep paths relative in examples and generated docs.
+- Do not commit credentials, local absolute paths, cache files, or private data.
+- Use `python scripts/test.py` from `开发产物/` for the standard verification path.

@@ -1,0 +1,20 @@
+---
+description: 用数值因果性检查时间序列、因子、特征、标签或回测信号中的未来泄露
+globs:
+  - "**/*.py"
+  - "**/*.ipynb"
+  - "**/*.md"
+alwaysApply: false
+---
+
+当用户要求检查 future leakage、lookahead、未来函数、因子泄露、标签泄露、回测泄露，或要求批量检查一批因子/特征/标签时，加载本 skill。
+
+执行顺序：
+
+1. 阅读 `SKILL.md`。
+2. 需要写 adapter 时阅读 `references/adapter-contract.md`。
+3. 设计 cut 时阅读 `references/checkpoint-design.md`。
+4. 解读结果时阅读 `references/result-interpretation.md`。
+5. 写报告时参考 `references/report-template.md`。
+
+不要假定固定因子接口、`F_*` 函数、`signal` 列、OHLCV schema 或单一资产类别。先理解项目，再用 adapter/harness 做 prefix replay 和 future mutation。最终对话必须给出批量范围、状态统计、FAIL/WARN 明细、局限和结果文件。

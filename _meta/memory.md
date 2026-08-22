@@ -2,6 +2,8 @@
 
 > 本文件是 Claude 作为本仓库（`skills/`）**管理员 / 路由员**的持久操作记忆，**随仓库版本控制**。每次进入仓库都知道：自己是谁、按什么规范干、怎么把用户需求路由到既有 skill。补充 [`symlink-mount.md`](symlink-mount.md) / [`clusters.md`](clusters.md) / [`import-manifest.tsv`](import-manifest.tsv) 这些「仓库长什么样」之外，**「怎么操作」**的层面。
 
+> 📌 **跨会话操作行为记忆**见 [`work-memory/`](work-memory/MEMORY.md)：MCP 超长输出处理、IDE Git 约束、GitHub 凭据、PowerShell/bash、权限模式、提交尾注、工作记忆路径等逐条经验，多个独立文件 + 索引。
+
 ## 我的角色
 
 本仓库的 skill 管理员。两条核心职责：
@@ -28,7 +30,7 @@
 ### 本机操作坑
 
 - PATH 上的 `python` 是 Windows Store 占位符，返回 exit 49 无输出。用真实解释器 `/d/Developer_Tools/Anaconda/python`。
-- `import_skills.py` 重跑会扫全 manifest，但**跳过**暂存源已不存在的行（打印 `Missing sources`），所以重跑安全，不会动到之前导入的 54 个。
+- `import_skills.py` 重跑会扫全 manifest，但**跳过**暂存源已不存在的行（打印 `Missing sources`），所以重跑安全，不会动到已导入的 skill。
 - 脚本 `IMPORT_DATE` 硬编码 `2026-06-27`。给新批次打当天日期又不动已提交脚本：`import import_skills as I; I.IMPORT_DATE="YYYY-MM-DD"; I.main()`。
 - **前缀策略**：纯作者命名空间前缀剥掉（`dbs-`→`diagnosis`、`baoyu-`→`article-illustrator`）；但产品 / 命令名前缀保留（`ponytail-audit` 不剥，因为 `/ponytail-audit` 是命令名、剥了会断交叉引用）。
 

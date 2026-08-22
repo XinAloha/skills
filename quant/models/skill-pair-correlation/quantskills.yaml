@@ -1,0 +1,32 @@
+# QUANTSKILLS upstream manifest — declares provenance & project type so AI tools
+# and downstream users can track the upstream source (per COMMUNITY_RULES.md).
+# NOTE: confirm the exact filename/schema against the organization template before
+# submission. Replace <...> placeholders after the repo is created under the org.
+schema_version: 1
+
+name: skill-pair-correlation
+type: skill                       # skill | agent
+organization: quantskills
+repository: https://github.com/quantskills/skill-pair-correlation
+authors:
+  - github: xiaohonglian
+version: 0.1.0
+status: listed                    # listed | runnable | verified (community review stages)
+license: GPL-3.0-only             # matches the GPLv3 LICENSE file in this repo
+
+summary: >-
+  Two-symbol relationship: return correlation (full + recent 20/60d), hedge beta
+  (A on B), and latest log-spread z-score for pairs / mean-reversion, across A-share / HK / US.
+
+entrypoint: scripts/pair_correlation.py::run      # async def run(...) -> str
+runtime:
+  language: python
+  python: ">=3.10"
+  dependencies: [pandas, numpy, panda_data, tqx_data]
+
+markets: [cn, hk, us]
+data_sources:
+  - panda_data     # A-share daily closes
+  - tqx_data       # HK / US daily closes
+
+usage: research-educational        # informational research only — not investment advice

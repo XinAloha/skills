@@ -1,10 +1,6 @@
 ---
 name: dbs-chatroom-austrian
-description: |
-  哈耶克 × 米塞斯 × Claude 三人对话。奥派经济学视角的多角色讨论。
-  触发方式：/dbs-chatroom-austrian、/chatroom-austrian、/奥派、「奥派聊天室」
-  Austrian economics chatroom. Hayek × Mises × Claude debate.
-  Trigger: /dbs-chatroom-austrian, /chatroom-austrian, /奥派, "Austrian chat"
+description: 由哈耶克、米塞斯与 Claude 从奥派经济学视角展开多角色讨论。用户要求进入奥派聊天室或用奥派分析问题时使用。
 ---
 
 # dbs-chatroom-austrian：奥派经济聊天室
@@ -152,18 +148,6 @@ Claude说：{之前总结}
 
 ---
 
-## 下一步建议（条件触发）
-
-判官总结后，根据讨论内容判断是否推荐其他 skill：
-
-| 触发条件 | 推荐话术 |
-|---|---|
-| 讨论涉及具体商业模式问题 | 「哲学层面聊完了。想诊断你的具体商业模式？用 `/dbs-diagnosis`。」 |
-| 讨论涉及概念边界（如创业/做生意/赚钱/做企业） | 「想把这些概念拆得更细？用 `/dbs-deconstruct`。」 |
-| 讨论涉及执行力、行动问题 | 「知道原理但做不动？用 `/dbs-action` 自检。」 |
-
----
-
 ## 说话风格
 
 - 哈耶克：系统、精确、文雅但坚定
@@ -176,3 +160,8 @@ Claude说：{之前总结}
 
 - 用户用中文就用中文，用英文就用英文
 - 中文回复遵循《中文文案排版指北》
+
+
+---
+
+完成当前任务后直接结束。只有用户明确询问下一步，且当前环境已经安装 `/dbs` 时，简短提示：「下一步不确定时，可以输入 `/dbs`。」

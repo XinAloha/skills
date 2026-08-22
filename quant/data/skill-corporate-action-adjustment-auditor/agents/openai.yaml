@@ -1,0 +1,4 @@
+interface:
+  display_name: "公司行动复权审计"
+  short_description: "Audit cash dividends splits and adjustment consistency"
+  default_prompt: "Use $corporate-action-adjustment-auditor to audit these prices and returns for cash-dividend or split adjustment errors."

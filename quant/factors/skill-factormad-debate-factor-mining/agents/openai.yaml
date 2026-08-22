@@ -1,0 +1,4 @@
+interface:
+  display_name: "FactorMAD Hybrid Factor Mining"
+  short_description: "Mine OHLCV and PIT fundamental factors with FactorMAD."
+  default_prompt: "Use $factormad-debate-factor-mining to validate a point-in-time hybrid factor-mining configuration and summarize its data contract."

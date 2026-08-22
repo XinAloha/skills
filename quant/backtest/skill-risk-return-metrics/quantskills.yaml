@@ -1,0 +1,32 @@
+# QUANTSKILLS upstream manifest — declares provenance & project type so AI tools
+# and downstream users can track the upstream source (per COMMUNITY_RULES.md).
+# NOTE: confirm the exact filename/schema against the organization template before
+# submission. Replace <...> placeholders after the repo is created under the org.
+schema_version: 1
+
+name: skill-risk-return-metrics
+type: skill                       # skill | agent
+organization: quantskills
+repository: https://github.com/quantskills/skill-risk-return-metrics
+authors:
+  - github: xiaohonglian
+version: 0.1.0
+status: listed                    # listed | runnable | verified (community review stages)
+license: GPL-3.0-only             # matches the GPLv3 LICENSE file in this repo
+
+summary: >-
+  Single-symbol risk/return dossier (annualized return, volatility, Sharpe,
+  Sortino, max drawdown, Calmar, win-rate) across A-share / HK / US.
+
+entrypoint: scripts/risk_return_metrics.py::run   # async def run(...) -> str
+runtime:
+  language: python
+  python: ">=3.10"
+  dependencies: [pandas, numpy, panda_data, tqx_data]
+
+markets: [cn, hk, us]
+data_sources:
+  - panda_data     # A-share daily closes
+  - tqx_data       # HK / US daily closes
+
+usage: research-educational        # informational research only — not investment advice

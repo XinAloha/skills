@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh) |
 | Kind | `atomic` |
 | Cluster | `humanizer` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Chinese text de-AI-ification; rewrite to natural prose. Sibling: content/ai-check (detects), content/format-markdown (formats).

@@ -32,7 +32,7 @@
 |--------|-------------|
 | `--type <name>` | Illustration type (see Type Gallery in SKILL.md) |
 | `--style <name>` | Visual style (see references/styles.md) |
-| `--preset <name>` | Shorthand for type + style combo (see [style-presets.md](style-presets.md)) |
+| `--preset <name>` | Shorthand for type + style combo (see [references/style-presets.md](references/style-presets.md)) |
 | `--density <level>` | Image count: minimal / balanced / rich |
 | `--batch-size <n>` | Temporary generation batch size for this run. Default: `generation_batch_size` from EXTEND.md, otherwise 4. Clamp to 1-8. |
 

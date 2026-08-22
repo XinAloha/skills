@@ -1,0 +1,22 @@
+---
+description: Use the Risk/Return Metrics skill when the request matches its SKILL.md description.
+alwaysApply: false
+---
+
+# Risk/Return Metrics Skill
+
+When the user asks "how risky / how good is X" or wants 夏普 / 最大回撤 / 年化 over a window for a single symbol, use the local skill package.
+
+Preferred local project path:
+
+```text
+.cursor/skills/risk-return-metrics
+```
+
+Workflow:
+
+1. Read `.cursor/skills/risk-return-metrics/SKILL.md` and follow its spec exactly.
+2. Run `scripts/risk_return_metrics.py` with the requested ticker and window; never fabricate prices — the script pulls closes from `panda_data` / `tqx_data`.
+3. Load files under `references/` only when the case needs those details.
+4. Verify the reported Sharpe / max-drawdown / Calmar against the returned series before presenting them; treat `null` ratios as undefined, not zero.
+5. Reproduce the disclaimer from `README.md` (Disclaimer / 免责声明) verbatim; never promise returns.

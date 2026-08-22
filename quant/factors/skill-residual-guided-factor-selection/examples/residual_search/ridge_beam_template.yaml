@@ -1,0 +1,76 @@
+data:
+  label_path: data/labels.parquet
+  factor_dir: data/factors
+  prepared_feature_cache: data/cache/prepared_features.parquet
+
+split:
+  train_start: "2018-01-01"
+  train_end: "2021-12-31"
+  valid_start: "2022-01-01"
+  valid_end: "2022-12-31"
+  oos_start: "2023-01-01"
+  oos_end: "2024-12-31"
+  embargo_bars: 1
+
+universe:
+  symbols: null
+  train_label_min_coverage: 0.80
+
+preprocess:
+  factor_transform: cross_sectional
+  label_transform: raw
+  winsor_lower: 0.01
+  winsor_upper: 0.99
+  cross_sectional_zscore: true
+  demean_label: false
+  min_cross_section: 30
+
+model:
+  type: ridge
+  ridge_alpha: 10.0
+  equal_date_weight: true
+
+selection:
+  random_seed: 20260723
+  initial_factor: null
+  max_factors: 30
+  top_n_log: 10
+  patience: 8
+  min_factors_before_stopping: 8
+  min_delta: 0.0002
+  min_residual_score: 0.0
+  score_method: pearson
+
+beam:
+  progress: true
+  deterministic_roots: true
+  root_width: 20
+  width: 5
+  branch_width: 5
+  final_depth: 30
+  early_stopping_patience: 8
+  early_stopping_min_delta: 0.0002
+  diversity_max_jaccard: 0.80
+  stability_penalty: 0.50
+  min_year_weight: 0.25
+  complexity_penalty: 0.00005
+  one_standard_error: true
+  cv_jobs: 4
+  ridge_alphas: [10.0]
+  cv_folds:
+    - fit_start: "2018-01-01"
+      fit_end: "2019-12-31"
+      score_start: "2020-01-01"
+      score_end: "2020-12-31"
+    - fit_start: "2018-01-01"
+      fit_end: "2020-12-31"
+      score_start: "2021-01-01"
+      score_end: "2021-12-31"
+    - fit_start: "2018-01-01"
+      fit_end: "2021-12-31"
+      score_start: "2022-01-01"
+      score_end: "2022-12-31"
+
+output:
+  root: outputs
+  experiment_name: ridge_beam

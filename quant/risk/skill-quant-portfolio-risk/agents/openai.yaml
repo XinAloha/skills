@@ -1,0 +1,11 @@
+interface:
+  display_name: "Quant Portfolio Risk"
+  short_description: "Institutional portfolio construction, risk, and governance"
+  default_prompt: "Use $quant-portfolio-risk to construct, optimize, stress-test, monitor, or govern a systematic investment portfolio."
+license: GPL-3.0-only
+metadata:
+  organization: QuantSkills
+  organization_url: https://github.com/quantskills
+  repository: skill-quant-portfolio-risk
+  repository_url: https://github.com/quantskills/skill-quant-portfolio-risk
+  project_type: skill

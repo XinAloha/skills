@@ -1,0 +1,103 @@
+{
+  "output_root": "../outputs/mlp_smoke",
+  "config": {
+    "compatibility": {"profile": "legacy_v1"},
+    "task": {
+      "name": "skill_mlp_smoke",
+      "seed": 42
+    },
+    "input": {
+      "feature_path": "toy_factors.csv",
+      "label_path": "toy_labels.csv"
+    },
+    "data": {
+      "start_date": 20200102,
+      "end_date": 20200331,
+      "date_col": "date",
+      "ticker_col": "symbol",
+      "label_col": "y",
+      "ticker_dtype": "preserve",
+      "all_null_feature_policy": "allow",
+      "strict_point_in_time": false,
+      "compute_hash": false
+    },
+    "search": {
+      "model_type": "mlp",
+      "method": "adaptive_tpe",
+      "sampler": "evidence_probe",
+      "probe_fraction": 0.5,
+      "max_trials": 4,
+      "max_rounds": 2,
+      "trials_per_round": 2,
+      "random_start_trials": 2,
+      "top_fraction": 0.5,
+      "seed": 42,
+      "space": {
+        "hidden_layers": {"type": "choice", "values": [[16], [32], [32, 16]]},
+        "activation": {"type": "choice", "values": ["relu", "gelu"]},
+        "dropout": {"type": "uniform", "low": 0.0, "high": 0.2},
+        "learning_rate": {"type": "loguniform", "low": 0.0003, "high": 0.003},
+        "weight_decay": {"type": "loguniform", "low": 0.000001, "high": 0.001},
+        "batch_size": {"type": "choice", "values": [64, 128]},
+        "max_epochs": {"type": "choice", "values": [2, 3]},
+        "gradient_clip_norm": {"type": "choice", "values": [0.0, 1.0]}
+      }
+    },
+    "model": {
+      "type": "mlp"
+    },
+    "validation": {
+      "method": "fixed_train_valid_test",
+      "train_start": 20200102,
+      "train_end": 20200214,
+      "valid_start": 20200218,
+      "valid_end": 20200306,
+      "test_start": 20200310,
+      "test_end": 20200331,
+      "embargo_days": 1,
+      "min_assets_per_date": 3
+    },
+    "training": {
+      "label_window": 1
+    },
+    "time": {
+      "trade_lag_days": 0
+    },
+    "evaluation": {
+      "inner_loop": "fast_evaluator",
+      "objective": "rankic_ir"
+    },
+    "fast_evaluator": {
+      "top_quantile": 0.25,
+      "bottom_quantile": 0.25
+    },
+    "preprocess": {
+      "winsorize": {"enabled": true, "lower": 0.01, "upper": 0.99, "by": "date"},
+      "normalize": {"method": "zscore_by_date"},
+      "fillna": {"method": "cross_sectional_median"},
+      "after_normalize_fillna": "zero"
+    },
+    "model_missing": {
+      "mlp_fill_value": 0.0
+    },
+    "space_controller": {
+      "enabled": true,
+      "mode": "rule",
+      "min_trials_for_adapt": 2,
+      "max_next_round_trials": 2,
+      "allow_stop": false
+    },
+    "llm": {
+      "enabled": false
+    },
+    "final_selector": {
+      "enabled": false
+    },
+    "reproducibility": {
+      "trial_seed_policy": "legacy_trial_index",
+      "confirmation": {
+        "enabled": false
+      }
+    }
+  }
+}

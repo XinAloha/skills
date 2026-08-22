@@ -1,0 +1,4 @@
+interface:
+  display_name: "指数调仓事件研究"
+  short_description: "Study market effects around index constituent rebalances"
+  default_prompt: "Use $index-rebalance-event-study to study index additions, deletions, and rebalance impact."

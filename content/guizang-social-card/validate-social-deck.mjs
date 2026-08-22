@@ -15,6 +15,8 @@
  *   R5  4-band density        on 3:4 boards: <75% filled OR any under-filled band > 216px
  *   R6  h-xl hard cap         display title lines/chars exceed the per-board cap
  *   R7  figure margin drift    browser-default <figure> margin offsets media alignment
+ *   R8  visual bounds          measured top/bottom blank space and visual overflow
+ *   R9  title gap              display title touches the next content block
  */
 import { chromium } from "playwright";
 import { fileURLToPath } from "node:url";
@@ -91,6 +93,20 @@ const HXL_CAPS = {
 
 const DISPLAY_CLASSES = ["h-xl", "h-hero", "h-statement", "h-display", "num-mega", "num-xl"];
 
+function overflowFix(px) {
+  const n = Math.round(px);
+  if (n <= 40) {
+    return `only ${n}px over: nudge content up or tighten one gap/padding by 20-40px; do not delete content`;
+  }
+  if (n <= 90) {
+    return `${n}px over: compact local gaps/padding and reduce one block height; avoid cutting copy`;
+  }
+  if (n <= 160) {
+    return `${n}px over: reduce a display title slightly or compress one paragraph before deleting content`;
+  }
+  return `${n}px over: switch to a higher-capacity recipe or remove/merge content intentionally`;
+}
+
 for (const s of sections) {
   const meta = await s.evaluate(el => {
     const w = el.clientWidth, h = el.clientHeight;
@@ -112,7 +128,106 @@ for (const s of sections) {
   // R1 overflow
   const overflow = meta.scrollH - meta.clientH;
   if (overflow > 4) {
-    fails.push({ rule: "R1", msg: `overflow ${overflow}px (scrollH ${meta.scrollH} > clientH ${meta.clientH})`, fix: "tighten content or switch to a higher-capacity recipe" });
+    fails.push({ rule: "R1", msg: `overflow ${overflow}px (scrollH ${meta.scrollH} > clientH ${meta.clientH})`, fix: overflowFix(overflow) });
+  }
+
+  // R8 visual bounds — measures the true rendered content extent, not just scrollHeight.
+  const visualBounds = await s.evaluate(el => {
+    const er = el.getBoundingClientRect();
+    const H = el.clientHeight;
+    const W = el.clientWidth;
+    const posterArea = H * W;
+    const TRANSPARENT = /rgba?\(\s*0\s*,\s*0\s*,\s*0\s*,\s*0?\s*\)|transparent/;
+    const hasDirectText = n => {
+      for (const c of n.childNodes) {
+        if (c.nodeType === 3 && c.textContent.trim().length > 0) return true;
+      }
+      return false;
+    };
+    const cssColorVisible = c => c && !TRANSPARENT.test(c);
+    const meaningful = [];
+    for (const n of el.querySelectorAll("*")) {
+      if (n.closest("script, style")) continue;
+      const tag = n.tagName;
+      const cs = getComputedStyle(n);
+      const r = n.getBoundingClientRect();
+      if (r.width < 6 || r.height < 6) continue;
+      if (n === el || n.classList.contains("content")) continue;
+      if (cs.position === "absolute" && r.width * r.height >= posterArea * 0.85) continue;
+
+      const isText = hasDirectText(n);
+      const isMedia = tag === "IMG" || tag === "CANVAS" || tag === "SVG";
+      const isRule = tag === "HR" || (r.height <= 4 && (
+        parseFloat(cs.borderTopWidth) >= 1 ||
+        parseFloat(cs.borderBottomWidth) >= 1 ||
+        cssColorVisible(cs.backgroundColor)
+      ));
+      const hasBoxFill = cssColorVisible(cs.backgroundColor) &&
+        r.width * r.height >= 1600 &&
+        !["MAIN", "SECTION"].includes(tag);
+      const hasBorderBox = (parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth) +
+        parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth)) >= 1 &&
+        r.width * r.height >= 1600;
+      if (!isText && !isMedia && !isRule && !hasBoxFill && !hasBorderBox) continue;
+      meaningful.push({
+        top: r.top - er.top,
+        bottom: r.bottom - er.top,
+        left: r.left - er.left,
+        right: r.right - er.left,
+        cls: n.className ? "." + String(n.className).split(" ").filter(Boolean).join(".") : tag.toLowerCase(),
+        text: n.textContent.trim().replace(/\s+/g, " ").slice(0, 32),
+      });
+    }
+    if (meaningful.length === 0) return null;
+    let top = Infinity, bottom = -Infinity;
+    let topNode = null, bottomNode = null;
+    for (const item of meaningful) {
+      if (item.top < top) {
+        top = item.top;
+        topNode = item;
+      }
+      if (item.bottom > bottom) {
+        bottom = item.bottom;
+        bottomNode = item;
+      }
+    }
+    return {
+      top: Math.round(top),
+      bottom: Math.round(bottom),
+      activeHeight: Math.round(bottom - top),
+      activeRatio: (bottom - top) / H,
+      topGap: Math.max(0, Math.round(top)),
+      bottomGap: Math.max(0, Math.round(H - bottom)),
+      topOverflow: Math.max(0, Math.round(-top)),
+      bottomOverflow: Math.max(0, Math.round(bottom - H)),
+      topNode,
+      bottomNode,
+      count: meaningful.length,
+    };
+  });
+  if (visualBounds) {
+    if (visualBounds.bottomOverflow > 4) {
+      fails.push({
+        rule: "R8",
+        msg: `visual bottom overflow ${visualBounds.bottomOverflow}px (lowest: ${visualBounds.bottomNode.cls}${visualBounds.bottomNode.text ? ` "${visualBounds.bottomNode.text}"` : ""})`,
+        fix: overflowFix(visualBounds.bottomOverflow),
+      });
+    }
+    if (visualBounds.topOverflow > 4) {
+      fails.push({
+        rule: "R8",
+        msg: `visual top overflow ${visualBounds.topOverflow}px (highest: ${visualBounds.topNode.cls}${visualBounds.topNode.text ? ` "${visualBounds.topNode.text}"` : ""})`,
+        fix: "move the content group down by the measured overflow plus 16-24px",
+      });
+    }
+    const bottomGapLimit = meta.board === "wide" ? 130 : meta.board === "square" ? 160 : 190;
+    if (visualBounds.bottomGap > bottomGapLimit && visualBounds.activeRatio < 0.78) {
+      warns.push({
+        rule: "R8",
+        msg: `bottom whitespace ${visualBounds.bottomGap}px; active content height ${Math.round(visualBounds.activeRatio * 100)}%`,
+        fix: "use the measured blank space to expand the last block or move the content down slightly; avoid over-tightening after an overflow fix",
+      });
+    }
   }
 
   // R2 footer collision — only flag leaf text or media nodes, not containers
@@ -309,6 +424,77 @@ for (const s of sections) {
     }
   }
 
+  // R9 title gap — catches headings visually touching the next content block.
+  const titleGaps = await s.evaluate((el, board) => {
+    const er = el.getBoundingClientRect();
+    const TRANSPARENT = /rgba?\(\s*0\s*,\s*0\s*,\s*0\s*,\s*0?\s*\)|transparent/;
+    const hasDirectText = n => {
+      for (const c of n.childNodes) {
+        if (c.nodeType === 3 && c.textContent.trim().length > 0) return true;
+      }
+      return false;
+    };
+    const colorVisible = c => c && !TRANSPARENT.test(c);
+    const isMeaningful = n => {
+      const tag = n.tagName;
+      const cs = getComputedStyle(n);
+      const r = n.getBoundingClientRect();
+      if (r.width < 6 || r.height < 6) return false;
+      if (n === el || n.classList.contains("content")) return false;
+      if (hasDirectText(n)) return true;
+      if (tag === "IMG" || tag === "CANVAS" || tag === "SVG" || tag === "HR") return true;
+      if (colorVisible(cs.backgroundColor) && r.width * r.height >= 1600 && !["MAIN", "SECTION"].includes(tag)) return true;
+      const border = parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth) +
+        parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+      return border >= 1 && r.width * r.height >= 1600;
+    };
+    const label = n => {
+      const cls = n.className ? "." + String(n.className).split(" ").filter(Boolean).join(".") : n.tagName.toLowerCase();
+      const text = n.textContent.trim().replace(/\s+/g, " ").slice(0, 30);
+      return text ? `${cls} "${text}"` : cls;
+    };
+    const nodes = Array.from(el.querySelectorAll("*")).filter(isMeaningful);
+    const titles = Array.from(el.querySelectorAll(".h-xl, .h-hero, .h-display, .h-statement, .h-md, .row-title, .step-title"));
+    const out = [];
+    for (const title of titles) {
+      if (!title.textContent.trim()) continue;
+      const tr = title.getBoundingClientRect();
+      const isLocal = title.matches(".h-md, .row-title, .step-title");
+      const minGap = isLocal ? 16 : board === "wide" ? 24 : 28;
+      let nearest = null;
+      let nearestGap = Infinity;
+      for (const node of nodes) {
+        if (node === title || title.contains(node) || node.contains(title)) continue;
+        const nr = node.getBoundingClientRect();
+        const gap = nr.top - tr.bottom;
+        if (gap < -2) continue;
+        const overlap = Math.max(0, Math.min(tr.right, nr.right) - Math.max(tr.left, nr.left));
+        const overlapRatio = overlap / Math.min(tr.width, nr.width);
+        if (overlapRatio < 0.12 && gap < 96) continue;
+        if (gap < nearestGap) {
+          nearestGap = gap;
+          nearest = node;
+        }
+      }
+      if (nearest && nearestGap < minGap) {
+        out.push({
+          title: label(title),
+          next: label(nearest),
+          gap: Math.round(nearestGap),
+          minGap,
+        });
+      }
+    }
+    return out;
+  }, meta.board);
+  for (const g of titleGaps) {
+    warns.push({
+      rule: "R9",
+      msg: `${g.title} has ${g.gap}px gap before ${g.next} (min ${g.minGap}px)`,
+      fix: "add/restore measured spacing under the title before reducing copy or resizing the whole layout",
+    });
+  }
+
   report.push({ meta, fails, warns });
 }
 
@@ -353,7 +539,7 @@ for (const { meta, fails, warns } of report) {
 }
 
 lines.push("");
-lines.push(`Legend: R1 overflow · R2 footer collision · R3 swiss bold display · R4 min font · R5 4-band density · R6 h-xl cap · R7 figure margin drift`);
+lines.push(`Legend: R1 overflow · R2 footer collision · R3 swiss bold display · R4 min font · R5 4-band density · R6 h-xl cap · R7 figure margin drift · R8 visual bounds · R9 title gap`);
 lines.push(`Exit code 1 only on FAIL. Warnings are advisory.`);
 
 console.log(lines.join("\n"));

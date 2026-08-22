@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test:docs": "node scripts/check-skill-docs.mjs",
     "validate": "node validate-social-deck.mjs"
   },
   "keywords": [],

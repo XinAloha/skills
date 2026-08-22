@@ -1,0 +1,4 @@
+interface:
+  display_name: "生存者偏差股票池审计"
+  short_description: "Audit historical universes for survivorship and delisting bias"
+  default_prompt: "Use $survivorship-universe-auditor to audit this historical universe for lifecycle and delisting-return defects."

@@ -1,0 +1,11 @@
+.env
+.idea/
+output/
+cache/
+__pycache__/
+*.pyc
+*.parquet
+.pytest_cache/
+*.egg-info/
+dist/
+build/

@@ -1,0 +1,15 @@
+---
+description: Use this repository to audit the reliability and chronological stability of binary probability forecasts.
+globs:
+alwaysApply: false
+---
+
+# Forecast Calibration Audit
+
+Use this rule when the task asks whether binary probabilities are numerically trustworthy, calibrated, or drifting over time.
+
+1. Read `SKILL.md` and `references/input_contract.md` before calculating.
+2. Use `scripts/calibrate_forecasts.py`; preserve chronological order and never randomly shuffle a time series.
+3. Reject probabilities outside `[0, 1]` and outcomes other than `0` or `1`.
+4. Report `scored_predictions.csv`, `reliability.csv`, `time_metrics.csv`, and `summary.json`, with counts and class balance.
+5. Treat calibration metrics as diagnostics, not evidence of causality or investment performance.

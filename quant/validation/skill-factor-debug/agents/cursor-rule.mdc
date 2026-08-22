@@ -1,0 +1,41 @@
+---
+description: 因子崩溃 / 失效诊断 — 9 类症状速查表 + 未来函数自检
+globs: ["alpha.py", "factor*.py", "logs/*.txt", "journal/last_failed/*"]
+alwaysApply: false
+---
+
+# Factor Debug（Cursor 项目规则）
+
+当用户说"因子崩了 / debug / 报错 / IC 异常高怀疑 bug"时，遵循以下规则：
+
+## 核心规则
+
+1. **先看错误日志**，再动代码
+2. **症状速查表**对症下药（9 类，覆盖 90% 问题）
+3. **二分定位**单个因子，不要盲改
+4. **修复后必须跑隔离测试**验证
+5. **危险信号**看到立刻警觉：IC > 0.15 / Sharpe > 5 / MDD < 5%
+
+## 9 类症状
+
+| 症状 | references |
+|---|---|
+| PermissionError 黑名单 | `forbidden-tokens.md` |
+| HORIZON 报错 | `horizon-mismatch.md` |
+| 信号校验失败 | `signal-validation.md` |
+| checksum mismatch | `data-integrity.md` |
+| IC 异常高 | `look-ahead-bias.md` |
+| 回测全空仓 / Sharpe NaN | `backtest-anomaly.md` |
+| 相关性 > 0.85 | `correlation-violation.md` |
+| Sharpe 远 > IC_IR | `look-ahead-bias.md` |
+| 不可复现 | `nondeterminism.md` |
+
+## 触发条件
+
+- 用户说"因子崩了 / 报错 / debug"
+- 用户怀疑"IC 太高有 bug"
+- 编辑 `alpha.py` / `factor*.py` 且文件刚崩过
+
+## 详细参考
+
+打开 `skills/factor-debug/references/` 下的对应文档。

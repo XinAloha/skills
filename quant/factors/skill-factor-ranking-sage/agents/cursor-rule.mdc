@@ -1,0 +1,38 @@
+---
+description: 当用户请求对本地量化多因子数据运行 mRMR 或 SAGE 排名和 Top-K 筛选时，使用本 Skill。
+alwaysApply: false
+---
+
+# Factor Ranking SAGE Skill
+
+当用户请求因子筛选、因子去冗余、mRMR 排名、SAGE 全局贡献、LGBM/MLP 固定模型贡献解释或 Top-K 因子导出时，使用本地 Skill 包。
+
+首选本地项目路径：
+
+~~~text
+.cursor/skills/factor-ranking-sage
+~~~
+
+工作流：
+
+1. 先读取 .cursor/skills/factor-ranking-sage/SKILL.md。
+2. 仅当 SKILL.md 要求或任务需要细节时，读取 references/ 下的引用文件。
+3. 按照 SKILL.md 的说明，从 Skill 根目录运行内置脚本。
+4. 保持文档中定义的配置字段、算法边界、输出约定、时间切分和数据来源边界。
+5. 仅执行 SKILL.md 声明的 mRMR 或 SAGE 排名模式。
+6. 按照指标定义解释排名、标准误和收敛信息。
+
+## 运行入口
+
+~~~bash
+python scripts/run_factor_selection.py --input examples/factor_selection_mrmr_smoke.json
+python scripts/run_factor_selection.py --input <input-json>
+~~~
+
+## 输入与输出
+
+运行前读取 references/input_schema.md。运行后读取 references/output_contract.md、references/metric_definitions.md 和 references/validation_notes.md。
+
+## 方法边界
+
+本 Skill 提供回归 mRMR 和固定模型 Marginal-SAGE 两种排名模式。详细的数据、算法与研究边界见 references/source_boundary.md。

@@ -1,0 +1,12 @@
+{
+  "rows": 160,
+  "period": 9,
+  "atol": 1e-8,
+  "warn_atol": 1e-5,
+  "seed": 20260709,
+  "sensitive_points": [9],
+  "random_checkpoints": 3,
+  "strict_ranges": [
+    {"start": 5, "end": 20}
+  ]
+}

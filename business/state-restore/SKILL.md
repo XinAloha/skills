@@ -1,10 +1,6 @@
 ---
 name: dbs-restore
-description: |
-  把上次诊断的状态拉出来，接着用。配合 dbs-save 使用。
-  触发方式：/dbs-restore、/续上、「接着上次」「之前的结论」「上次诊断到哪了」
-  Restore the most recent diagnosis snapshot saved by dbs-save.
-  Trigger: /dbs-restore, "continue from last time", "where did we leave off"
+description: 恢复由 dbs-save 保存的最近诊断状态。用户要求接着上次、查看此前结论或继续未完成诊断时使用。
 ---
 
 # dbs-restore：接续诊断
@@ -45,6 +41,22 @@ frontmatter 字段名（status / title / source_skill / next_skill）和文件�
 
 ---
 
+## 存档根目录
+
+先读取当前工作目录下的 `.dbs/config.json`，并与 dbs-save 使用同一套解析规则：
+
+1. 配置文件不存在，或 `mode` 是 `default` → `~/.dbs/`
+2. `mode` 是 `project` → 当前工作目录下的 `.dbs/`
+3. `mode` 是 `custom` → `root` 指定的目录；展开开头的 `~`，相对路径按当前工作目录解析
+
+配置无法解析、`mode` 不受支持、`root` 为空，或路径指向 `/`、用户家目录、当前项目根目录时，停止恢复并说明配置问题。不要到其他位置猜测，也不要静默退回默认位置。
+
+`dbs-restore` 只读取配置，不修改配置。用户要查看或调整位置时，引导使用 `/dbs-save location`。
+
+后文中的 `{存档根目录}` 都指这一步解析出的绝对路径。
+
+---
+
 ## 工作流程
 
 ### Step 1：定位存档文件
@@ -61,7 +73,7 @@ frontmatter 字段名（status / title / source_skill / next_skill）和文件�
 
 **情况 A：当前项目目录不存在或为空**
 
-先看 `~/.dbs/sessions/` 下有没有别的项目。
+先看 `{存档根目录}/sessions/` 下有没有别的项目。
 
 - 如果有别的项目 → 列出最近活跃过的 3 个（按各项目下最新存档的时间戳排序），让用户选：
 
@@ -75,10 +87,12 @@ frontmatter 字段名（status / title / source_skill / next_skill）和文件�
 输入 `/dbs-restore --slug <名字>` 拉对应项目的记录。
 ```
 
-- 如果连 `~/.dbs/sessions/` 本身都不存在 → 直接说：
+- 如果连 `{存档根目录}/sessions/` 本身都不存在 → 直接说：
 
 ```
-还没有任何诊断记录。先用 `/dbs-diagnosis` 或别的诊断 skill 做一次，再用 `/dbs-save` 存下来。下次就能 `/dbs-restore` 接续。
+当前存档位置没有诊断记录：{存档根目录}
+
+输入 `/dbs` 开始处理一个真实任务；形成结论后，明确说「保存」即可建立可恢复记录。以前改过存档位置时，可以输入 `/dbs-save location` 查看当前设置。
 ```
 
 **情况 B：list 模式**
@@ -117,7 +131,7 @@ frontmatter 字段名（status / title / source_skill / next_skill）和文件�
 - {假设 1}（如果没有就写「（暂无）」）
 
 ### 上次留的下一步
-{推荐下一步原文}
+{已确认下一步原文；没有就写「待定，交回 /dbs 判断」}
 
 ---
 
@@ -130,7 +144,7 @@ frontmatter 字段名（status / title / source_skill / next_skill）和文件�
 
 用户的回应有几种可能：
 
-**A. 用户说「就接着上次的下一步走」/「按那个走」**
+**A. 用户说「就接着上次确认的下一步走」/「按那个走」**
 
 → 这时候才路由到 next_skill 字段指的那个 skill。说一句：
 
@@ -140,7 +154,7 @@ frontmatter 字段名（status / title / source_skill / next_skill）和文件�
 
 **B. 用户说「我有新情况」/「之前那个不重要了」**
 
-→ 默认进 dbs-diagnosis 走问诊模式。说一句：
+→ 把新情况交回 `/dbs`，按主路由重新判断。说一句：
 
 > 那把新情况说一下，从头来。
 
@@ -157,6 +171,7 @@ frontmatter 字段名（status / title / source_skill / next_skill）和文件�
 - 存档文件被用户手动删了 → 「这份存档已经被删了，换一份吗？输入 `/dbs-restore list` 看看还有什么。」
 - 同一个对话里用户连续 `/dbs-restore` 两次 → 第二次说：「上次的状态已经在前面展示过了，往上翻就能看到。你想拉别的存档就给个序号或项目名。」
 - 用户传的序号超出范围 → 「{项目名} 下只有 {N} 份存档，你给的序号是 {M}。」
+- 当前存档位置为空，但用户确认以前存过 → 显示当前存档根目录，引导用户用 `/dbs-save location` 检查设置。不要跨目录自动搜索私人文件
 
 ---
 
@@ -173,8 +188,8 @@ frontmatter 字段名（status / title / source_skill / next_skill）和文件�
 
 | 用户回应 | 路由到 |
 |---|---|
-| 「按 next_skill 接着走」/「按那个推荐继续」 | `/<next_skill 字段值>`，并把存档内容作为上下文 |
-| 「我换个问题」/「重新开始」 | 默认 `/dbs-diagnosis` |
+| 「按 next_skill 接着走」/「按上次确认的继续」 | `/<next_skill 字段值>`，并把存档内容作为上下文 |
+| 「我换个问题」/「重新开始」 | 交回 `/dbs`，按新目标重新判断 |
 | 提到具体的新需求（小红书标题、AI 检测等） | 按 dbs 主路由判断，路由到对应 skill |
 
 ---
@@ -183,3 +198,8 @@ frontmatter 字段名（status / title / source_skill / next_skill）和文件�
 
 - 用户用中文就用中文回复，用英文就用英文回复
 - 中文回复遵循《中文文案排版指北》
+
+
+---
+
+完成当前任务后直接结束。只有用户明确询问下一步，且当前环境已经安装 `/dbs` 时，简短提示：「下一步不确定时，可以输入 `/dbs`。」

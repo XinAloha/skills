@@ -1,0 +1,11 @@
+---
+description: Load the backtesting and bias-avoidance skill for Cursor
+globs: "**/*"
+alwaysApply: false
+---
+
+When a request concerns backtesting, look-ahead bias, survivorship bias,
+overfitting, data snooping, transaction costs, or walk-forward validation,
+read `SKILL.md` and follow its workflow. Use `scripts/run_backtest.py` and
+the references it names. Keep conclusions research-only and do not make
+investment recommendations or performance promises.

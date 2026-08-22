@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brinson Attribution"
+  short_description: "Fachler/BHB allocation-selection attribution with Carino linking."
+  default_prompt: "Validate sector weights and returns, run Fachler or BHB attribution, reconcile active return, rank contributors, and use Carino linking for multi-period inputs."

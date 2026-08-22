@@ -1,0 +1,100 @@
+---
+description: 当用户请求对内置或显式注册的多因子模型进行 evidence-driven 或 grid 超参数搜索时，使用本 Skill。
+alwaysApply: false
+---
+
+# Model HPO Evidence Driven Skill
+
+当用户请求模型超参数优化、多因子模型调参、LGBM/MLP 或自定义模型参数搜索、用户因子数据接入、LLM 搜索空间调整、trial evidence 驱动搜索、grid search 或 best_params 导出时，使用本地 Skill 包。
+
+首选本地项目路径：
+
+```text
+.cursor/skills/model-hpo-evidence-driven
+```
+
+工作流：
+
+1. 先读取 `.cursor/skills/model-hpo-evidence-driven/SKILL.md`。
+2. 仅当 `SKILL.md` 要求或任务需要细节时，读取 `references/` 下的引用文件。
+3. 按照 `SKILL.md` 的说明，从 Skill 根目录运行内置脚本。
+4. 保持文档中定义的 API 名称、参数名、环境变量、文件路径、输出约定、验证边界和数据来源边界。
+5. 不要编造 Skill 文件中未支持的数据接口、本地凭据、评价指标、模型结构、输出字段或运行时行为。
+6. 将输出视为量化研究候选参数，不要解释为投资建议、交易信号、收益承诺或生产交易验证。
+
+## 运行入口
+
+在仓库根目录运行：
+
+```bash
+python scripts/run_hpo_search.py --input examples/hpo_lgbm_smoke.json
+```
+
+使用自定义输入文件：
+
+```bash
+python scripts/run_hpo_search.py --input <input-json>
+```
+
+离线最终参数选择：
+
+```bash
+python scripts/run_offline_final_selection.py --source-run-dir <run-dir> --output-root <output-root>
+```
+
+## 输入配置
+
+运行前先阅读：
+
+```text
+references/input_schema.md
+```
+
+输入 JSON 至少需要提供：
+
+```text
+feature_path
+label_path
+search.model_type
+search.method
+```
+
+自定义因子 provider、特征 pipeline 或模型 plugin 时，先读取：
+
+```text
+references/extension_api.md
+```
+
+## LLM decision handoff
+
+需要 LLM decision 参与搜索空间决策时，使用 `decision_provider.type=codex_external`；runtime 会写出 evidence 和 decision template 文件，由外部 LLM/Agent 补充 decision JSON。
+
+## 输出文件
+
+运行后阅读：
+
+```text
+references/output_contract.md
+```
+
+稳定输出包括：
+
+```text
+search_manifest.json
+trials.jsonl
+trial_leaderboard.csv
+best_params.json
+confirmation_seed_metrics.csv
+confirmation_leaderboard.csv
+search_report.md
+```
+
+默认 `legacy_v1` 搜索状态应为 `evaluated`。显式使用 `research_v2` 时状态应为 `selected_not_tested`，参数冻结后才运行：
+
+```bash
+python scripts/run_holdout_evaluation.py --source-run-dir <run-dir> --confirm-holdout-access
+```
+
+## 边界说明
+
+本 Skill 用于量化研究自动化。验证指标和 holdout 报告不构成投资建议、收益承诺或生产交易验证。

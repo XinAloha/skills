@@ -1,0 +1,6 @@
+interface:
+  display_name: "Factor Idea Generation"
+  short_description: "用七层目录和外部研究生成因子想法"
+  default_prompt: "我现在没有因子想法了，请帮我想几个。若我未说明字段，默认使用日频 OHLCV，生成 5 个带具体 factor_shape 的候选并 shortlist 2 个；若我提供外部研究材料，保留来源并完成未来信息与反同质化检查。"
+policy:
+  allow_implicit_invocation: true

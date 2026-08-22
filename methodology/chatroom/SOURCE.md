@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-chatroom](https://github.com/dontbesilent2025/dbskill/tree/main/skills/dbs-chatroom) |
 | Kind | `atomic` |
 | Cluster | `chatroom` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Multi-expert directed discussion with host and judge.

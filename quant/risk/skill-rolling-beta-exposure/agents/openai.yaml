@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rolling Beta Exposure"
+  short_description: "Rolling CAPM beta, robust CI, asymmetry and Vasicek shrinkage."
+  default_prompt: "Analyze aligned asset and market returns with rolling CAPM, HC1 beta confidence intervals, same-window up/down beta, residual volatility and Vasicek shrinkage."

@@ -1,0 +1,31 @@
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 临时文件
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+
+# Claude Code 本机配置（含个人盘符路径白名单，本机限定不入库）
+.claude/settings.local.json
+
+# 测试与类型检查缓存
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# 开发产物里允许长期保留 demo.mp4 / sample 数据 / 生产 Parquet，但临时报告不入库
+开发产物/reports/
+!开发产物/reports/.gitkeep
+
+# scripts/demo.py 一键演示产物（合成数据，不入库）
+开发产物/demo_output/
+
+# 日志
+*.log
+logs/

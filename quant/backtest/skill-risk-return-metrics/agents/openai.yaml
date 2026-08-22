@@ -1,0 +1,4 @@
+interface:
+  display_name: "风险收益指标"
+  short_description: "单标的年化收益/波动率/夏普/索提诺/最大回撤/卡玛/胜率，自动路由 A股/港股/美股"
+  default_prompt: "Use $risk_return_metrics to build a risk/return dossier for this symbol over the window: annualized return, volatility, Sharpe, Sortino, max drawdown, Calmar, and win-rate, then reproduce the disclaimer."

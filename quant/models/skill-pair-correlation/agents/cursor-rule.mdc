@@ -1,0 +1,22 @@
+---
+description: Use the Pair Correlation skill when the request matches its SKILL.md description.
+alwaysApply: false
+---
+
+# Pair Correlation Skill
+
+When the user asks about 相关性 / 对冲比例 / 配对交易 / 价差 between two symbols (or "do X and Y move together"), use the local skill package.
+
+Preferred local project path:
+
+```text
+.cursor/skills/pair-correlation
+```
+
+Workflow:
+
+1. Read `.cursor/skills/pair-correlation/SKILL.md` and follow its spec exactly.
+2. Run `scripts/pair_correlation.py` with the two requested tickers; never fabricate prices — the script pulls closes from `panda_data` / `tqx_data` and inner-joins the legs on shared trading dates.
+3. Load files under `references/` only when the case needs those details.
+4. Verify the reported correlation, hedge beta, and spread z-score against the aligned sample before presenting them.
+5. Reproduce the disclaimer from `README.md` (Disclaimer / 免责声明) verbatim; never promise returns and never call a pair/hedge setup a trade recommendation.

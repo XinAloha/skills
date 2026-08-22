@@ -22,6 +22,15 @@ Recommended set:
 - 1 cover.
 - 4-8 content pages.
 - 1 summary or checklist page if the article benefits from it.
+- Optional Live Photo card for motion-heavy evidence. Use `references/live-photo-production.md` when making `.pvt` packages for AirDrop and iPhone testing.
+
+Live Photo:
+
+- Duration: up to `5s`.
+- Keep the same `1080 x 1440` / `3:4` canvas and safe area as static Rednote cards.
+- Use Live Photo when motion is the evidence: fast generation, before/after UI, product interaction, app/game demo, scroll reveal, or process-to-result comparison.
+- Package as `.pvt` for iPhone/AirDrop testing. Loose JPG/MOV pairs often import as separate assets.
+- Publish path: AirDrop the `.pvt` package as one item to iPhone, then publish from the Xiaohongshu app. Desktop/web upload cannot be treated as the primary Live Photo publishing path.
 
 Naming:
 
@@ -100,6 +109,17 @@ output/wechat-21x9-cover.png
 output/wechat-1x1-cover.png
 output/wechat-cover-pair-preview.png
 ```
+
+## WeChat Official Account Article Live Photo
+
+截至 2026-07 实测，Live Photo 支持与上传路径相关：
+
+- iPhone 端上传可在公众号文章编辑中保留 Live Photo。
+- 网页端上传没有对应的 Live Photo 入口。
+- Keep Live Photo duration at or below `3s`.
+- Publish path: AirDrop the `.pvt` package as one item to iPhone, then upload from the iPhone Official Account article editing path.
+
+Use the same `3:4` card standard as Rednote when the user wants a WeChat article body card. If the publisher must use the desktop/web path, export a GIF or short video fallback instead of promising Live Photo support.
 
 ## Screenshot And Photo Placement
 

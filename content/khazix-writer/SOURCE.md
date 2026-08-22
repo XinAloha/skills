@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/KKKKhazix/khazix-skills/tree/main/khazix-writer](https://github.com/KKKKhazix/khazix-skills/tree/main/khazix-writer) |
 | Kind | `composite` |
 | Cluster | `-` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Personal long-form WeChat writing style (Khazix voice).

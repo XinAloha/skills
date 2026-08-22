@@ -1,0 +1,15 @@
+---
+description: Use this repository to calibrate execution costs from fills and pre-fill quotes or OHLCV bars.
+globs:
+alwaysApply: false
+---
+
+# Transaction Cost Calibration
+
+Use this rule when the task asks to estimate commissions, spread, signed slippage, participation, or simple market impact from executions and market data.
+
+1. Read `SKILL.md` and `references/input_contract.md` before calculating.
+2. Use `scripts/calibrate_costs.py`; do not replace the as-of alignment with a future quote or an ad hoc fixed bps estimate.
+3. Parse timestamps as UTC and use only quotes or bars at or before each fill.
+4. Report `execution_costs.csv`, `cost_curve.csv`, and `summary.json`, including reference coverage and observed participation range.
+5. Keep signed slippage separate from absolute cost and do not extrapolate the impact curve without an explicit sensitivity assumption.

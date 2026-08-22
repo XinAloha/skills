@@ -1,0 +1,19 @@
+name: skill-factor-mason
+type: skill
+version: 1.0.0
+organization: QuantSkills
+organization_url: https://github.com/quantskills
+repository: skill-factor-mason
+repository_url: https://github.com/quantskills/skill-factor-mason
+project_type: skill
+collection: quantitative-research
+project_status: community-project
+review_status: unreviewed
+license: GPL-3.0-only
+spdx_license: GPL-3.0-only
+runtime_adapters:
+  - codex
+  - claude-code
+  - cursor
+  - hermes
+  - openclaw

@@ -1,0 +1,30 @@
+---
+description: 当用户请求对已有股票因子池进行一轮 mutation、crossover、RankIC/RankICIR 评估或下一轮因子推荐时，使用本 Skill。
+alwaysApply: false
+---
+
+# Factor Pool Evolution Skill
+
+当用户请求因子池迭代、mutation、crossover、候选因子评估或下一轮因子推荐时，加载本地 `factor-pool-evolution` Skill。
+
+推荐安装路径：
+
+```text
+.cursor/skills/factor-pool-evolution
+```
+
+工作流：
+
+1. 先读取 `.cursor/skills/factor-pool-evolution/SKILL.md`。如果仓库本身就是当前工作区，则读取根目录 `SKILL.md`。
+2. 按 `SKILL.md` 指引读取所需的 `references/` 文件，不要一次加载无关文档。
+3. 根据 `references/input_schema.md` 准备输入，并从 Skill 根目录运行脚本。
+4. 在 prepare 阶段读取生成的 prompt pack，由当前模型生成 mutation / crossover 候选并填写 `generated_candidates.json`。
+5. 再次运行主脚本完成 evaluate 阶段，并按 `references/output_contract.md` 消费结果。
+6. 保持输入字段、候选 schema、指标口径和输出文件名与 Skill 文档一致。
+7. 将输出视为研究候选，不要表述为投资建议、收益承诺、官方验证或生产交易结论。
+
+主入口：
+
+```bash
+python scripts/run_factor_pool_evolution.py --input <evolution-input-json>
+```

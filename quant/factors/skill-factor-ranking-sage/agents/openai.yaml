@@ -1,0 +1,5 @@
+name: factor-ranking-sage
+entrypoint: SKILL.md
+display_name: Factor Ranking SAGE
+short_description: Rank quant factors with regression mRMR or Marginal-SAGE.
+default_prompt: Run the mRMR example using examples/factor_selection_mrmr_smoke.json and summarize the selected factors, ranking values, and output artifacts.

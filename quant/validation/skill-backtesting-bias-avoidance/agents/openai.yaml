@@ -1,0 +1,4 @@
+name: backtesting-bias-avoidance
+description: Build look-ahead-free backtests and audit statistical and cost biases.
+entrypoint: ../SKILL.md
+license: GPL-3.0-only

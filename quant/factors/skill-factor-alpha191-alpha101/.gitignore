@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local outputs
+outputs/
+examples/outputs/
+.skill_outputs/
+
+# Local-only configs and data
+*.local.json
+.env
+examples/market_data_*.csv

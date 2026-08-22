@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-electron-extract](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-electron-extract) |
 | Kind | `composite` |
 | Cluster | `-` |
-| Imported on | 2026-06-27 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Extract JS/resources from installed Electron apps (.asar bundles).

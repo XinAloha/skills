@@ -1,0 +1,11 @@
+interface:
+  display_name: "Quant Research"
+  short_description: "Professional quantitative research and backtesting workflow"
+  default_prompt: "Use $quant-research to design, implement, validate, or review a reproducible quantitative research workflow."
+license: GPL-3.0-only
+metadata:
+  organization: QuantSkills
+  organization_url: https://github.com/quantskills
+  repository: skill-quant-research
+  repository_url: https://github.com/quantskills/skill-quant-research
+  project_type: skill

@@ -1,0 +1,4 @@
+name: statistical-arbitrage-time-series
+description: Reproducible statistical-arbitrage and time-series research skill.
+entrypoint: ../SKILL.md
+license: GPL-3.0-only

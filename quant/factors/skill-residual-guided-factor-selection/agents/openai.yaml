@@ -1,0 +1,7 @@
+interface:
+  display_name: "Residual-Guided Factor Selection"
+  short_description: "Select factors and hand off frozen OOS signals"
+  default_prompt: "Use $residual-guided-factor-selection to select and freeze a compact factor set, then use $factor-backtest for portfolio-level evaluation when requested."
+
+policy:
+  allow_implicit_invocation: true

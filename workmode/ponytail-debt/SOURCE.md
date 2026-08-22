@@ -11,7 +11,7 @@
 | Canonical URL | [https://github.com/DietrichGebert/ponytail/tree/main/skills/ponytail-debt](https://github.com/DietrichGebert/ponytail/tree/main/skills/ponytail-debt) |
 | Kind | `atomic` |
 | Cluster | `ponytail` |
-| Imported on | 2026-07-04 |
+| Imported on | 2026-08-21 |
 | License | see upstream `LICENSE` |
 
 **Summary.** Harvest every ponytail: comment into a debt ledger so deliberate shortcuts get tracked. One-shot report, changes nothing.

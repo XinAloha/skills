@@ -13,6 +13,32 @@ This is a routing document. When the user names a category, find the row here an
 
 For any category, if a poster has a full-bleed image with text on top, also follow `image-overlay.md` (photo qualification, localized tint fallback, and subject avoidance).
 
+## Live Photo Scene Library
+
+This is not a fixed template list. When the user supplies video, infer the scenario and information budget from the actual content, then choose single Live Photo, triple collage, long-video trimming, or a non-Live-Photo fallback.
+
+Use `references/live-photo-production.md` for duration limits and rendering details. This section only decides what kind of motion is worth showing.
+
+| Scenario | User problem | Motion value | Best Live Photo form |
+| --- | --- | --- | --- |
+| 游戏攻略 / gameplay guide | A screenshot cannot explain timing, route, or operation rhythm | show the key move plus success state | single `5s` for one move; triple collage for three strategies or stages |
+| 产品更新 / product update | Static screenshots lack "how it works" proof | show trigger → interaction → result | single `3-5s`; triple collage for three features or three generated outputs |
+| 教程技巧 / tutorial | Step images are too fragmented | show the one critical action or failure-prone step | single `3-5s`; long videos should be trimmed, not compressed whole |
+| AI 模型测试 / model demo | Static results do not prove process or credibility | show prompt/process/result evidence | triple collage for multiple results; single for one clear generation path |
+| 旅行攻略 / travel | A pretty place photo has atmosphere but not process | add arrival, route, movement, or现场感 around a static guide card | single `5s`; avoid pure scenery loops with no informational role |
+| 生活方式 / packing / living | Product or object photos feel too staged | show real handling, packing, opening, setup, or use | single `5s`; triple collage for checklist-style sequences |
+| 电商种草 / product rec | Product photos do not prove texture, scale, or use state | show touch, rotation, fit, before/after, or detail | single `3-5s`; triple collage for detail / scale / result |
+| 健身动作 / fitness movement | One pose cannot explain trajectory | show range, rhythm, or correction | single `3-5s`; triple collage for wrong / fix / result |
+| 美食手作 / food & craft | Finished photo misses the satisfying change | show pour, stir, cut, assemble, melt, or final reveal | single `3-5s`; avoid full recipes in one Live Photo |
+| 家居改造 / home before-after | Before/after static pair feels disconnected | show the transition or the practical action | single for one transformation; triple collage for before / process / after |
+
+Motion role shortcuts:
+
+- **One action point** → single Live Photo, usually `3s` WeChat or `5s` Xiaohongshu.
+- **One small process** → single `5s`, possibly with light speed-up.
+- **Three parallel results / viewpoints / stages** → triple Live Photo collage.
+- **Long sequence or narration-heavy content** → diagnose first; trim, split, or recommend normal video/GIF.
+
 ---
 
 ## 旅行 · Travel

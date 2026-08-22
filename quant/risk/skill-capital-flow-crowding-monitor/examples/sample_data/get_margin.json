@@ -1,0 +1,1402 @@
+[
+ {
+  "symbol": "600519.SH",
+  "date": "20260408",
+  "margin_balance": 2397543549.2,
+  "short_balance": 28872808.9,
+  "total_balance": 2426314071.8,
+  "buy_on_margin_value": 71248018.0,
+  "short_sell_quantity": 26076.5,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260409",
+  "margin_balance": 2394521988.2,
+  "short_balance": 28688318.8,
+  "total_balance": 2423256252.0,
+  "buy_on_margin_value": 72610588.9,
+  "short_sell_quantity": 25223.1,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260410",
+  "margin_balance": 2404453307.2,
+  "short_balance": 28903220.2,
+  "total_balance": 2433306746.9,
+  "buy_on_margin_value": 73317908.1,
+  "short_sell_quantity": 22735.6,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260413",
+  "margin_balance": 2406235744.4,
+  "short_balance": 28922573.7,
+  "total_balance": 2435110573.3,
+  "buy_on_margin_value": 70821043.1,
+  "short_sell_quantity": 16697.2,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260414",
+  "margin_balance": 2389956457.0,
+  "short_balance": 28330699.9,
+  "total_balance": 2418635934.5,
+  "buy_on_margin_value": 69029847.7,
+  "short_sell_quantity": 39287.7,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260415",
+  "margin_balance": 2385480649.1,
+  "short_balance": 29004445.9,
+  "total_balance": 2414106416.9,
+  "buy_on_margin_value": 73276094.5,
+  "short_sell_quantity": 18688.3,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260416",
+  "margin_balance": 2388426270.7,
+  "short_balance": 28739946.1,
+  "total_balance": 2417087385.9,
+  "buy_on_margin_value": 69669376.1,
+  "short_sell_quantity": 15421.8,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260417",
+  "margin_balance": 2404835048.8,
+  "short_balance": 28609259.9,
+  "total_balance": 2433693069.4,
+  "buy_on_margin_value": 70044563.2,
+  "short_sell_quantity": 21171.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260420",
+  "margin_balance": 2401525546.7,
+  "short_balance": 28797022.3,
+  "total_balance": 2430343853.3,
+  "buy_on_margin_value": 73942002.6,
+  "short_sell_quantity": 30412.0,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260421",
+  "margin_balance": 2403911964.3,
+  "short_balance": 28690923.0,
+  "total_balance": 2432758907.9,
+  "buy_on_margin_value": 73262181.4,
+  "short_sell_quantity": 27566.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260422",
+  "margin_balance": 2396143036.0,
+  "short_balance": 28802668.2,
+  "total_balance": 2424896752.4,
+  "buy_on_margin_value": 73163848.0,
+  "short_sell_quantity": 17322.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260423",
+  "margin_balance": 2381864485.4,
+  "short_balance": 28364472.8,
+  "total_balance": 2410446859.2,
+  "buy_on_margin_value": 69805423.3,
+  "short_sell_quantity": 36254.1,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260424",
+  "margin_balance": 2380853249.0,
+  "short_balance": 28406786.9,
+  "total_balance": 2409423487.9,
+  "buy_on_margin_value": 72917767.5,
+  "short_sell_quantity": 22543.7,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260427",
+  "margin_balance": 2380260131.8,
+  "short_balance": 28568272.5,
+  "total_balance": 2408823253.4,
+  "buy_on_margin_value": 69686918.8,
+  "short_sell_quantity": 24668.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260428",
+  "margin_balance": 2393976118.1,
+  "short_balance": 28800162.2,
+  "total_balance": 2422703831.6,
+  "buy_on_margin_value": 72177106.0,
+  "short_sell_quantity": 36264.3,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260429",
+  "margin_balance": 2381535408.7,
+  "short_balance": 28458199.4,
+  "total_balance": 2410113833.6,
+  "buy_on_margin_value": 75705080.2,
+  "short_sell_quantity": 27831.1,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260430",
+  "margin_balance": 2372317777.5,
+  "short_balance": 28361589.1,
+  "total_balance": 2400785590.9,
+  "buy_on_margin_value": 75036046.0,
+  "short_sell_quantity": 24223.0,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260501",
+  "margin_balance": 2353037552.0,
+  "short_balance": 28200106.8,
+  "total_balance": 2381274002.6,
+  "buy_on_margin_value": 69680421.7,
+  "short_sell_quantity": 31044.8,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260504",
+  "margin_balance": 2335155000.5,
+  "short_balance": 27518213.0,
+  "total_balance": 2363176860.5,
+  "buy_on_margin_value": 71126841.7,
+  "short_sell_quantity": 21573.7,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260505",
+  "margin_balance": 2328277857.5,
+  "short_balance": 27918433.5,
+  "total_balance": 2356217191.7,
+  "buy_on_margin_value": 69289322.9,
+  "short_sell_quantity": 23850.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260506",
+  "margin_balance": 2330566801.5,
+  "short_balance": 28053674.2,
+  "total_balance": 2358533603.1,
+  "buy_on_margin_value": 74699016.2,
+  "short_sell_quantity": 13880.2,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260507",
+  "margin_balance": 2336337551.5,
+  "short_balance": 28039035.3,
+  "total_balance": 2364373602.1,
+  "buy_on_margin_value": 73077328.5,
+  "short_sell_quantity": 36142.7,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260508",
+  "margin_balance": 2345263315.0,
+  "short_balance": 28249084.5,
+  "total_balance": 2373406474.8,
+  "buy_on_margin_value": 64436273.1,
+  "short_sell_quantity": 34578.4,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260511",
+  "margin_balance": 2339318728.9,
+  "short_balance": 28177897.9,
+  "total_balance": 2367390553.7,
+  "buy_on_margin_value": 68351433.1,
+  "short_sell_quantity": 22458.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260512",
+  "margin_balance": 2327049576.6,
+  "short_balance": 28246616.2,
+  "total_balance": 2354974171.5,
+  "buy_on_margin_value": 71467379.2,
+  "short_sell_quantity": 15286.5,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260513",
+  "margin_balance": 2325652055.3,
+  "short_balance": 27924318.0,
+  "total_balance": 2353559880.0,
+  "buy_on_margin_value": 71942466.4,
+  "short_sell_quantity": 24548.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260514",
+  "margin_balance": 2319497965.4,
+  "short_balance": 27751028.4,
+  "total_balance": 2347331941.0,
+  "buy_on_margin_value": 72709992.6,
+  "short_sell_quantity": 21077.6,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260515",
+  "margin_balance": 2319746605.8,
+  "short_balance": 27384574.0,
+  "total_balance": 2347583565.0,
+  "buy_on_margin_value": 66587786.2,
+  "short_sell_quantity": 30714.8,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260518",
+  "margin_balance": 2306941667.7,
+  "short_balance": 27656350.4,
+  "total_balance": 2334624967.7,
+  "buy_on_margin_value": 68761193.6,
+  "short_sell_quantity": 36986.0,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260519",
+  "margin_balance": 2304191796.5,
+  "short_balance": 27726580.0,
+  "total_balance": 2331842098.0,
+  "buy_on_margin_value": 63121518.5,
+  "short_sell_quantity": 33936.2,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260520",
+  "margin_balance": 2296937837.0,
+  "short_balance": 27689558.3,
+  "total_balance": 2324501091.0,
+  "buy_on_margin_value": 72294206.0,
+  "short_sell_quantity": 11867.4,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260521",
+  "margin_balance": 2304830137.0,
+  "short_balance": 27782756.8,
+  "total_balance": 2332488098.6,
+  "buy_on_margin_value": 69987954.6,
+  "short_sell_quantity": 14869.1,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260522",
+  "margin_balance": 2303205716.1,
+  "short_balance": 27693955.8,
+  "total_balance": 2330844184.7,
+  "buy_on_margin_value": 70814351.1,
+  "short_sell_quantity": 13043.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260525",
+  "margin_balance": 2303213450.1,
+  "short_balance": 27608797.7,
+  "total_balance": 2330852011.5,
+  "buy_on_margin_value": 69611813.6,
+  "short_sell_quantity": 36230.0,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260526",
+  "margin_balance": 2299274098.7,
+  "short_balance": 27516778.9,
+  "total_balance": 2326865387.9,
+  "buy_on_margin_value": 68938906.2,
+  "short_sell_quantity": 20924.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260527",
+  "margin_balance": 2307770234.8,
+  "short_balance": 27971904.0,
+  "total_balance": 2335463477.6,
+  "buy_on_margin_value": 73301194.0,
+  "short_sell_quantity": 39793.1,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260528",
+  "margin_balance": 2297395343.6,
+  "short_balance": 27617523.5,
+  "total_balance": 2324964087.8,
+  "buy_on_margin_value": 70116866.5,
+  "short_sell_quantity": 20279.1,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260529",
+  "margin_balance": 2299587732.7,
+  "short_balance": 27560259.1,
+  "total_balance": 2327182785.5,
+  "buy_on_margin_value": 74600300.6,
+  "short_sell_quantity": 14843.2,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260601",
+  "margin_balance": 2321940221.0,
+  "short_balance": 27934309.2,
+  "total_balance": 2349803503.6,
+  "buy_on_margin_value": 67995519.7,
+  "short_sell_quantity": 26295.2,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260602",
+  "margin_balance": 2321016566.6,
+  "short_balance": 28093782.6,
+  "total_balance": 2348868765.4,
+  "buy_on_margin_value": 70252215.0,
+  "short_sell_quantity": 39355.0,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260603",
+  "margin_balance": 2330380192.8,
+  "short_balance": 27730849.9,
+  "total_balance": 2358344755.1,
+  "buy_on_margin_value": 69711305.2,
+  "short_sell_quantity": 15011.3,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260604",
+  "margin_balance": 2339268312.9,
+  "short_balance": 28105112.7,
+  "total_balance": 2367339532.7,
+  "buy_on_margin_value": 66513148.2,
+  "short_sell_quantity": 33371.6,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260605",
+  "margin_balance": 2336078018.9,
+  "short_balance": 28157594.2,
+  "total_balance": 2364110955.1,
+  "buy_on_margin_value": 73357703.1,
+  "short_sell_quantity": 35578.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260608",
+  "margin_balance": 2311008822.1,
+  "short_balance": 27859583.5,
+  "total_balance": 2338740928.0,
+  "buy_on_margin_value": 64129874.3,
+  "short_sell_quantity": 32196.2,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260609",
+  "margin_balance": 2312634411.0,
+  "short_balance": 27990543.9,
+  "total_balance": 2340386023.9,
+  "buy_on_margin_value": 68931073.5,
+  "short_sell_quantity": 10838.1,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260610",
+  "margin_balance": 2314402217.3,
+  "short_balance": 27744354.2,
+  "total_balance": 2342175044.0,
+  "buy_on_margin_value": 71716233.3,
+  "short_sell_quantity": 30775.7,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260611",
+  "margin_balance": 2324108549.2,
+  "short_balance": 27830539.6,
+  "total_balance": 2351997851.8,
+  "buy_on_margin_value": 77959232.1,
+  "short_sell_quantity": 38650.0,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260612",
+  "margin_balance": 2313447035.5,
+  "short_balance": 27668260.4,
+  "total_balance": 2341208400.0,
+  "buy_on_margin_value": 70994823.5,
+  "short_sell_quantity": 16805.4,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260615",
+  "margin_balance": 2315503432.1,
+  "short_balance": 27913770.2,
+  "total_balance": 2343289473.2,
+  "buy_on_margin_value": 64883126.9,
+  "short_sell_quantity": 35213.1,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260616",
+  "margin_balance": 2301522319.7,
+  "short_balance": 27329704.5,
+  "total_balance": 2329140587.5,
+  "buy_on_margin_value": 69607035.6,
+  "short_sell_quantity": 33989.3,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260617",
+  "margin_balance": 2313180727.5,
+  "short_balance": 27907480.3,
+  "total_balance": 2340938896.2,
+  "buy_on_margin_value": 73814646.0,
+  "short_sell_quantity": 32504.2,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260618",
+  "margin_balance": 2304504100.5,
+  "short_balance": 27529814.8,
+  "total_balance": 2332158149.7,
+  "buy_on_margin_value": 69393979.4,
+  "short_sell_quantity": 33674.1,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260619",
+  "margin_balance": 2296298028.7,
+  "short_balance": 27867642.7,
+  "total_balance": 2323853605.0,
+  "buy_on_margin_value": 71853029.3,
+  "short_sell_quantity": 22041.6,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260622",
+  "margin_balance": 2294664583.1,
+  "short_balance": 27839469.7,
+  "total_balance": 2322200558.1,
+  "buy_on_margin_value": 67258796.0,
+  "short_sell_quantity": 15100.1,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260623",
+  "margin_balance": 2298332332.6,
+  "short_balance": 27661980.9,
+  "total_balance": 2325912320.6,
+  "buy_on_margin_value": 73444255.1,
+  "short_sell_quantity": 14385.2,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260624",
+  "margin_balance": 2288953842.1,
+  "short_balance": 27726650.3,
+  "total_balance": 2316421288.2,
+  "buy_on_margin_value": 61213626.6,
+  "short_sell_quantity": 29718.0,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260625",
+  "margin_balance": 2282141654.1,
+  "short_balance": 27589414.4,
+  "total_balance": 2309527353.9,
+  "buy_on_margin_value": 68809805.6,
+  "short_sell_quantity": 39126.7,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260626",
+  "margin_balance": 2283275326.1,
+  "short_balance": 27255136.1,
+  "total_balance": 2310674630.0,
+  "buy_on_margin_value": 65534569.2,
+  "short_sell_quantity": 38008.7,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260629",
+  "margin_balance": 2266343257.8,
+  "short_balance": 27359875.8,
+  "total_balance": 2293539376.9,
+  "buy_on_margin_value": 68941402.1,
+  "short_sell_quantity": 17555.0,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260630",
+  "margin_balance": 2260802437.0,
+  "short_balance": 27090060.7,
+  "total_balance": 2287932066.3,
+  "buy_on_margin_value": 69968919.7,
+  "short_sell_quantity": 27593.1,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260701",
+  "margin_balance": 2260248225.6,
+  "short_balance": 27331045.7,
+  "total_balance": 2287371204.3,
+  "buy_on_margin_value": 72281889.1,
+  "short_sell_quantity": 20613.5,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260702",
+  "margin_balance": 2274803256.6,
+  "short_balance": 27042079.6,
+  "total_balance": 2302100895.7,
+  "buy_on_margin_value": 69275702.5,
+  "short_sell_quantity": 37128.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260703",
+  "margin_balance": 2256943398.5,
+  "short_balance": 27297117.9,
+  "total_balance": 2284026719.3,
+  "buy_on_margin_value": 64012497.8,
+  "short_sell_quantity": 25705.2,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260706",
+  "margin_balance": 2256828167.6,
+  "short_balance": 27295866.3,
+  "total_balance": 2283910105.6,
+  "buy_on_margin_value": 68083723.6,
+  "short_sell_quantity": 15493.2,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260707",
+  "margin_balance": 2272998495.7,
+  "short_balance": 27284835.7,
+  "total_balance": 2300274477.6,
+  "buy_on_margin_value": 69782901.3,
+  "short_sell_quantity": 31755.8,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260708",
+  "margin_balance": 2282095211.8,
+  "short_balance": 27218559.2,
+  "total_balance": 2309480354.3,
+  "buy_on_margin_value": 67536992.2,
+  "short_sell_quantity": 25550.5,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260709",
+  "margin_balance": 2267067837.8,
+  "short_balance": 27085244.9,
+  "total_balance": 2294272651.9,
+  "buy_on_margin_value": 71034267.1,
+  "short_sell_quantity": 17454.8,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260710",
+  "margin_balance": 2274256588.9,
+  "short_balance": 27233170.1,
+  "total_balance": 2301547667.9,
+  "buy_on_margin_value": 73314688.2,
+  "short_sell_quantity": 25231.4,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260713",
+  "margin_balance": 2260029363.9,
+  "short_balance": 26992561.9,
+  "total_balance": 2287149716.3,
+  "buy_on_margin_value": 70569071.2,
+  "short_sell_quantity": 28375.8,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "600519.SH",
+  "date": "20260714",
+  "margin_balance": 2262063390.3,
+  "short_balance": 26905278.4,
+  "total_balance": 2289208151.0,
+  "buy_on_margin_value": 67736512.9,
+  "short_sell_quantity": 30781.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260408",
+  "margin_balance": 1795700777.1,
+  "short_balance": 17822507.0,
+  "total_balance": 1813657784.8,
+  "buy_on_margin_value": 98300681.3,
+  "short_sell_quantity": 11332.5,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260409",
+  "margin_balance": 1799253207.6,
+  "short_balance": 18064099.3,
+  "total_balance": 1817245739.6,
+  "buy_on_margin_value": 85787566.0,
+  "short_sell_quantity": 16783.0,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260410",
+  "margin_balance": 1791480209.1,
+  "short_balance": 17839990.2,
+  "total_balance": 1809395011.2,
+  "buy_on_margin_value": 89279465.5,
+  "short_sell_quantity": 20538.3,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260413",
+  "margin_balance": 1793353218.9,
+  "short_balance": 17937027.5,
+  "total_balance": 1811286751.1,
+  "buy_on_margin_value": 92068773.2,
+  "short_sell_quantity": 13229.0,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260414",
+  "margin_balance": 1795641524.3,
+  "short_balance": 17977313.4,
+  "total_balance": 1813597939.5,
+  "buy_on_margin_value": 88162402.7,
+  "short_sell_quantity": 25190.0,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260415",
+  "margin_balance": 1798475610.3,
+  "short_balance": 17955499.4,
+  "total_balance": 1816460366.4,
+  "buy_on_margin_value": 95626967.1,
+  "short_sell_quantity": 13558.0,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260416",
+  "margin_balance": 1798081371.1,
+  "short_balance": 17996513.1,
+  "total_balance": 1816062184.9,
+  "buy_on_margin_value": 89901589.1,
+  "short_sell_quantity": 24661.6,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260417",
+  "margin_balance": 1798713824.9,
+  "short_balance": 17925628.7,
+  "total_balance": 1816700963.2,
+  "buy_on_margin_value": 88913946.7,
+  "short_sell_quantity": 19495.2,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260420",
+  "margin_balance": 1800277421.5,
+  "short_balance": 17983849.6,
+  "total_balance": 1818280195.7,
+  "buy_on_margin_value": 92246104.4,
+  "short_sell_quantity": 19900.0,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260421",
+  "margin_balance": 1796800361.9,
+  "short_balance": 18018666.8,
+  "total_balance": 1814768365.5,
+  "buy_on_margin_value": 85532870.0,
+  "short_sell_quantity": 20133.7,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260422",
+  "margin_balance": 1792904572.9,
+  "short_balance": 17666194.6,
+  "total_balance": 1810833618.6,
+  "buy_on_margin_value": 84447615.2,
+  "short_sell_quantity": 24134.5,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260423",
+  "margin_balance": 1798563326.6,
+  "short_balance": 17918747.9,
+  "total_balance": 1816548959.9,
+  "buy_on_margin_value": 86087570.6,
+  "short_sell_quantity": 16951.0,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260424",
+  "margin_balance": 1800350610.2,
+  "short_balance": 18021179.0,
+  "total_balance": 1818354116.3,
+  "buy_on_margin_value": 97436851.8,
+  "short_sell_quantity": 15111.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260427",
+  "margin_balance": 1802894514.8,
+  "short_balance": 18050730.3,
+  "total_balance": 1820923459.9,
+  "buy_on_margin_value": 91941093.1,
+  "short_sell_quantity": 26825.4,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260428",
+  "margin_balance": 1806585976.6,
+  "short_balance": 17957576.0,
+  "total_balance": 1824651836.3,
+  "buy_on_margin_value": 89587122.9,
+  "short_sell_quantity": 15861.2,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260429",
+  "margin_balance": 1809223029.5,
+  "short_balance": 18035567.6,
+  "total_balance": 1827315259.8,
+  "buy_on_margin_value": 91198966.8,
+  "short_sell_quantity": 18916.5,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260430",
+  "margin_balance": 1808454576.9,
+  "short_balance": 18339183.4,
+  "total_balance": 1826539122.6,
+  "buy_on_margin_value": 96622809.8,
+  "short_sell_quantity": 14888.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260501",
+  "margin_balance": 1807675385.8,
+  "short_balance": 18160829.7,
+  "total_balance": 1825752139.6,
+  "buy_on_margin_value": 89462585.1,
+  "short_sell_quantity": 17131.7,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260504",
+  "margin_balance": 1811220056.5,
+  "short_balance": 18112859.1,
+  "total_balance": 1829332257.1,
+  "buy_on_margin_value": 84725312.7,
+  "short_sell_quantity": 14019.6,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260505",
+  "margin_balance": 1811899396.0,
+  "short_balance": 18109035.6,
+  "total_balance": 1830018389.9,
+  "buy_on_margin_value": 90580149.9,
+  "short_sell_quantity": 15283.4,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260506",
+  "margin_balance": 1814992584.7,
+  "short_balance": 18203910.1,
+  "total_balance": 1833142510.5,
+  "buy_on_margin_value": 91779846.5,
+  "short_sell_quantity": 16084.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260507",
+  "margin_balance": 1815192994.6,
+  "short_balance": 18166238.5,
+  "total_balance": 1833344924.6,
+  "buy_on_margin_value": 97357552.8,
+  "short_sell_quantity": 20583.8,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260508",
+  "margin_balance": 1815211048.3,
+  "short_balance": 18005713.8,
+  "total_balance": 1833363158.8,
+  "buy_on_margin_value": 88581145.4,
+  "short_sell_quantity": 17790.3,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260511",
+  "margin_balance": 1807918112.7,
+  "short_balance": 17946053.6,
+  "total_balance": 1825997293.8,
+  "buy_on_margin_value": 103232686.3,
+  "short_sell_quantity": 12989.3,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260512",
+  "margin_balance": 1807078828.2,
+  "short_balance": 17929105.8,
+  "total_balance": 1825149616.5,
+  "buy_on_margin_value": 99493017.0,
+  "short_sell_quantity": 27838.8,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260513",
+  "margin_balance": 1808943622.1,
+  "short_balance": 17976082.1,
+  "total_balance": 1827033058.3,
+  "buy_on_margin_value": 84610892.6,
+  "short_sell_quantity": 26244.4,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260514",
+  "margin_balance": 1811767355.6,
+  "short_balance": 18211187.6,
+  "total_balance": 1829885029.1,
+  "buy_on_margin_value": 81101341.9,
+  "short_sell_quantity": 26093.6,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260515",
+  "margin_balance": 1811578483.6,
+  "short_balance": 18176960.7,
+  "total_balance": 1829694268.5,
+  "buy_on_margin_value": 84704856.8,
+  "short_sell_quantity": 27856.6,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260518",
+  "margin_balance": 1809298702.9,
+  "short_balance": 17952701.0,
+  "total_balance": 1827391689.9,
+  "buy_on_margin_value": 90623081.9,
+  "short_sell_quantity": 12661.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260519",
+  "margin_balance": 1810201992.6,
+  "short_balance": 18071847.4,
+  "total_balance": 1828304012.5,
+  "buy_on_margin_value": 92317297.0,
+  "short_sell_quantity": 26716.4,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260520",
+  "margin_balance": 1805452463.8,
+  "short_balance": 18003982.9,
+  "total_balance": 1823506988.5,
+  "buy_on_margin_value": 84971869.6,
+  "short_sell_quantity": 19785.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260521",
+  "margin_balance": 1801564901.7,
+  "short_balance": 18194383.4,
+  "total_balance": 1819580550.7,
+  "buy_on_margin_value": 90264375.0,
+  "short_sell_quantity": 24965.3,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260522",
+  "margin_balance": 1797105511.6,
+  "short_balance": 17968744.5,
+  "total_balance": 1815076566.7,
+  "buy_on_margin_value": 88857985.7,
+  "short_sell_quantity": 24735.8,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260525",
+  "margin_balance": 1795986781.8,
+  "short_balance": 17959325.7,
+  "total_balance": 1813946649.6,
+  "buy_on_margin_value": 91765966.0,
+  "short_sell_quantity": 15311.2,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260526",
+  "margin_balance": 1795671564.8,
+  "short_balance": 17889509.1,
+  "total_balance": 1813628280.4,
+  "buy_on_margin_value": 88912720.4,
+  "short_sell_quantity": 19879.0,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260527",
+  "margin_balance": 1785897361.3,
+  "short_balance": 17774482.3,
+  "total_balance": 1803756334.9,
+  "buy_on_margin_value": 93135995.8,
+  "short_sell_quantity": 23673.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260528",
+  "margin_balance": 1786423984.1,
+  "short_balance": 17726487.7,
+  "total_balance": 1804288223.9,
+  "buy_on_margin_value": 88068333.5,
+  "short_sell_quantity": 12948.5,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260529",
+  "margin_balance": 1785302725.5,
+  "short_balance": 17848945.3,
+  "total_balance": 1803155752.8,
+  "buy_on_margin_value": 97507380.5,
+  "short_sell_quantity": 16088.3,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260601",
+  "margin_balance": 1784787586.1,
+  "short_balance": 17841333.1,
+  "total_balance": 1802635462.0,
+  "buy_on_margin_value": 92911684.4,
+  "short_sell_quantity": 23440.0,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260602",
+  "margin_balance": 1785838212.5,
+  "short_balance": 17805057.2,
+  "total_balance": 1803696594.6,
+  "buy_on_margin_value": 82277880.9,
+  "short_sell_quantity": 15817.1,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260603",
+  "margin_balance": 1781866939.6,
+  "short_balance": 17807075.6,
+  "total_balance": 1799685609.0,
+  "buy_on_margin_value": 86637995.1,
+  "short_sell_quantity": 27873.3,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260604",
+  "margin_balance": 1782242688.6,
+  "short_balance": 17909106.4,
+  "total_balance": 1800065115.5,
+  "buy_on_margin_value": 102239925.1,
+  "short_sell_quantity": 28725.1,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260605",
+  "margin_balance": 1786169714.3,
+  "short_balance": 17873863.2,
+  "total_balance": 1804031411.4,
+  "buy_on_margin_value": 94889281.1,
+  "short_sell_quantity": 18989.0,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260608",
+  "margin_balance": 1777682114.8,
+  "short_balance": 17768794.1,
+  "total_balance": 1795458935.9,
+  "buy_on_margin_value": 92292144.8,
+  "short_sell_quantity": 28911.7,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260609",
+  "margin_balance": 1778828857.5,
+  "short_balance": 17916272.7,
+  "total_balance": 1796617146.0,
+  "buy_on_margin_value": 92773644.5,
+  "short_sell_quantity": 29054.8,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260610",
+  "margin_balance": 1782199295.0,
+  "short_balance": 17946582.6,
+  "total_balance": 1800021287.9,
+  "buy_on_margin_value": 95965164.7,
+  "short_sell_quantity": 20174.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260611",
+  "margin_balance": 1786410153.8,
+  "short_balance": 17762381.7,
+  "total_balance": 1804274255.3,
+  "buy_on_margin_value": 90566535.5,
+  "short_sell_quantity": 19722.8,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260612",
+  "margin_balance": 1793987312.3,
+  "short_balance": 17948251.7,
+  "total_balance": 1811927185.4,
+  "buy_on_margin_value": 89765271.0,
+  "short_sell_quantity": 19833.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260615",
+  "margin_balance": 1791089513.4,
+  "short_balance": 17936711.1,
+  "total_balance": 1809000408.5,
+  "buy_on_margin_value": 92465100.5,
+  "short_sell_quantity": 16321.6,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260616",
+  "margin_balance": 1793633107.7,
+  "short_balance": 17939501.9,
+  "total_balance": 1811569438.8,
+  "buy_on_margin_value": 89432636.9,
+  "short_sell_quantity": 25014.7,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260617",
+  "margin_balance": 1794596621.2,
+  "short_balance": 17903115.5,
+  "total_balance": 1812542587.4,
+  "buy_on_margin_value": 96800472.8,
+  "short_sell_quantity": 28031.3,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260618",
+  "margin_balance": 1792066427.4,
+  "short_balance": 17896764.9,
+  "total_balance": 1809987091.7,
+  "buy_on_margin_value": 94277771.9,
+  "short_sell_quantity": 17858.0,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260619",
+  "margin_balance": 1796847023.2,
+  "short_balance": 17967458.3,
+  "total_balance": 1814815493.4,
+  "buy_on_margin_value": 86455195.3,
+  "short_sell_quantity": 15503.1,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260622",
+  "margin_balance": 1799763243.5,
+  "short_balance": 18041835.4,
+  "total_balance": 1817760875.9,
+  "buy_on_margin_value": 90679786.5,
+  "short_sell_quantity": 26693.5,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260623",
+  "margin_balance": 1797892075.3,
+  "short_balance": 18207278.8,
+  "total_balance": 1815870996.1,
+  "buy_on_margin_value": 89911277.8,
+  "short_sell_quantity": 20219.3,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260624",
+  "margin_balance": 1800718234.5,
+  "short_balance": 18042858.4,
+  "total_balance": 1818725416.9,
+  "buy_on_margin_value": 94528832.8,
+  "short_sell_quantity": 29123.3,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260625",
+  "margin_balance": 1805636891.2,
+  "short_balance": 17934838.8,
+  "total_balance": 1823693260.1,
+  "buy_on_margin_value": 82755853.6,
+  "short_sell_quantity": 28814.0,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260626",
+  "margin_balance": 1799782793.6,
+  "short_balance": 17845931.3,
+  "total_balance": 1817780621.5,
+  "buy_on_margin_value": 87562087.3,
+  "short_sell_quantity": 10989.5,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260629",
+  "margin_balance": 1799346681.7,
+  "short_balance": 17884649.2,
+  "total_balance": 1817340148.5,
+  "buy_on_margin_value": 90087875.1,
+  "short_sell_quantity": 15724.2,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260630",
+  "margin_balance": 1794171782.4,
+  "short_balance": 18159635.2,
+  "total_balance": 1812113500.2,
+  "buy_on_margin_value": 93171594.8,
+  "short_sell_quantity": 12546.2,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260701",
+  "margin_balance": 1814080426.6,
+  "short_balance": 18156761.5,
+  "total_balance": 1832221230.8,
+  "buy_on_margin_value": 88280805.3,
+  "short_sell_quantity": 29525.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260702",
+  "margin_balance": 1838689942.6,
+  "short_balance": 18377571.6,
+  "total_balance": 1857076842.1,
+  "buy_on_margin_value": 99224043.0,
+  "short_sell_quantity": 16016.7,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260703",
+  "margin_balance": 1859030954.5,
+  "short_balance": 18555014.7,
+  "total_balance": 1877621264.1,
+  "buy_on_margin_value": 94425398.3,
+  "short_sell_quantity": 14157.5,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260706",
+  "margin_balance": 1882297703.6,
+  "short_balance": 18920343.5,
+  "total_balance": 1901120680.6,
+  "buy_on_margin_value": 90849123.5,
+  "short_sell_quantity": 14400.5,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260707",
+  "margin_balance": 1910145576.9,
+  "short_balance": 18914749.3,
+  "total_balance": 1929247032.7,
+  "buy_on_margin_value": 92899848.4,
+  "short_sell_quantity": 13848.1,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260708",
+  "margin_balance": 1933391254.7,
+  "short_balance": 19410935.7,
+  "total_balance": 1952725167.3,
+  "buy_on_margin_value": 99137903.3,
+  "short_sell_quantity": 11821.9,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260709",
+  "margin_balance": 1956693996.0,
+  "short_balance": 19644075.6,
+  "total_balance": 1976260936.0,
+  "buy_on_margin_value": 88371751.0,
+  "short_sell_quantity": 24993.2,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260710",
+  "margin_balance": 1978442573.0,
+  "short_balance": 19696195.4,
+  "total_balance": 1998226998.7,
+  "buy_on_margin_value": 101614781.2,
+  "short_sell_quantity": 20483.4,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260713",
+  "margin_balance": 2000897935.3,
+  "short_balance": 20072471.0,
+  "total_balance": 2020906914.6,
+  "buy_on_margin_value": 103773776.4,
+  "short_sell_quantity": 29353.7,
+  "margin_type": "cash"
+ },
+ {
+  "symbol": "000858.SZ",
+  "date": "20260714",
+  "margin_balance": 2025521975.9,
+  "short_balance": 20338422.9,
+  "total_balance": 2045777195.7,
+  "buy_on_margin_value": 105482188.5,
+  "short_sell_quantity": 22592.5,
+  "margin_type": "cash"
+ }
+]
